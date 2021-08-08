@@ -1,0 +1,24 @@
+version: '3'
+services:
+  server:
+    container_name: server
+    build: ./server
+    environment:
+        - PORT=9000
+    expose:
+        - "9000"
+
+
+  client:
+    container_name: client
+    build: ./client
+    expose:
+        - "8080"
+        
+  mongo:
+    container_name: database_mongo
+    image: mongo
+    volumes:
+      - ./tmp/data:/data/db
+    ports:
+      - "27017:27017" 
