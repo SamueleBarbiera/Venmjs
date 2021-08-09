@@ -1,6 +1,6 @@
 'use strict'
 import chalk from 'chalk'
-import fs from 'fs'
+import fs from 'fs-extra'
 import path from 'path'
 import inquirer from 'inquirer'
 import showBanner from 'node-banner'
@@ -17,6 +17,16 @@ let shell = require('shelljs')
  * @param {String} template
  * @returns {Promise<void>}
  * @param {String} templateServer
+ * @returns {Promise<void>}
+ * @param {String} template_FRONTEND
+ * @returns {Promise<void>}
+ * @param {String} template_SSG_Jam
+ * @returns {Promise<void>}
+ * @param {String} template_SSR
+ * @returns {Promise<void>}
+ * @param {String} template_VUE
+ * @returns {Promise<void>}
+ * @param {String} template_Mobile
  * @returns {Promise<void>}
  */
 
@@ -62,29 +72,73 @@ export default async (appName) => {
     shell.cd(`./${appName}`)
 
     //#region CLIENT
-    const { template } = await inquirer.prompt([
+    const { template_FRONTEND } = await inquirer.prompt([
         {
-            name: 'template',
+            name: 'template_FRONTEND',
             type: 'list',
-            message: 'Please choose a starter template for the client side 🔮',
-            choices: ['Vue 1️⃣', 'Nuxt 2️⃣', 'Mobile 3️⃣'],
+            message: 'Please choose a starter template ✨',
+            choices: ['SSG/Jamstack 1️⃣', 'SSR 2️⃣', 'Vue 3️⃣', 'Mobile 4️⃣'],
         },
     ])
 
-    if (template === 'Vue 1️⃣') {
+    if (template_FRONTEND === 'SSG/Jamstack 1️⃣') {
+        const { template_SSG_Jam } = await inquirer.prompt([
+            {
+                name: 'template_SSG_Jam',
+                type: 'list',
+                message: 'Please choose a SSG starter template ✨',
+                choices: ['Vuepress 1️⃣', 'Gridsome 2️⃣'],
+            },
+        ])
+        if (template_SSG_Jam === 'Vuepress 1️⃣') {
+            logger.info('Creating the Vuepress project 📃')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "npx create-vuepress-site client && cd client && npm add --dev vitepress && npm i && npm i mongoose && exit";')
+            module.exports.template = 'Vuepress'
+        }
+        if (template_SSG_Jam === 'Gridsome 2️⃣') {
+            logger.info('Creating the Gridsome project 📃')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "gridsome create client && cd client && npm i && npm i mongoose && exit";')
+            module.exports.template = 'Gridsome'
+        }
+    } else if (template_FRONTEND === 'SSR 2️⃣') {
+        const { template_SSR } = await inquirer.prompt([
+            {
+                name: 'template_SSR',
+                type: 'list',
+                message: 'Please choose a SSR starter template ✨',
+                choices: ['Nuxt 1️⃣', 'Quasar 2️⃣'],
+            },
+        ])
+        if (template_SSR === 'Nuxt 1️⃣') {
+            logger.info('Creating the Nuxt-Vite project 📃')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
+            fs.unlink(`./${appName}/client/nuxt.config.js`)
+            fs.copySync(path.resolve(__dirname, '../../templates/create/nuxt/nuxt.config.js'), 'nuxt.config.js')
+            module.exports.template = 'Nuxt'
+        }
+        if (template_SSR === 'Quasar 2️⃣') {
+            logger.info('Creating the Quasar project 📃')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "quasar create client && cd client && npm i && npm i mongoose && exit";')
+            module.exports.template = 'Quasar'
+        }
+    } else if (template_FRONTEND === 'Vue 3️⃣') {
         logger.info('Creating the Vue-Vite project 📃')
         shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "vue create client && cd client && npm install && npm i @vitejs/plugin-vue && vue add vite && npm i mongoose && exit";')
         module.exports.template = 'Vue'
-    } else if (template === 'Nuxt 2️⃣') {
-        logger.info('Creating the Nuxt-Vite project 📃')
-        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
-        fs.unlink(`./${appName}/client/nuxt.config.js`)
-        fs.copySync(path.resolve(__dirname, '../../templates/create/nuxt/nuxt.config.js'), 'nuxt.config.js')
-        module.exports.template = 'Nuxt'
-    } else if (template === 'Mobile 3️⃣') {
-        logger.info('Creating the VueNative project 📃')
-        shell.exec('vue-native init client && npm install && npm i mongoose')
-        module.exports.template = 'Mobile'
+    } else if (template_FRONTEND === 'Mobile 4️⃣') {
+        const { template_Mobile } = await inquirer.prompt([
+            {
+                name: 'template_Mobile',
+                type: 'list',
+                message: 'Please choose a MOBILE starter template ✨',
+                choices: ['Vue native 1️⃣'],
+            },
+        ])
+        if (template_Mobile === 'Vue native 1️⃣') {
+            logger.info('Creating the VueNative project 📃')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "vue-native init client && npm install && npm i mongoose && exit";')
+            module.exports.template = 'Vue native'
+        }
     }
     //#endregion
 
@@ -98,13 +152,12 @@ export default async (appName) => {
         },
     ])
     if (templateServer === 'Rest API 1️⃣') {
-        /*logger.info('Creating the Rest API 📃')
-        const srcDir = `templates/server/RestAPI/*`
-        const destDir = `./${appName}`
+        logger.info('Creating the Rest API 📃')
+        fs.copySync(path.resolve(__dirname, '../../templates/server/RestAPI'), './RestAPI')
         const currPath = './RestAPI'
         const newPath = './server'
-        fs.copy(srcDir, destDir)
         fs.rename(currPath, newPath)
+        shell.cd(`./server`)
         const { uri } = await inquirer.prompt([
             {
                 type: 'input',
@@ -123,32 +176,15 @@ export default async (appName) => {
                 validate: validateInput,
             },
         ])
-        fs.writeFileSync(path.join('server', '.env'), `DB_URL=${uri}/${name}`)
-        shell.cd(`/server`)
-        shell.exec('npm install && npm i mongoose')
-        module.exports.templateServer = 'RestAPI'
-        showInstructions()*/
-        logger.info('Creating the Rest API 📃')
-        shell.exec('git clone https://github.com/SamueleBarbiera/server_restapi_crud.git')
-        const currPath = './server_restapi_crud'
-        const newPath = './server'
-        fs.rename(currPath, newPath, function (err) {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log('Successfully renamed the directory.')
-            }
-        })
-        shell.exec('npm install && npm i mongoose')
+        fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+        //shell.exec('npm install && npm i mongoose')
         module.exports.templateServer = 'RestAPI'
         showInstructions()
     } else if (templateServer === 'GraphQL 2️⃣') {
         logger.info('Creating the GraphQL project 📃')
-        const srcDir = `../../templates/server/GraphQL`
-        const destDir = `./${appName}`
+        fs.copySync(path.resolve(__dirname, '../../templates/server/GraphQL'), '/GraphQL')
         const currPath = './GraphQL'
         const newPath = './server'
-        fs.copySync(srcDir, destDir)
         fs.rename(currPath, newPath)
         const { uri } = await inquirer.prompt([
             {

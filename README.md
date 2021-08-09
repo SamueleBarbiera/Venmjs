@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/black.png" width="300px" height="380px"/></a>
+<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="320px" height="280px"/></a>
 </p>
 <p align="center">
   <a aria-label="License" href="https://github.com/SamueleBarbiera/venm-cli/blob/0.0.2/LICENSE.md">
@@ -9,11 +9,12 @@
     <img alt="" src="https://img.shields.io/npm/v/blitz.svg?style=for-the-badge&labelColor=000000&color=E65528">
   </a>
 </p>
+<h1>NOTE : This current version works only with windows OS</h1>
 <h2>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ it was made for beginners and even for experts, for his utilities, and a simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 as developers we know that we are lazy, so I came up with this idea 💡
 </h2>
 
-## Quick start 🕹️
+# Quick start 🕹️
 
 ```bash
 npm install -g venmjs
@@ -35,16 +36,19 @@ venm create <appname>
 -   [**yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 -   [**git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
--   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
--   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) `npm install --global vue-native-cli && npm install --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
--   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy ou webapp
--   [**docker**](https://www.docker.com/) is a Dev Environment to deploy your app
+-   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
+-   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
+-   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
+-   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
+-   [**mongodb**](https://www.mongodb.com/) Starting non relational database
+-   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
+-   [**gridsome**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
 
 ## License :copyright:
 
