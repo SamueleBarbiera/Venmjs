@@ -48,7 +48,7 @@ venm create <appname>
 -   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
--   [**gridsome**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+-   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
 
 ## License :copyright:
 
