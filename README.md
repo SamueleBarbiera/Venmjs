@@ -33,23 +33,30 @@ venm create <appname>
 
 ## Installation & Prerequisite (TO RUN VENM-CLI) :exclamation:
 
--   [**node.js 7.x.x**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
+-   [**node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 -   [**git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
+### Frontend
 -   [**VueNative**](https://vue-native.io/docs/installation.html) `npm install --global vue-native-cli && npm install --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
+-   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
+-   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+
+### Deployment
 -   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
+
+### Backend API
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
 -   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
+
+### Database
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database
--   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
--   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
 
 ## License :copyright:
 
@@ -69,7 +76,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <a href="https://www.linkedin.com/in/samuele-antonio-barbiera-bb023320b/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="samuele antonio barbiera" height="30" width="40" /></a>
 <a href="https://stackoverflow.com/users/16105959" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="samuelebarbiera" height="30" width="40" /></a>
 <a href="https://instagram.com/samuelebarbiera" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="samuelebarbiera" height="30" width="40" /></a>
-<a href="https://discord.gg/TCAx36jZ" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="samuele#6396" height="30" width="40" /></a>
+<a href="https://discord.gg/CBsUJtk2" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="samuele#6396" height="30" width="40" /></a>
 </p>
 
   
