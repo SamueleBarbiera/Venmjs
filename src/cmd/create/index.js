@@ -7,6 +7,8 @@ import showBanner from 'node-banner'
 import validate from 'validate-npm-package-name'
 import * as logger from '../../preload/logger'
 import { validateInput } from '../../preload/validate'
+import { validateInputname } from '../../preload/validate'
+const templateDir = require('../create/index')
 let projectPathRelative
 let shell = require('shelljs')
 /**
@@ -43,7 +45,7 @@ const showInstructions = () => {
     logger.info(`Now type in ${userCommandInstruction}`)
 }
 
-export default async (appName) => {
+export default async (appName, templateDir) => {
     await showBanner('VENM', '-------------------------------------------------------------------------------', 'blue', 'white')
     let isCurrentDir = false
 
@@ -71,7 +73,7 @@ export default async (appName) => {
     projectPathRelative = isCurrentDir ? '.' : appName
     shell.cd(`./${appName}`)
 
-    //#region CLIENT
+    //#region FRONTEND CLIENT
     const { template_FRONTEND } = await inquirer.prompt([
         {
             name: 'template_FRONTEND',
@@ -112,8 +114,17 @@ export default async (appName) => {
         if (template_SSR === 'Nuxt 1️⃣') {
             logger.info('Creating the Nuxt-Vite project 📃')
             shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
-            fs.unlink(`./${appName}/client/nuxt.config.js`)
-            fs.copySync(path.resolve(__dirname, '../../templates/create/nuxt/nuxt.config.js'), 'nuxt.config.js')
+            const client = path.resolve(__dirname, '/client')
+            const template = path.resolve(__dirname, '../../templates/create/nuxt')
+            if (templateDir != 'client' || templateDir != 'server') {
+                shell.cd('cd client')
+                fs.unlink(`nuxt.config.js`)
+                fs.copySync((`${client}`, `${template}`), 'nuxt.config.js')
+            } else if (templateDir != 'client' || templateDir === 'server') {
+                shell.exec('cd .. && cd client')
+                fs.unlink(`nuxt.config.js`)
+                fs.copySync((`${client}`, `${template}`), 'nuxt.config.js')
+            }
             module.exports.template = 'Nuxt'
         }
         if (template_SSR === 'Quasar 2️⃣') {
@@ -142,73 +153,96 @@ export default async (appName) => {
     }
     //#endregion
 
-    //#region SERVER
-    const { templateServer } = await inquirer.prompt([
+    //#region BACKEND SERVER API
+    const { template_backend } = await inquirer.prompt([
         {
-            name: 'templateServer',
+            name: 'template_backend',
             type: 'list',
-            message: 'Please choose a starter template for the server side 💾',
-            choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
+            message: 'Please choose a backend framework template ✨',
+            choices: ['express 1️⃣'],
         },
     ])
-    if (templateServer === 'Rest API 1️⃣') {
-        logger.info('Creating the Rest API 📃')
-        fs.copySync(path.resolve(__dirname, '../../templates/server/RestAPI'), './RestAPI')
-        const currPath = './RestAPI'
-        const newPath = './server'
-        fs.rename(currPath, newPath)
-        shell.cd(`./server`)
-        const { uri } = await inquirer.prompt([
+    if (template_backend === 'express 1️⃣') {
+        const { templateServer } = await inquirer.prompt([
             {
-                type: 'input',
-                name: 'uri',
-                message: 'Enter the URI of you MongoDB 👇',
-                default: 'mongodb://localhost:27017',
-                validate: validateInput,
+                name: 'templateServer',
+                type: 'list',
+                message: 'Please choose a starter template for the server side 💾',
+                choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
             },
         ])
-        const { name } = await inquirer.prompt([
-            {
-                type: 'input',
-                name: 'name',
-                message: 'Enter the name of your new Database 👇',
-                default: 'example',
-                validate: validateInput,
-            },
-        ])
-        fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
-        //shell.exec('npm install && npm i mongoose')
-        module.exports.templateServer = 'RestAPI'
-        showInstructions()
-    } else if (templateServer === 'GraphQL 2️⃣') {
-        logger.info('Creating the GraphQL project 📃')
-        fs.copySync(path.resolve(__dirname, '../../templates/server/GraphQL'), '/GraphQL')
-        const currPath = './GraphQL'
-        const newPath = './server'
-        fs.rename(currPath, newPath)
-        const { uri } = await inquirer.prompt([
-            {
-                type: 'input',
-                name: 'uri',
-                message: 'Enter the URI of you MongoDB 👇',
-                default: 'mongodb://localhost:27017',
-                validate: validateInput,
-            },
-        ])
-        const { name } = await inquirer.prompt([
-            {
-                type: 'input',
-                name: 'uri',
-                message: 'Enter the name of your new DB 👇',
-                default: 'example',
-                validate: validateInput,
-            },
-        ])
-        fs.writeFileSync(path.join('server', '.env'), `DB_URL=${uri}/${name}`)
-        shell.cd(`/server`)
-        shell.exec('npm install && npm i mongoose')
-        module.exports.templateServer = 'GraphQL'
-        showInstructions()
+        if (templateServer === 'Rest API 1️⃣') {
+            logger.info('Creating the Rest API 📃')
+            fs.copySync(path.resolve(__dirname, '../../templates/server/RestAPI'), './RestAPI')
+            const currPath = './RestAPI'
+            const newPath = './server'
+            fs.rename(currPath, newPath)
+            const { uri } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the URI of you MongoDB 👇',
+                    default: 'mongodb://localhost:27017',
+                    validate: validateInput,
+                },
+            ])
+            const { name } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'Enter the name of your new Database 👇',
+                    default: 'example',
+                    validate: validateInputname,
+                },
+            ])
+            fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+            shell.cd(`server`)
+            shell.exec('npm install && npm i mongoose')
+            module.exports.templateServer = 'RestAPI'
+            showInstructions()
+        } else if (templateServer === 'GraphQL 2️⃣') {
+            fs.copySync(path.resolve(__dirname, '../../templates/server/GraphQL'), './GraphQL')
+            const currPath = './GraphQL'
+            const newPath = './server'
+            fs.rename(currPath, newPath)
+            const { uri } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the URI of you MongoDB 👇',
+                    default: 'mongodb://localhost:27017',
+                    validate: validateInput,
+                },
+            ])
+            const { name } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'Enter the name of your new Database 👇',
+                    default: 'example',
+                    validate: validateInputname,
+                },
+            ])
+            fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+            shell.cd(`server`)
+            shell.exec('npm install && npm i mongoose')
+            module.exports.templateServer = 'GraphQL'
+            showInstructions()
+        }
     }
+    //#endregion
+
+    //#region DATABASE
+    /*
+    const { template_database } = await inquirer.prompt([
+        {
+            name: 'template_database',
+            type: 'list',
+            message: 'Please choose a database ✨',
+            choices: ['mongo 1️⃣'],
+        },
+    ])
+    if (template_database === 'mongo 1️⃣') {}
+    */
     //#endregion
 }

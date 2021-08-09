@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="320px" height="280px"/></a>
+<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="340px" height="300px"/></a>
 </p>
 <p align="center">
   <a aria-label="License" href="https://github.com/SamueleBarbiera/venm-cli/blob/0.0.2/LICENSE.md">
@@ -11,8 +11,9 @@
 </p>
 <h1>NOTE : This current version works only with windows OS</h1>
 <h2>
-This is a tool 🔧 that can be installed in your terminal at any time ⛏️ it was made for beginners and even for experts, for his utilities, and a simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 as developers we know that we are lazy, so I came up with this idea 💡
+This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
 </h2>
+<h3><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h3>
 
 # Quick start 🕹️
 
@@ -48,7 +49,7 @@ venm create <appname>
 -   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
--   [**gridsome**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+-   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
 
 ## License :copyright:
 

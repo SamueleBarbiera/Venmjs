@@ -1,5 +1,4 @@
 'use strict'
-
 import chalk from 'chalk'
 import execa from 'execa'
 import inquirer from 'inquirer'
@@ -9,12 +8,24 @@ const isWin = process.platform === 'win32'
 const isLinux = process.platform === 'linux'
 //const isMac = process.platform === 'darwin'
 class Spinner {
-    constructor(text) {this.text = text}
-    start() {this.spinner = ora(this.text).start()}
-    info(text) {this.spinner.info(text)}
-    succeed(text) {this.spinner.succeed(text)}
-    fail(text) {this.spinner.fail(text)}
-    stop() {this.spinner.stop()}
+    constructor(text) {
+        this.text = text
+    }
+    start() {
+        this.spinner = ora(this.text).start()
+    }
+    info(text) {
+        this.spinner.info(text)
+    }
+    succeed(text) {
+        this.spinner.succeed(text)
+    }
+    fail(text) {
+        this.spinner.fail(text)
+    }
+    stop() {
+        this.spinner.stop()
+    }
 }
 const spinner = new Spinner()
 /**
@@ -84,6 +95,13 @@ const installDocker = () => {
  */
 
 export const validateInput = (userInput) => {
+    if (!userInput) {
+        return `Can't be empty!`
+    }
+    return true
+}
+
+export const validateInputname = (userInput) => {
     if (!userInput) {
         return `Can't be empty!`
     }
