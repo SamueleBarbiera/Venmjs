@@ -14,7 +14,7 @@
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ it was made for beginners and even for experts, for his utilities, and a simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 as developers we know that we are lazy, so I came up with this idea 💡
 </h2>
 
-# Quick start 🕹️
+## Quick start 🕹️
 
 ```bash
 npm install -g venmjs
@@ -36,16 +36,17 @@ venm create <appname>
 -   [**yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 -   [**git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
--   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
--   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) `npm install --global vue-native-cli && npm install --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
--   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy ou webapp
--   [**docker**](https://www.docker.com/) is a Dev Environment to deploy your app
+-   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
+-   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
+-   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
+-   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
+-   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 
 ## License :copyright:
 
