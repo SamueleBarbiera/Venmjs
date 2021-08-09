@@ -22,7 +22,20 @@
         "database": "src/cmd/database.js",
         "backend": "src/cmd/backend.js"
     },
-    "scripts": {},
+    "scripts": {
+      "build": "gulp",
+      "build:watch": "babel --watch src --out-dir lib --copy-files --include-dotfiles",
+      "lint": "eslint ./src __e2e__ jest",
+      "lint:fix": "eslint --fix ./src __e2e__ jest",
+      "pretest": "npm run lint",
+      "test": "jest",
+    },
+    "lint-staged": {
+      "src/**/*.js": [
+        "eslint --fix",
+        "git add"
+      ]
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/SamueleBarbiera/Venmjs"
