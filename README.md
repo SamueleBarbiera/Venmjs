@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="420px" height="380px"/></a>
+<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="350px" height="280px"/></a>
 </p>
 <p align="center">
   <a aria-label="License" href="https://github.com/SamueleBarbiera/venm-cli/blob/0.0.2/LICENSE.md">
