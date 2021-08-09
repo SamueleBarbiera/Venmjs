@@ -23,7 +23,7 @@ venm create <appname>
 
 ## VENM-CLI offers the options listed below 👇
 
--   create <appname> 👉 Create a VENM stack project 🚀 (Vue, Nuxt, VueNative) [PARTIONALLY WORKING ❌]
+-   create <appname> 👉 Create a VENM stack project 🚀 (Vue, Nuxt, VueNative) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
