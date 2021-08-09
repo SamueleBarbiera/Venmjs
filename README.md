@@ -71,5 +71,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <a href="https://discord.gg/TCAx36jZ" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="samuele#6396" height="30" width="40" /></a>
 </p>
   
-## This project was inspired by 👇
-[**MEVN CLI"**]("https://github.com/madlabsinc/mevn-cli")
+## This project was inspired by [**MEVN CLI**]("https://github.com/madlabsinc/mevn-cli")
