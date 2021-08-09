@@ -14,6 +14,8 @@
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ it was made for beginners and even for experts, for his utilities, and a simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 as developers we know that we are lazy, so I came up with this idea 💡
 </h2>
 
+<h3>This project was inspired by [**MEVN-CLI**](https://github.com/madlabsinc/mevn-cli)</h3>
+
 # Quick start 🕹️
 
 ```bash
