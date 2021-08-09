@@ -14,7 +14,6 @@
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
 </h2>
 <h3><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h3>
-
 # Quick start 🕹️
 
 ```bash
@@ -71,3 +70,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <a href="https://instagram.com/samuelebarbiera" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="samuelebarbiera" height="30" width="40" /></a>
 <a href="https://discord.gg/TCAx36jZ" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="samuele#6396" height="30" width="40" /></a>
 </p>
+
+  
+
