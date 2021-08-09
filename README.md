@@ -49,10 +49,12 @@ venm create <appname>
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 -   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+  
 
 ## License :copyright:
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project was inspired by madlabsinc repository [**MEVN CLI**]("https://github.com/madlabsinc/mevn-cli") 
 
 ## Donations 💸
 
@@ -72,5 +74,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 </p>
 
   
-[**MEVN CLI**]("https://github.com/madlabsinc/mevn-cli") This project was inspired by madlabsinc repository
 
