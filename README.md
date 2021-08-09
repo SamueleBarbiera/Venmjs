@@ -54,7 +54,7 @@ venm create <appname>
 ## License :copyright:
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-This project was inspired by madlabsinc repository [**MEVN CLI**]("https://github.com/madlabsinc/mevn-cli") 
+<h3><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [**MEVN CLI**]</a></h3>
 
 ## Donations 💸
 
