@@ -21,11 +21,9 @@ npm install -g venmjs
 venm create <appname>
 ```
 
-### --------------------------------------------------------------------------------------------------------------------
-
 ## VENM-CLI offers the options listed below 👇
 
--   create <appname> 👉 Create a VENM stack project 🚀 (Vue, Nuxt, VueNative) [WORKS ✅]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
@@ -39,58 +37,43 @@ venm create <appname>
 -   [**git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 
-### --------------------------------------------------------------------------------------------------------------------
-
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
-### Frontend 🎱
-### mobile
+## Frontend 🎱
+### Mobile
 -   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
 
-### ssr
+### Ssr
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
-  
-### Backend API 🎯
--   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
--   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
 
-### ssg/Jamstack
+### Ssg/Jamstack
 -   [**vuepress**]() `npm install -D vuepress`
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 
-### vue
+### Vue
 -   [**vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
 
-### --------------------------------------------------------------------------------------------------------------------
-
-### Backend API 🎯
+## Backend API 🎯
 
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
 -   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
 
-### --------------------------------------------------------------------------------------------------------------------
 
-### Deployment 🚧
+## Deployment 🚧
 
 -   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
-### --------------------------------------------------------------------------------------------------------------------
-
-### Database 🧱
--   [**mongodb**](https://www.mongodb.com/) Starting non relational database
-
-### --------------------------------------------------------------------------------------------------------------------           
+## Database 🧱
+-   [**mongodb**](https://www.mongodb.com/) Starting non relational database          
            
 ## License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 <h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
-
-### --------------------------------------------------------------------------------------------------------------------
 
 ## Donations 💸
 
@@ -99,8 +82,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
     <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
     </a>
     </p>
- 
-### --------------------------------------------------------------------------------------------------------------------
 
 ## My Socials 🤳
 <p align="left">
