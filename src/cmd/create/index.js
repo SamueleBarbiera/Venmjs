@@ -114,8 +114,8 @@ export default async (appName, templateDir) => {
         if (template_SSR === 'Nuxt 1️⃣') {
             logger.info('Creating the Nuxt-Vite project 📃')
             shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
-            const client = path.resolve(__dirname, '/client')
-            const template = path.resolve(__dirname, '../../templates/create/nuxt')
+            const client = path.resolve(__dirname + '/client')
+            const template = path.resolve(__dirname + '../../templates/create/nuxt')
             if (templateDir != 'client' || templateDir != 'server') {
                 shell.cd('cd client')
                 fs.unlink(`nuxt.config.js`)
