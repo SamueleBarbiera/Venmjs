@@ -39,7 +39,7 @@ venm create <appname>
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
-<h3>Frontend 🎱</h3>
+<h2>Frontend 🎱</h2>
   
 ### Mobile
 -   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
