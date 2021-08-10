@@ -13,7 +13,6 @@
 <h2>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
 </h2>
-<h3><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h3>
 
 # Quick start 🕹️
 
@@ -31,7 +30,7 @@ venm create <appname>
 -   dep 👉 Install dependencies on the current project 🧰 [NOT READY ⛔⏳]
 -   v 👉 Check the version of your venm-cli [WORKS ✅]
 
-## Installation & Prerequisite (TO RUN VENM-CLI) :exclamation:
+## Installation & Prerequisite (TO RUN VENM-CLI) ⚗️
 
 -   [**node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
@@ -40,27 +39,28 @@ venm create <appname>
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
-### Frontend
+### Frontend 🎱
 -   [**VueNative**](https://vue-native.io/docs/installation.html) `npm install --global vue-native-cli && npm install --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 -   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+  
+### Backend API 🎯
+-   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
+-   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
 
-### Deployment
+### Deployment 🚧
 -   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
-### Backend API
--   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
--   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
-
-### Database
+### Database 🧱
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 
-## License :copyright:
+## License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+<h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
 ## Donations 💸
 
