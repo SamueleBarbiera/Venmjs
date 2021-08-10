@@ -14,8 +14,6 @@
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
 </h2>
 
-### --------------------------------------------------------------------------------------------------------------------
-
 # Quick start 🕹️
 
 ```bash
@@ -52,8 +50,13 @@ venm create <appname>
 -   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
 
 ### ssr
+
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+  
+### Backend API 🎯
+-   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
+-   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
 
 ### ssg/Jamstack
 -   [**vuepress**]() `npm install -D vuepress`
@@ -77,6 +80,7 @@ venm create <appname>
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
+<<<<<<< HEAD
 ### --------------------------------------------------------------------------------------------------------------------
 
 ### Database 🧱
@@ -85,9 +89,15 @@ venm create <appname>
 
 ### --------------------------------------------------------------------------------------------------------------------
 
+=======
+### Database 🧱
+-   [**mongodb**](https://www.mongodb.com/) Starting non relational database
+
+>>>>>>> 33aa7e86a3e0976ec28252485f3e2da4dbd42975
 ## License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+<h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
 <h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
