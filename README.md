@@ -44,13 +44,11 @@ venm create <appname>
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
 ### Frontend 🎱
-
 ### mobile
 -   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
 
 ### ssr
-
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
   
@@ -80,25 +78,16 @@ venm create <appname>
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
-<<<<<<< HEAD
 ### --------------------------------------------------------------------------------------------------------------------
 
 ### Database 🧱
-
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database
 
-### --------------------------------------------------------------------------------------------------------------------
-
-=======
-### Database 🧱
--   [**mongodb**](https://www.mongodb.com/) Starting non relational database
-
->>>>>>> 33aa7e86a3e0976ec28252485f3e2da4dbd42975
+### --------------------------------------------------------------------------------------------------------------------           
+           
 ## License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-<h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
-
 <h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
 ### --------------------------------------------------------------------------------------------------------------------
