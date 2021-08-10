@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="340px" height="300px"/></a>
+<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="320px" height="280px"/></a>
 </p>
 <p align="center">
   <a aria-label="License" href="https://github.com/SamueleBarbiera/venm-cli/blob/0.0.2/LICENSE.md">
@@ -23,7 +23,7 @@ venm create <appname>
 
 ## VENM-CLI offers the options listed below 👇
 
--   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Database) [WORKS ✅]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
