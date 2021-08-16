@@ -39,7 +39,8 @@ venm create <appname>
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
-## Frontend 🎱
+<h3>Frontend 🎱</h3>
+  
 ### Mobile
 -   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
@@ -52,23 +53,24 @@ venm create <appname>
 -   [**vuepress**]() `npm install -D vuepress`
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 
-### Vue
+### Default
 -   [**vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
 
-## Backend API 🎯
-
+## Standard Api 🎯
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
--   [**express**](https://expressjs.com/en/starter/installing.html) Starting backend framework
-
+-   [**Rest API**] Default api 
+  
+## Backend Framework 👨‍💻
+-   [**express**](https://expressjs.com/en/starter/installing.html) express framework
 
 ## Deployment 🚧
-
--   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
--   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
+-   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy a full stack webapp
+-   [**netlify**](https://www.netlify.com/) it's a platform service to deploy the Frontend of you're webapp
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
 ## Database 🧱
 -   [**mongodb**](https://www.mongodb.com/) Starting non relational database          
+-   [**mysql**](https://www.mysql.com/) Starting relational database
            
 ## License ©️
 
@@ -76,12 +78,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
 ## Donations 💸
-
-  <p align="left">
+<p align="left">
   <a href="buymeacoffee.com/?via=samueleb" target="_blank">
     <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
-    </a>
-    </p>
+  </a>
+</p>
 
 ## My Socials 🤳
 <p align="left">

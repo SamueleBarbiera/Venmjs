@@ -8,7 +8,6 @@ import validate from 'validate-npm-package-name'
 import * as logger from '../../preload/logger'
 import { validateInput } from '../../preload/validate'
 import { validateInputname } from '../../preload/validate'
-const templateDir = require('../create/index')
 let projectPathRelative
 let shell = require('shelljs')
 /**
@@ -49,7 +48,7 @@ const showInstructions = () => {
     logger.info(`Now type in ${userCommandInstruction}`)
 }
 
-export default async (appName, templateDir) => {
+export default async (appName) => {
     await showBanner('VENM', '-------------------------------------------------------------------------------', 'blue', 'white')
     let isCurrentDir = false
 
@@ -85,7 +84,7 @@ export default async (appName, templateDir) => {
             name: 'template_backend',
             type: 'list',
             message: 'Please choose a BACKEND framework ✨',
-            choices: ['express 1️⃣', 'laravel 2️⃣'],
+            choices: ['express 1️⃣' /*, 'laravel 2️⃣'*/],
         },
     ])
     const { template_database } = await inquirer.prompt([
@@ -93,12 +92,12 @@ export default async (appName, templateDir) => {
             name: 'template_database',
             type: 'list',
             message: 'Please choose a database ✨',
-            choices: ['Mongo 1️⃣', 'Postgress 2️⃣'],
+            choices: ['Mongo 1️⃣', 'mysql 2️⃣'],
         },
     ])
     /*
     if (template_backend === 'laravel 2️⃣' && template_database === 'Mongo 1️⃣') {
-    } else if (template_backend === 'laravel 2️⃣' && template_database === 'Postgress 2️⃣') {
+    } else if (template_backend === 'laravel 2️⃣' && template_database === 'mysql 2️⃣') {
         const { templateServer } = await inquirer.prompt([
             {
                 name: 'templateServer',
@@ -165,8 +164,7 @@ export default async (appName, templateDir) => {
             module.exports.templateServer = 'GraphQL'
             showInstructions()
         }
-    } else if (template_backend === 'express 1️⃣' && template_database === 'Postgress 2️⃣') {
-    } else */ if (template_backend === 'express 1️⃣' && template_database === 'Mongo 1️⃣') {
+    } else */ if (template_backend === 'express 1️⃣' && template_database === 'mysql 2️⃣') {
         const { templateServer } = await inquirer.prompt([
             {
                 name: 'templateServer',
@@ -177,7 +175,38 @@ export default async (appName, templateDir) => {
         ])
         if (templateServer === 'Rest API 1️⃣') {
             logger.info('Creating the Rest API 📃')
-            fs.copySync(path.resolve(__dirname, '../../templates/server/RestAPI'), './RestAPI')
+            fs.copySync(path.resolve(__dirname, '../../templates/server/express-mysql/RestAPI'), './RestAPI')
+            const currPath = './RestAPI'
+            const newPath = './server'
+            fs.rename(currPath, newPath)
+            //fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+            shell.cd(`server`)
+            shell.exec('npm install && npm i mongoose')
+            module.exports.templateServer = 'RestAPI'
+            showInstructions()
+        } else if (templateServer === 'GraphQL 2️⃣') {
+            fs.copySync(path.resolve(__dirname, '../../templates/server/express-mysql/GraphQL'), './GraphQL')
+            const currPath = './GraphQL'
+            const newPath = './server'
+            fs.rename(currPath, newPath)
+            //fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+            shell.cd(`server`)
+            shell.exec('npm install && npm i mongoose')
+            module.exports.templateServer = 'GraphQL'
+            showInstructions()
+        }
+    } else if (template_backend === 'express 1️⃣' && template_database === 'Mongo 1️⃣') {
+        const { templateServer } = await inquirer.prompt([
+            {
+                name: 'templateServer',
+                type: 'list',
+                message: 'Please choose a starter template for the CRUD API 💾',
+                choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
+            },
+        ])
+        if (templateServer === 'Rest API 1️⃣') {
+            logger.info('Creating the Rest API 📃')
+            fs.copySync(path.resolve(__dirname, '../../templates/server/express-mongodb/RestAPI'), './RestAPI')
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
@@ -205,7 +234,7 @@ export default async (appName, templateDir) => {
             module.exports.templateServer = 'RestAPI'
             showInstructions()
         } else if (templateServer === 'GraphQL 2️⃣') {
-            fs.copySync(path.resolve(__dirname, '../../templates/server/GraphQL'), './GraphQL')
+            fs.copySync(path.resolve(__dirname, '../../templates/server/express-mongodb/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
