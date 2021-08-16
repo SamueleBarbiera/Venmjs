@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://samuelebarbiera.github.io/Venm/"><img src="img/logo.png" width="340px" height="300px"/></a>
+<a href="https://samuelebarbiera.github.io/venmjs/"><img src="img/logo.png" width="320px" height="280px"/></a>
 </p>
 <p align="center">
   <a aria-label="License" href="https://github.com/SamueleBarbiera/venm-cli/blob/0.0.2/LICENSE.md">
@@ -23,7 +23,7 @@ venm create <appname>
 
 ## VENM-CLI offers the options listed below 👇
 
--   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Database) [WORKS ✅]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
@@ -64,8 +64,13 @@ venm create <appname>
 -   [**express**](https://expressjs.com/en/starter/installing.html) express framework
 
 ## Deployment 🚧
+<<<<<<< HEAD
 -   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy a full stack webapp
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy the Frontend of you're webapp
+=======
+-   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
+-   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
+>>>>>>> 665f78601f5ea2a9014e94216ade64667c31e93c
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
 ## Database 🧱
