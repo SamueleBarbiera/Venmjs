@@ -1,27 +1,27 @@
 const sql = require('./db.js')
 
 // constructor
-const Customer = function (customer) {
-    this.email = customer.email
-    this.name = customer.name
-    this.active = customer.active
+const Customer = function (user) {
+    this.email = user.email
+    this.name = user.name
+    this.active = user.active
 }
 
 Customer.create = (newCustomer, result) => {
-    sql.query('INSERT INTO customers SET ?', newCustomer, (err, res) => {
+    sql.query('INSERT INTO users SET ?', newCustomer, (err, res) => {
         if (err) {
             console.log('error: ', err)
             result(err, null)
             return
         }
 
-        console.log('created customer: ', { id: res.insertId, ...newCustomer })
+        console.log('created user: ', { id: res.insertId, ...newCustomer })
         result(null, { id: res.insertId, ...newCustomer })
     })
 }
 
-Customer.findById = (customerId, result) => {
-    sql.query(`SELECT * FROM customers WHERE id = ${customerId}`, (err, res) => {
+Customer.findById = (usersid, result) => {
+    sql.query(`SELECT * FROM users WHERE id = ${usersid}`, (err, res) => {
         if (err) {
             console.log('error: ', err)
             result(err, null)
@@ -29,7 +29,7 @@ Customer.findById = (customerId, result) => {
         }
 
         if (res.length) {
-            console.log('found customer: ', res[0])
+            console.log('found user: ', res[0])
             result(null, res[0])
             return
         }
@@ -40,20 +40,20 @@ Customer.findById = (customerId, result) => {
 }
 
 Customer.getAll = (result) => {
-    sql.query('SELECT * FROM customers', (err, res) => {
+    sql.query('SELECT * FROM users', (err, res) => {
         if (err) {
             console.log('error: ', err)
             result(null, err)
             return
         }
 
-        console.log('customers: ', res)
+        console.log('users: ', res)
         result(null, res)
     })
 }
 
-Customer.updateById = (id, customer, result) => {
-    sql.query('UPDATE customers SET email = ?, name = ?, active = ? WHERE id = ?', [customer.email, customer.name, customer.active, id], (err, res) => {
+Customer.updateById = (id, user, result) => {
+    sql.query('UPDATE users SET email = ?, name = ?, active = ? WHERE id = ?', [user.email, user.name, user.active, id], (err, res) => {
         if (err) {
             console.log('error: ', err)
             result(null, err)
@@ -66,13 +66,13 @@ Customer.updateById = (id, customer, result) => {
             return
         }
 
-        console.log('updated customer: ', { id: id, ...customer })
-        result(null, { id: id, ...customer })
+        console.log('updated user: ', { id: id, ...user })
+        result(null, { id: id, ...user })
     })
 }
 
 Customer.remove = (id, result) => {
-    sql.query('DELETE FROM customers WHERE id = ?', id, (err, res) => {
+    sql.query('DELETE FROM users WHERE id = ?', id, (err, res) => {
         if (err) {
             console.log('error: ', err)
             result(null, err)
@@ -85,20 +85,20 @@ Customer.remove = (id, result) => {
             return
         }
 
-        console.log('deleted customer with id: ', id)
+        console.log('deleted user with id: ', id)
         result(null, res)
     })
 }
 
 Customer.removeAll = (result) => {
-    sql.query('DELETE FROM customers', (err, res) => {
+    sql.query('DELETE FROM users', (err, res) => {
         if (err) {
             console.log('error: ', err)
             result(null, err)
             return
         }
 
-        console.log(`deleted ${res.affectedRows} customers`)
+        console.log(`deleted ${res.affectedRows} users`)
         result(null, res)
     })
 }

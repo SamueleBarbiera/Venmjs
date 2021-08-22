@@ -39,8 +39,8 @@ venm create <appname>
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
-<h3>Frontend 🎱</h3>
-  
+<h2>Frontend 🎱</h2>
+
 ### Mobile
 -   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
@@ -53,24 +53,23 @@ venm create <appname>
 -   [**vuepress**]() `npm install -D vuepress`
 -   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 
+### Multi Platform
+-   [**electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
+
 ### Default
 -   [**vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
 
 ## Standard Api 🎯
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
--   [**Rest API**] Default api 
+-   [**Rest API**](https://it.wikipedia.org/wiki/Representational_State_Transfer) Default Api
   
 ## Backend Framework 👨‍💻
 -   [**express**](https://expressjs.com/en/starter/installing.html) express framework
 
 ## Deployment 🚧
-<<<<<<< HEAD
+  
 -   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy a full stack webapp
 -   [**netlify**](https://www.netlify.com/) it's a platform service to deploy the Frontend of you're webapp
-=======
--   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy you're webapp
--   [**netlify**](https://www.netlify.com/) it's a platform service to deploy you're webapp
->>>>>>> 665f78601f5ea2a9014e94216ade64667c31e93c
 -   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
 ## Database 🧱

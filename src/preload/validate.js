@@ -108,6 +108,34 @@ export const validateInputname = (userInput) => {
     return true
 }
 
+export const validateInputhost = (userInput) => {
+    if (!userInput) {
+        return `Can't be empty!`
+    }
+    return true
+}
+
+export const validateInputdb = (userInput) => {
+    if (!userInput) {
+        return `Can't be empty!`
+    }
+    return true
+}
+
+export const validateInputuser = (userInput) => {
+    if (!userInput) {
+        return `Can't be empty!`
+    }
+    return true
+}
+
+export const validateInputpass = (userInput) => {
+    if (!userInput) {
+        return `Can't be empty!`
+    }
+    return true
+}
+
 /**
  * Checks if a necessary dependency is installed
  * @param {String} dependency

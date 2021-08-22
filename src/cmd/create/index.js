@@ -8,6 +8,10 @@ import validate from 'validate-npm-package-name'
 import * as logger from '../../preload/logger'
 import { validateInput } from '../../preload/validate'
 import { validateInputname } from '../../preload/validate'
+import { validateInputhost } from '../../preload/validate'
+import { validateInputuser } from '../../preload/validate'
+import { validateInputpass } from '../../preload/validate'
+import { validateInputdb } from '../../preload/validate'
 let projectPathRelative
 let shell = require('shelljs')
 /**
@@ -95,6 +99,7 @@ export default async (appName) => {
             choices: ['Mongo 1️⃣', 'mysql 2️⃣'],
         },
     ])
+    //#region LARAVEL
     /*
     if (template_backend === 'laravel 2️⃣' && template_database === 'Mongo 1️⃣') {
     } else if (template_backend === 'laravel 2️⃣' && template_database === 'mysql 2️⃣') {
@@ -164,7 +169,9 @@ export default async (appName) => {
             module.exports.templateServer = 'GraphQL'
             showInstructions()
         }
-    } else */ if (template_backend === 'express 1️⃣' && template_database === 'mysql 2️⃣') {
+    } else */
+    //#endregion
+    if (template_backend === 'express 1️⃣' && template_database === 'mysql 2️⃣') {
         const { templateServer } = await inquirer.prompt([
             {
                 name: 'templateServer',
@@ -179,7 +186,60 @@ export default async (appName) => {
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            //fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+            const { host } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the HOST of the mySQL db 👇',
+                    default: 'localhost',
+                    validate: validateInputhost,
+                },
+            ])
+            const { user } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the USER of the mySQL db 👇',
+                    default: 'root',
+                    validate: validateInputuser,
+                },
+            ])
+            const { pass } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the PASSWORD of the mySQL db 👇',
+                    default: '',
+                    validate: validateInputpass,
+                },
+            ])
+            const { db } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'Enter the name of the new Database 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            fs.writeFileSync(
+                './server/config/db.config.js',
+                `con.connect(function (err) {
+                if (err) throw err
+                console.log('Connected!')
+                con.query('CREATE DATABASE ${db}', function (err, result) {
+                    if (err) throw err
+                    console.log('Database created')
+                })
+              })
+              
+              module.exports = {
+                  HOST: '${host}',
+                  USER: '${user}',
+                  PASSWORD: '${pass}',
+                  DB: '${db}',
+              }`,
+            )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
             module.exports.templateServer = 'RestAPI'
@@ -189,7 +249,61 @@ export default async (appName) => {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            //fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
+            const { host } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the HOST of the mySQL db 👇',
+                    default: 'localhost',
+                    validate: validateInputhost,
+                },
+            ])
+            const { user } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the USER of the mySQL db 👇',
+                    default: 'root',
+                    validate: validateInputuser,
+                },
+            ])
+            const { pass } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'uri',
+                    message: 'Enter the PASSWORD of the mySQL db 👇',
+                    default: '',
+                    validate: validateInputpass,
+                },
+            ])
+            const { db } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'Enter the name of the new Database 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            fs.writeFileSync(
+                './server/models/index.js',
+                `import Sequelize from 'sequelize'
+
+                const sequelize = new Sequelize('${db}', '${user}', '${pass}', {
+                    host: '${host}',
+                    dialect: 'mysql',
+                    operatorsAliases: false,
+                })
+                
+                const db = {
+                    User: sequelize.import('./user.js'),
+                }
+                
+                db.sequelize = sequelize
+                db.Sequelize = Sequelize
+                
+                export default db`,
+            )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
             module.exports.templateServer = 'GraphQL'
@@ -214,7 +328,7 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the URI of you MongoDB 👇',
+                    message: 'Enter the URI of the MongoDB 👇',
                     default: 'mongodb://localhost:27017',
                     validate: validateInput,
                 },
@@ -223,7 +337,7 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of your new Database 👇',
+                    message: 'Enter the name of the new Database 👇',
                     default: 'example',
                     validate: validateInputname,
                 },
@@ -242,7 +356,7 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the URI of you MongoDB 👇',
+                    message: 'Enter the URI of the MongoDB 👇',
                     default: 'mongodb://localhost:27017',
                     validate: validateInput,
                 },
@@ -251,7 +365,7 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of your new Database 👇',
+                    message: 'Enter the name of the new Database 👇',
                     default: 'example',
                     validate: validateInputname,
                 },
@@ -271,7 +385,7 @@ export default async (appName) => {
             name: 'template_FRONTEND',
             type: 'list',
             message: 'Please choose a FRONTEND template ✨',
-            choices: ['SSG/Jamstack 1️⃣', 'SSR 2️⃣', 'Vue 3️⃣', 'Mobile 4️⃣'],
+            choices: ['SSG/Jamstack 1️⃣', 'SSR 2️⃣', 'Vue 3️⃣', 'Mobile 4️⃣', 'Multi Platform 5️⃣'],
         },
     ])
     if (template_FRONTEND === 'SSG/Jamstack 1️⃣') {
@@ -348,6 +462,10 @@ export default async (appName) => {
             shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "ionic start client tabs --type vue --capacitor && npm install && npm i mongoose && exit";')
             module.exports.template = 'Ionic'
         }
+    } else if (template_FRONTEND === 'Multi Platform 5️⃣') {
+        logger.info('Creating the Electron project 📃')
+        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "vue create client && cd client && vue add electron-builder && npm install && npm i mongoose && exit";')
+        module.exports.template = 'Vue'
     }
     //#endregion
 }
