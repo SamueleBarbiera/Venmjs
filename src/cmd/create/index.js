@@ -465,7 +465,7 @@ export default async (appName) => {
     } else if (template_FRONTEND === 'Multi Platform 5️⃣') {
         logger.info('Creating the Electron project 📃')
         shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "vue create client && cd client && vue add electron-builder && npm install && npm i mongoose && exit";')
-        module.exports.template = 'Vue'
+        module.exports.template = 'Multi Platform'
     }
     //#endregion
 }
