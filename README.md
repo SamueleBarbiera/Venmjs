@@ -32,10 +32,10 @@ venm create <appname>
 
 ## Installation & Prerequisite (TO RUN VENM-CLI) ⚗️
 
--   [**node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
--   [**yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
--   [**git**](https://git-scm.com/) is a version control system for tracking changes in computer files
--   [**npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
+-   [**Node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
+-   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
+-   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
+-   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
@@ -47,34 +47,34 @@ venm create <appname>
 
 ### Ssr
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
--   [**quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
+-   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
 
 ### Ssg/Jamstack
--   [**vuepress**]() `npm install -D vuepress`
--   [**gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
+-   [**Vuepress**]() `npm install -D vuepress`
+-   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 
 ### Multi Platform
--   [**electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
+-   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
 
 ### Default
--   [**vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
+-   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
 
 ## Standard Api 🎯
 -   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
 -   [**Rest API**](https://it.wikipedia.org/wiki/Representational_State_Transfer) Default Api
   
 ## Backend Framework 👨‍💻
--   [**express**](https://expressjs.com/en/starter/installing.html) express framework
+-   [**Express**](https://expressjs.com/en/starter/installing.html) express framework
 
 ## Deployment 🚧
   
--   [**heroku**](https://dashboard.heroku.com/) is a platform service to deploy a full stack webapp
--   [**netlify**](https://www.netlify.com/) it's a platform service to deploy the Frontend of you're webapp
--   [**docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
+-   [**Heroku**](https://dashboard.heroku.com/) is a platform service to deploy a full stack webapp
+-   [**Netlify**](https://www.netlify.com/) it's a platform service to deploy the Frontend of you're webapp
+-   [**Docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
 ## Database 🧱
--   [**mongodb**](https://www.mongodb.com/) Starting non relational database          
--   [**mysql**](https://www.mysql.com/) Starting relational database
+-   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          
+-   [**Mysql**](https://www.mysql.com/) Starting relational database
            
 ## License ©️
 
