@@ -5,7 +5,7 @@ import showBanner from 'node-banner'
 import deployToHeroku from './heroku'
 import deployToNetlify from './netlify'
 import { dirOfChoice } from '../../preload/helpers'
-const templateDir = require('../create/index')
+//const templateDir = require('../create/index')
 
 /**
  * Deploy the webapp to a cloud solution of choice
@@ -39,7 +39,7 @@ export default async () => {
             return deployToNetlify(templateDir)
         }
         module.exports.templateDir = 'client'
-    }else{
+    } else {
         deployToHeroku(templateDir)
     }
 }

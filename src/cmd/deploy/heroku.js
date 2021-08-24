@@ -109,7 +109,7 @@ export default async (templateDir) => {
     // Necessary configurations that are specific to the client side
     if (templateDir === 'client') {
         // Nuxt.js with target server
-        if (template === 'Vue 1️⃣' || template === 'Nuxt 2️⃣' || template === 'Mobile 3️⃣') {
+        if (template === 'Nuxt 2️⃣') {
             // Set config vars via heroku-cli
             await setConfigVar('HOST', templateDir, 'localhost')
             await setConfigVar('NODE_ENV', templateDir, 'production')

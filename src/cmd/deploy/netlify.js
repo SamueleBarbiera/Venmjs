@@ -1,11 +1,8 @@
 'use strict'
 import fs from 'fs-extra'
 import path from 'path'
-//const { exec } = require('child_process')
 import * as logger from '../../preload/logger'
 import { validateInstallation } from '../../preload/validate'
-//const templateDir = require('../create/index')
-//const appName = require('../create/index')
 let shell = require('shelljs')
 /**
  * Deploy the webapp to netlify
@@ -21,15 +18,36 @@ export default async (templateDir) => {
     logger.info('Deploying the client side project 📃')
     if (templateDir !== 'client' || templateDir !== 'server') {
         fs.copySync(path.resolve(__dirname, '../../templates/deploy/netlify.toml'), 'netlify.toml')
+        fs.writeFileSync(
+            'netlify.toml',
+            `[build]
+                command = "npm run build"
+                publish="dist"
+                base = ""
+                # The base directory should be the path to the nested Vue project
+            
+             [[redirects]]
+                from = "/*"
+                to = "/index.html"
+                status = 200`,
+        )
+        shell.exec(`wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && netlify deploy --open && netlify deploy --prod && exit";`)
     } else if (templateDir === 'client' || templateDir === 'server') {
         shell.cd('cd ..')
         fs.copySync(path.resolve(__dirname, '../../templates/deploy/netlify.toml'), 'netlify.toml')
+        fs.writeFileSync(
+            'netlify.toml',
+            `[build]
+                command = "npm run build"
+                publish="dist"
+                base = ""
+                # The base directory should be the path to the nested Vue project
+            
+             [[redirects]]
+                from = "/*"
+                to = "/index.html"
+                status = 200`,
+        )
+        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && netlify deploy --open && netlify deploy --prod && exit";')
     }
-
-    if (templateDir !== 'client') {
-        shell.cd('./client')
-    } else if (templateDir === 'server') {
-        shell.cd('cd .. && cd client')
-    }
-    shell.exec('start cmd /k "netlify deploy --open && netlify deploy --prod" ')
 }

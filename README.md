@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://samuelebarbiera.github.io/venmjs/"><img src="img/logo.png" width="320px" height="280px"/></a>
+<a href="https://samuelebarbiera.github.io/venmjs/"><img src="img/logo.png" width="270px" height="230px"/></a>
 </p>
 <p align="center">
   <a aria-label="License" href="https://github.com/SamueleBarbiera/venm-cli/blob/0.0.2/LICENSE.md">
@@ -9,7 +9,7 @@
     <img alt="" src="https://img.shields.io/npm/v/blitz.svg?style=for-the-badge&labelColor=000000&color=E65528">
   </a>
 </p>
-<h1>NOTE : This current version works only with windows OS</h1>
+<h1>NOTE : This current version works only with Windows O.S.</h1>
 <h2>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
 </h2>
@@ -36,7 +36,11 @@ venm create <appname>
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
-
+  
+## ACCESSIBLE FULLSTACK PROJECTS TO CREATE ✒️
+- [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs]
+- [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs]
+  
 ## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
 
 <h2>Frontend 🎱</h2>
@@ -75,7 +79,7 @@ venm create <appname>
 ## Database 🧱
 -   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          
 -   [**Mysql**](https://www.mysql.com/) Starting relational database
-           
+  
 ## License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
