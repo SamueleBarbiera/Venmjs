@@ -71,9 +71,9 @@ venm create <appname>
 -   [**Express**](https://expressjs.com/en/starter/installing.html) express framework
 
 ## Deployment 🚧
-  
--   [**Heroku**](https://dashboard.heroku.com/) is a platform service to deploy a full stack webapp
--   [**Netlify**](https://www.netlify.com/) it's a platform service to deploy the Frontend of you're webapp
+-   [**Firebase**](https://firebase.google.com/) `npm install -g firebase-tools` it's a platform service to deploy a full stack webapp
+-   [**Heroku**](https://dashboard.heroku.com/) `brew install heroku` it's a platform service to deploy a full stack webapp
+-   [**Netlify**](https://www.netlify.com/) `npm install netlify-cli -g` it's a platform service to deploy the Frontend of you're webapp
 -   [**Docker**](https://www.docker.com/) it's a Dev Environment to deploy your app
 
 ## Database 🧱

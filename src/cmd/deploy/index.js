@@ -4,6 +4,7 @@ import inquirer from 'inquirer'
 import showBanner from 'node-banner'
 import deployToHeroku from './heroku'
 import deployToNetlify from './netlify'
+import deployToFirebase from './Firebase'
 import { dirOfChoice } from '../../preload/helpers'
 //const templateDir = require('../create/index')
 
@@ -29,7 +30,7 @@ export default async () => {
                 name: 'platform',
                 type: 'list',
                 message: 'Choose your preferred platform 📍',
-                choices: ['Heroku 1️⃣', 'Netlify 2️⃣'],
+                choices: ['Heroku 1️⃣', 'Netlify 2️⃣', 'Firebase 3️⃣'],
             },
         ])
 
@@ -37,6 +38,8 @@ export default async () => {
             return deployToHeroku(templateDir)
         } else if (platform === 'Netlify 2️⃣') {
             return deployToNetlify(templateDir)
+        } else if (platform === 'Firebase 3️⃣') {
+            return deployToFirebase(templateDir)
         }
         module.exports.templateDir = 'client'
     } else {
