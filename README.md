@@ -10,9 +10,9 @@
   </a>
 </p>
 <h1>NOTE : This current version works only with Windows O.S.</h1>
-<h2>
+<h3>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
-</h2>
+</h3>
 
 # Quick start 🕹️
 
@@ -21,7 +21,7 @@ npm install -g venmjs
 venm create <appname>
 ```
 
-## Venm-cli offers the options listed below 👇
+# Venm-cli offers the options listed below 👇
 
 -   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
@@ -30,18 +30,18 @@ venm create <appname>
 -   dep 👉 Install dependencies on the current project 🧰 [NOT READY ⛔⏳]
 -   v 👉 Check the version of your venm-cli [WORKS ✅]
 
-## Installation & Prerequisite (TO RUN VENM-CLI) ⚗️
+# Installation & Prerequisite (TO RUN VENM-CLI) ⚗️
 
 -   [**Node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
   
-## Accessible fullstack projects to create ✒️
+# Accessible fullstack projects to create ✒️
 - [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs]
 - [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs]
   
-## Optional (to use every command of the cli) 📦
+# Optional (to use every command of the cli) 📦
 
 <h2>Frontend 🎱</h2>
 
@@ -80,12 +80,12 @@ venm create <appname>
 -   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          
 -   [**Mysql**](https://www.mysql.com/) Starting relational database
   
-## License ©️
+# License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 <h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
-## Donations 💸
+# Donations 💸
 <p align="left">
   <a href="buymeacoffee.com/?via=samueleb" target="_blank">
     <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
