@@ -30,7 +30,7 @@ venm create <appname>
 -   dep 👉 Install dependencies on the current project 🧰 [NOT READY ⛔⏳]
 -   v 👉 Check the version of your venm-cli [WORKS ✅]
 
-# Installation & Prerequisite (TO RUN VENM-CLI) ⚗️
+# Installation & Prerequisite (to run the cli) ⚗️
 
 -   [**Node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
