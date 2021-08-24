@@ -21,7 +21,7 @@ npm install -g venmjs
 venm create <appname>
 ```
 
-## VENM-CLI offers the options listed below 👇
+## Venm-cli offers the options listed below 👇
 
 -   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
@@ -37,11 +37,11 @@ venm create <appname>
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
   
-## ACCESSIBLE FULLSTACK PROJECTS TO CREATE ✒️
+## Accessible fullstack projects to create ✒️
 - [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs]
 - [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs]
   
-## Optional (TO USE EVERY COMMAND OF VENM-CLI) 📦
+## Optional (to use every command of the cli) 📦
 
 <h2>Frontend 🎱</h2>
 
