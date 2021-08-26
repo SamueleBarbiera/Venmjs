@@ -5,6 +5,7 @@ import showBanner from 'node-banner'
 import deployToHeroku from './heroku'
 import deployToNetlify from './netlify'
 import deployToFirebase from './Firebase'
+import deployToSurge from './surge'
 import { dirOfChoice } from '../../preload/helpers'
 //const templateDir = require('../create/index')
 
@@ -30,7 +31,7 @@ export default async () => {
                 name: 'platform',
                 type: 'list',
                 message: 'Choose your preferred platform 📍',
-                choices: ['Heroku 1️⃣', 'Netlify 2️⃣', 'Firebase 3️⃣'],
+                choices: ['Heroku 1️⃣', 'Netlify 2️⃣', 'Firebase 3️⃣', 'Surge 4️⃣'],
             },
         ])
 
@@ -40,9 +41,23 @@ export default async () => {
             return deployToNetlify(templateDir)
         } else if (platform === 'Firebase 3️⃣') {
             return deployToFirebase(templateDir)
+        } else if (platform === 'Surge 4️⃣') {
+            return deployToSurge(templateDir)
         }
         module.exports.templateDir = 'client'
     } else {
-        deployToHeroku(templateDir)
+        const { platform } = await inquirer.prompt([
+            {
+                name: 'platform',
+                type: 'list',
+                message: 'Choose your preferred platform 📍',
+                choices: ['Heroku 1️⃣', 'Firebase 2️⃣'],
+            },
+        ])
+        if (platform === 'Heroku 1️⃣') {
+            return deployToHeroku(templateDir)
+        } else if (platform === 'Firebase 2️⃣') {
+            return deployToFirebase(templateDir)
+        }
     }
 }

@@ -1,6 +1,6 @@
 'use strict'
-import fs from 'fs-extra'
-import path from 'path'
+//import fs from 'fs-extra'
+//import path from 'path'
 import * as logger from '../../preload/logger'
 import { validateInstallation } from '../../preload/validate'
 let shell = require('shelljs')
@@ -17,7 +17,7 @@ export default async (templateDir) => {
 
     logger.info('Deploying the client side project 📃')
     if (templateDir !== 'client' || templateDir !== 'server') {
-        fs.copySync(path.resolve(__dirname, '../../templates/deploy/firebase.json'), 'firebase.json')
+        /*fs.copySync(path.resolve(__dirname, '../../templates/deploy/firebase.json'), 'firebase.json')
         fs.writeFileSync(
             'firebase.json',
             `{
@@ -31,11 +31,11 @@ export default async (templateDir) => {
                     }
                 ]
              }`,
-        )
-        shell.exec(`wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && firebase login && firebase init && firebase deploy hosting && exit";`)
+        )*/
+        shell.exec(`wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && firebase login && firebase init && firebase deploy hosting && exit";`)
     } else if (templateDir === 'client' || templateDir === 'server') {
         shell.cd('cd ..')
-        fs.copySync(path.resolve(__dirname, '../../templates/deploy/firebase.json'), 'firebase.json')
+        /*fs.copySync(path.resolve(__dirname, '../../templates/deploy/firebase.json'), 'firebase.json')
         fs.writeFileSync(
             'firebase.json',
             `{
@@ -49,7 +49,7 @@ export default async (templateDir) => {
                     }
                 ]
              }`,
-        )
-        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && firebase login && firebase init && firebase deploy hosting && exit";')
+        )*/
+        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && firebase login && firebase init && firebase deploy hosting && exit";')
     }
 }
