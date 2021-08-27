@@ -16,7 +16,7 @@ export default async (templateDir) => {
     await validateInstallation('git help -g')
 
     logger.info('Deploying the client side project 📃')
-    if (templateDir !== 'client' || templateDir !== 'server') {
+    if (templateDir === 'client') {
         /*fs.copySync(path.resolve(__dirname, '../../templates/deploy/firebase.json'), 'firebase.json')
         fs.writeFileSync(
             'firebase.json',
@@ -33,8 +33,7 @@ export default async (templateDir) => {
              }`,
         )*/
         shell.exec(`wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && firebase login && firebase init && firebase deploy hosting && exit";`)
-    } else if (templateDir === 'client' || templateDir === 'server') {
-        shell.cd('cd ..')
+    } else if (templateDir === 'server') {
         /*fs.copySync(path.resolve(__dirname, '../../templates/deploy/firebase.json'), 'firebase.json')
         fs.writeFileSync(
             'firebase.json',
@@ -50,6 +49,6 @@ export default async (templateDir) => {
                 ]
              }`,
         )*/
-        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && firebase login && firebase init && firebase deploy hosting && exit";')
+        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd server && npm run build && firebase login && firebase init && firebase deploy hosting && exit";')
     }
 }

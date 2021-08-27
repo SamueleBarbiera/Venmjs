@@ -68,7 +68,8 @@ venm create <appname>
 -   [**Rest API**](https://it.wikipedia.org/wiki/Representational_State_Transfer) Default Api
   
 ## Backend Framework 👨‍💻
--   [**Express**](https://expressjs.com/en/starter/installing.html) express framework
+-   [**Express**](https://expressjs.com/en/starter/installing.html) Express framework
+-   [**Laravel**](https://laravel.com/docs/8.x/installation) Laravel framework (Composer and php must be installed)
 
 ## Deployment 🚧
 -   [**Firebase**](https://firebase.google.com/) `npm install -g firebase-tools` it's a platform service to deploy a full stack webapp
