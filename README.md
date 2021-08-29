@@ -78,7 +78,6 @@ venm create <appname>
 -   [**Heroku**](https://dashboard.heroku.com/) `brew install heroku` it's a platform service to deploy a full stack webapp
 -   [**Netlify**](https://www.netlify.com/) `npm install netlify-cli -g` it's a platform service to deploy Static sites
 -   [**Docker**](https://www.docker.com/) it's a Dev Environment to deploy an app
--   [**Netlify**](https://www.netlify.com/) `npm install --g surge` it's a platform service to deploy Static sites
 
 ## Database 🧱
 -   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          
