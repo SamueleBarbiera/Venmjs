@@ -200,7 +200,7 @@ export default async (appName) => {
                 name: 'templateServer',
                 type: 'list',
                 message: 'Please choose a starter template for the CRUD API💾',
-                choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
+                choices: ['Rest API 1️⃣'],
             },
         ])
         if (templateServer === 'Rest API 1️⃣') {
@@ -299,7 +299,7 @@ export default async (appName) => {
                 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
             )
             fs.writeFileSync(
-                './app/Models/Users.php',
+                './app/Users.php',
                 `<?php
 
                namespace App\Models;
@@ -321,71 +321,7 @@ export default async (appName) => {
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
             module.exports.templateServer = 'RestAPI'
             showInstructions()
-        } else if (templateServer === 'GraphQL 2️⃣') {
-            fs.copySync(path.resolve(__dirname, '../../templates/server/laravel-mongodb/GraphQL'), './GraphQL')
-            const currPath = './GraphQL'
-            const newPath = './server'
-            fs.rename(currPath, newPath)
-            const { host } = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'uri',
-                    message: 'Enter the HOST of the Mongodb 👇',
-                    default: 'localhost',
-                    validate: validateInputhost,
-                },
-            ])
-            const { user } = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'uri',
-                    message: 'Enter the USER of the Mongodb 👇',
-                    default: 'root',
-                    validate: validateInputuser,
-                },
-            ])
-            const { pass } = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'uri',
-                    message: 'Enter the PASSWORD of the Mongodb 👇',
-                    default: '',
-                    validate: validateInputpass,
-                },
-            ])
-            const { db } = await inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'name',
-                    message: 'Enter the name of the new Database 👇',
-                    default: 'example',
-                    validate: validateInputdb,
-                },
-            ])
-            fs.writeFileSync(
-                './server/models/index.js',
-                `import Sequelize from 'sequelize'
-
-                const sequelize = new Sequelize('${db}', '${user}', '${pass}', {
-                    host: '${host}',
-                    dialect: 'mysql',
-                    operatorsAliases: false,
-                })
-                
-                const db = {
-                    User: sequelize.import('./user.js'),
-                }
-                
-                db.sequelize = sequelize
-                db.Sequelize = Sequelize
-                
-                export default db`
-            )
-            shell.cd(`server`)
-            shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
-            module.exports.templateServer = 'GraphQL'
-            showInstructions()
-        }
+        } 
     } else if (template_backend === 'express 1️⃣' && template_database === 'Mongo 1️⃣') {
         const { templateServer } = await inquirer.prompt([
             {
@@ -575,8 +511,8 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the mySQL db 👇',
-                    default: 'localhost',
+                    message: 'Enter the HOST of the Mongodb 👇',
+                    default: '127.0.0.1',
                     validate: validateInputhost,
                 },
             ])
@@ -584,7 +520,7 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the mySQL db 👇',
+                    message: 'Enter the USER of the Mongodb 👇',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -593,7 +529,7 @@ export default async (appName) => {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the mySQL db 👇',
+                    message: 'Enter the PASSWORD of the Mongodb 👇',
                     default: '',
                     validate: validateInputpass,
                 },
@@ -608,23 +544,58 @@ export default async (appName) => {
                 },
             ])
             fs.writeFileSync(
-                './server/models/index.js',
-                `import Sequelize from 'sequelize'
+                './server/.env',
+                `APP_NAME=Laravel
+                APP_ENV=local
+                APP_KEY=base64:Q2JklRcMGT2RfbDcJprAZs4q8stBo0A79ltNzm6scAM=
+                APP_DEBUG=true
+                APP_URL=http://localhost
 
-                const sequelize = new Sequelize('${db}', '${user}', '${pass}', {
-                    host: '${host}',
-                    dialect: 'mysql',
-                    operatorsAliases: false,
-                })
-                
-                const db = {
-                    User: sequelize.import('./user.js'),
-                }
-                
-                db.sequelize = sequelize
-                db.Sequelize = Sequelize
-                
-                export default db`
+                LOG_CHANNEL=stack
+                LOG_LEVEL=debug
+
+                DB_CONNECTION=mysql
+                DB_HOST=${host}
+                DB_PORT=${port}
+                DB_DATABASE=${db}
+                DB_USERNAME=${user}
+                DB_PASSWORD=${pass}
+
+                BROADCAST_DRIVER=log
+                CACHE_DRIVER=file
+                FILESYSTEM_DRIVER=local
+                QUEUE_CONNECTION=sync
+                SESSION_DRIVER=file
+                SESSION_LIFETIME=120
+
+                MEMCACHED_HOST=127.0.0.1
+
+                REDIS_HOST=127.0.0.1
+                REDIS_PASSWORD=null
+                REDIS_PORT=6379
+
+                MAIL_MAILER=smtp
+                MAIL_HOST=mailhog
+                MAIL_PORT=1025
+                MAIL_USERNAME=null
+                MAIL_PASSWORD=null
+                MAIL_ENCRYPTION=null
+                MAIL_FROM_ADDRESS=null
+                MAIL_FROM_NAME="${APP_NAME}"
+
+                AWS_ACCESS_KEY_ID=
+                AWS_SECRET_ACCESS_KEY=
+                AWS_DEFAULT_REGION=us-east-1
+                AWS_BUCKET=
+                AWS_USE_PATH_STYLE_ENDPOINT=false
+
+                PUSHER_APP_ID=
+                PUSHER_APP_KEY=
+                PUSHER_APP_SECRET=
+                PUSHER_APP_CLUSTER=mt1
+
+                MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install')
