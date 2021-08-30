@@ -32,6 +32,7 @@ venm create <appname>
 
 # Installation & Prerequisite (to run the cli) ⚗️
 
+-   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) the new windows terminal used to create various projects with this cli.
 -   [**Node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
