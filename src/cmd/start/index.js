@@ -2,11 +2,11 @@
 import showBanner from 'node-banner'
 import inquirer from 'inquirer'
 import * as logger from '../../preload/logger'
-const projectTemplate = require('../create/index');
+const projectTemplate = require('../create/index')
 let shell = require('shelljs')
 /**
  * @returns {Promise<void>}
-*/
+ */
 
 export default async () => {
     await showBanner('VENM', 'The project is starting ⏳', 'blue', 'white')
@@ -23,7 +23,7 @@ export default async () => {
         logger.info('Running the client side 🔓')
         shell.cd(`./client`)
         port = '8080'
-        shell.exec(`npm run dev -- --port ${port} --open`)
+        shell.exec(`npm run dev -- --port ${port} --open || npm run serve -- --port ${port} --open`)
     } else if (template === 'server') {
         logger.info('Running the server side 🔓')
         shell.cd(`./server`)
@@ -32,6 +32,6 @@ export default async () => {
         } else {
             port = '9000/api'
         }
-        shell.exec(`npm run dev -- --port ${port} --open`)
+        shell.exec(`npm run dev -- --port ${port} --open || npm run serve -- --port ${port} --open`)
     }
 }

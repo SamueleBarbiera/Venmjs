@@ -1,6 +1,5 @@
-/* eslint-disable no-useless-escape */
 /* eslint-disable no-undef */
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-useless-escape */
 'use strict'
 import chalk from 'chalk'
 import fs from 'fs-extra'
@@ -296,7 +295,7 @@ export default async (appName) => {
                 PUSHER_APP_CLUSTER=mt1
 
                 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
+                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`,
             )
             fs.writeFileSync(
                 './app/Users.php',
@@ -315,13 +314,13 @@ export default async (appName) => {
                    protected $fillable = [
                        'name', 'age', 'description'
                    ];
-               }`
+               }`,
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
             module.exports.templateServer = 'RestAPI'
             showInstructions()
-        } 
+        }
     } else if (template_backend === 'express 1️⃣' && template_database === 'Mongo 1️⃣') {
         const { templateServer } = await inquirer.prompt([
             {
@@ -496,7 +495,7 @@ export default async (appName) => {
                 PUSHER_APP_CLUSTER=mt1
 
                 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
+                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`,
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
@@ -595,7 +594,7 @@ export default async (appName) => {
                 PUSHER_APP_CLUSTER=mt1
 
                 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
+                MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`,
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install')
@@ -669,7 +668,7 @@ export default async (appName) => {
                   USER: '${user}',
                   PASSWORD: '${pass}',
                   DB: '${db}',
-              }`
+              }`,
             )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
@@ -733,7 +732,7 @@ export default async (appName) => {
                 db.sequelize = sequelize
                 db.Sequelize = Sequelize
                 
-                export default db`
+                export default db`,
             )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
