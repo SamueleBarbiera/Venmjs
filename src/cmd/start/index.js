@@ -19,11 +19,25 @@ export default async () => {
             choices: ['client', 'server'],
         },
     ])
+    const { run } = await inquirer.prompt([
+        {
+            name: 'template',
+            type: 'list',
+            message: 'Choose the running method (check the package.json) ❗⏳',
+            choices: ['dev', 'serve', 'build'],
+        },
+    ])
     if (template === 'client') {
         logger.info('Running the client side 🔓')
         shell.cd(`./client`)
         port = '8080'
-        shell.exec(`npm run dev -- --port ${port} --open || npm run serve -- --port ${port} --open`)
+        if (run === 'dev') {
+            shell.exec(`npm run dev -- --port ${port} --open`)
+        } else if (run === 'serve') {
+            shell.exec(`npm run serve -- --port ${port} --open`)
+        } else if (run === 'build') {
+            shell.exec(`npm run build`)
+        }
     } else if (template === 'server') {
         logger.info('Running the server side 🔓')
         shell.cd(`./server`)
@@ -32,6 +46,12 @@ export default async () => {
         } else {
             port = '9000/api'
         }
-        shell.exec(`npm run dev -- --port ${port} --open || npm run serve -- --port ${port} --open`)
+        if (run === 'dev') {
+            shell.exec(`npm run dev -- --port ${port} --open`)
+        } else if (run === 'serve') {
+            shell.exec(`npm run serve -- --port ${port} --open`)
+        } else if (run === 'build') {
+            shell.exec(`npm run build`)
+        }
     }
 }

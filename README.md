@@ -23,12 +23,12 @@ venm create <appname>
 
 # Venm-cli offers the options listed below 👇
 
--   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
--   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [PARTIONALLY WORKING ❌]
--   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
--   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
--   dep 👉 Install dependencies on the current project 🧰 [NOT READY ⛔⏳]
--   v 👉 Check the version of your venm-cli [WORKS ✅]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [ WORKS ✅ ]
+-   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [ WORKS ✅ ]
+-   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [ WORKS ✅ ]
+-   start 👉 Start the client side or the server side locally 🏁 [ WORKS ✅ ]
+-   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]
+-   v 👉 Check the version of your venm-cli [ WORKS ✅ ]
 
 # Installation & Prerequisite (to run the cli) ⚗️
 
@@ -77,7 +77,7 @@ venm create <appname>
 -   [**Firebase**](https://firebase.google.com/) `npm install -g firebase-tools` it's a platform service to deploy a full stack webapp
 -   [**Heroku**](https://dashboard.heroku.com/) `brew install heroku` it's a platform service to deploy a full stack webapp
 -   [**Netlify**](https://www.netlify.com/) `npm install netlify-cli -g` it's a platform service to deploy Static sites
--   [**Docker**](https://www.docker.com/) it's a Dev Environment to deploy an app
+-   [**Docker**](https://www.docker.com/) it's a Dev Environment to create containers that can be deployed easily
 
 ## Database 🧱
 -   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          

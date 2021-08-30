@@ -1,22 +1,26 @@
 version: '3'
 services:
-  server:
-    container_name: server
-    build: ./server
-    environment:
-        - PORT=9000
-    expose:
-        - "9000"
-
-
-  client:
-    container_name: client
+  vue-client:
     build: ./client
-    expose:
-        - "8080"
-        
+    command: bash -c "npm install && npm run serve"
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    ports:
+      - "8080:8080"
+
+  node-server:
+    build: ./server
+    command: bash -c "npm install && npm run serve"
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mongo
+
   mongo:
-    container_name: database_mongo
     image: mongo
     volumes:
       - ./tmp/data:/data/db
