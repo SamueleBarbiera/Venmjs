@@ -13,11 +13,24 @@ describe('Default behavior', () => {
         const { exitCode, stderr } = run(['init'], { reject: false })
         expect(exitCode).toBe(1)
         expect(stderr.trim()).toBe('Unknown command init.')
+        expect(stderr).toContain('Did you mean create?')
     })
 
     it('suggests the closest match for an unknown command', () => {
-        const { exitCode, stderr } = run(['ini'], { reject: false })
+        const { exitCode, stderr } = run(['docker'], { reject: false })
         expect(exitCode).toBe(1)
-        expect(stderr).toContain('Did you mean init?')
+        expect(stderr).toContain('Did you mean dockerize?')
+    })
+
+    it('suggests the closest match for an unknown command', () => {
+        const { exitCode, stderr } = run(['dep', 'add'], { reject: false })
+        expect(exitCode).toBe(1)
+        expect(stderr).toContain('Did you mean dependencies?')
+    })
+
+    it('suggests the closest match for an unknown command', () => {
+        const { exitCode, stderr } = run(['serve', 'run'], { reject: false })
+        expect(exitCode).toBe(1)
+        expect(stderr).toContain('Did you mean start?')
     })
 })

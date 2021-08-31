@@ -28,72 +28,34 @@ class Spinner {
     }
 }
 const spinner = new Spinner()
+export default Spinner
+
 /**
  * Shows installation information
  * @param {String} depCandidate - The repective package to be installed
  * @param {String} url - Official downloads page url
  * @returns {Void}
- */
-
-const showInstallationInfo = (depCandidate, url) => {
-    const msg = ` You need to download ${depCandidate} from the official downloads page: ${url}`
-    console.log(chalk.cyan.bold(msg))
-    process.exit(0)
-}
-
-/**
+ * -------------------------------------------------------------------------
  * Helper method to validate installation
  * @param {String} dependency
  * @returns {Promise<boolean>}
- */
-
-const checkInstallationStatus = async (dependency) => {
-    try {
-        await execa.command(dependency)
-        return true
-    } catch (err) {
-        return false
-    }
-}
-
-/**
+ * -------------------------------------------------------------------------
  * Install Git for supported platforms, else show installation instructions
- * @returns{Promise<void>}
- */
-
-const installGit = () => {
-    const url = 'https://git-scm.com/download/win'
-
-    if (isWin) {
-        return showInstallationInfo('git', url)
-    }
-    const packageMgr = isLinux ? 'apt' : 'brew'
-    return exec(`${packageMgr} install git`)
-}
-
-/**
+ * @returns {Promise<void>}
+ * -------------------------------------------------------------------------
  * Install Docker for Linux platform, else show installation instructions
- * @returns{Promise<void>}
- */
-
-const installDocker = () => {
-    const urlMap = {
-        win32: 'https://hub.docker.com/editions/community/docker-ce-desktop-windows',
-        darwin: 'https://docs.docker.com/docker-for-mac/install/',
-    }
-    if (!isLinux) {
-        return showInstallationInfo('docker', urlMap[process.platform])
-    }
-    return exec('apt install docker.io')
-}
-
-// Exported methods
-/**
+ * @returns {Promise<void>}
+ * -------------------------------------------------------------------------
  * Validates user input for input prompts
  * @param {String} userInput
  * @returns {Boolean}
+ * -------------------------------------------------------------------------
+ * Checks if a necessary dependency is installed
+ * @param {String} dependency
+ * @returns {Promise<Void>}
  */
 
+//#region region VALIDATE INPUT
 export const validateInput = (userInput) => {
     if (!userInput) {
         return `Can't be empty!`
@@ -135,12 +97,43 @@ export const validateInputpass = (userInput) => {
     }
     return true
 }
+//#endregion
 
-/**
- * Checks if a necessary dependency is installed
- * @param {String} dependency
- * @returns {Promise<Void>}
- */
+const showInstallationInfo = (depCandidate, url) => {
+    const msg = ` You need to download ${depCandidate} from the official downloads page: ${url}`
+    console.log(chalk.cyan.bold(msg))
+    process.exit(0)
+}
+
+const checkInstallationStatus = async (dependency) => {
+    try {
+        await execa.command(dependency)
+        return true
+    } catch (err) {
+        return false
+    }
+}
+
+const installGit = () => {
+    const url = 'https://git-scm.com/download/win'
+
+    if (isWin) {
+        return showInstallationInfo('git', url)
+    }
+    const packageMgr = isLinux ? 'apt' : 'brew'
+    return exec(`${packageMgr} install git`)
+}
+
+const installDocker = () => {
+    const urlMap = {
+        win32: 'https://hub.docker.com/editions/community/docker-ce-desktop-windows',
+        darwin: 'https://docs.docker.com/docker-for-mac/install/',
+    }
+    if (!isLinux) {
+        return showInstallationInfo('docker', urlMap[process.platform])
+    }
+    return exec('apt install docker.io')
+}
 
 export const validateInstallation = async (dependency) => {
     const isDepInstalled = await checkInstallationStatus(dependency)
