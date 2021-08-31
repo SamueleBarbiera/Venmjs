@@ -1,8 +1,8 @@
 'use strict'
 //import fs from 'fs-extra'
 //import path from 'path'
-import * as logger from '../../preload/logger'
-import { validateInstallation } from '../../preload/validate'
+import * as logger from '../../utils/logger'
+import { validateInstallation } from '../../utils/validate'
 let shell = require('shelljs')
 /**
  * Deploy the webapp to netlify

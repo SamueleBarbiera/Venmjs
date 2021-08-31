@@ -1,8 +1,8 @@
 'use strict'
 import fs from 'fs-extra'
 import path from 'path'
-import * as logger from '../../preload/logger'
-import { validateInstallation } from '../../preload/validate'
+import * as logger from '../../utils/logger'
+import { validateInstallation } from '../../utils/validate'
 let shell = require('shelljs')
 /**
  * Deploy the webapp to netlify
@@ -29,7 +29,7 @@ export default async (templateDir) => {
              [[redirects]]
                 from = "/*"
                 to = "/index.html"
-                status = 200`,
+                status = 200`
         )
         shell.exec(`wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && netlify deploy --open && netlify deploy --prod && exit";`)
     } else if (templateDir === 'client' || templateDir === 'server') {
@@ -46,7 +46,7 @@ export default async (templateDir) => {
              [[redirects]]
                 from = "/*"
                 to = "/index.html"
-                status = 200`,
+                status = 200`
         )
         shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd client && npm run build && netlify deploy --open && netlify deploy --prod && exit";')
     }

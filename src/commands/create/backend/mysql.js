@@ -4,11 +4,11 @@
 import fs from 'fs-extra'
 import path from 'path'
 import inquirer from 'inquirer'
-import * as logger from '../../../preload/logger'
-import { validateInputhost } from '../../../preload/validate'
-import { validateInputuser } from '../../../preload/validate'
-import { validateInputpass } from '../../../preload/validate'
-import { validateInputdb } from '../../../preload/validate'
+import * as logger from '../../../utils/logger'
+import { validateInputhost } from '../../../utils/validate'
+import { validateInputuser } from '../../../utils/validate'
+import { validateInputpass } from '../../../utils/validate'
+import { validateInputdb } from '../../../utils/validate'
 let shell = require('shelljs')
 
 export async function mysql(showInstructions) {
@@ -124,7 +124,7 @@ export async function mysql(showInstructions) {
             PUSHER_APP_CLUSTER=mt1
 
             MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-            MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`,
+            MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
@@ -223,7 +223,7 @@ export async function mysql(showInstructions) {
             PUSHER_APP_CLUSTER=mt1
 
             MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-            MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`,
+            MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install')
@@ -297,7 +297,7 @@ export async function mysql(showInstructions) {
             USER: '${user}',
             PASSWORD: '${pass}',
             DB: '${db}',
-        }`,
+        }`
             )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
@@ -361,7 +361,7 @@ export async function mysql(showInstructions) {
             db.sequelize = sequelize
             db.Sequelize = Sequelize
             
-            export default db`,
+            export default db`
             )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')

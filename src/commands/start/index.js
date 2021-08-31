@@ -1,15 +1,17 @@
-/* eslint-disable prettier/prettier */
 'use strict'
 import showBanner from 'node-banner'
 import inquirer from 'inquirer'
-import * as logger from '../../preload/logger'
-//import { dirOfChoice, fetchProjectConfig, readFileContent } from '../../preload/helpers'
-//const template = require('../create/index')
-//const templateServer = require('../create/backend/mongo.js')
+import * as logger from '../../utils/logger'
+const templateServerMongo = require('../create/backend/mongo.js')
+const templateServerMysql = require('../create/backend/mysql.js')
 let shell = require('shelljs')
+/**
+ * @returns {Promise<void>}
+ */
 
 export default async () => {
-    await showBanner('VENM', 'The process to adding the dependencies is starting ⏳', 'blue', 'white')
+    await showBanner('VENM', 'The project is starting ⏳', 'blue', 'white')
+    let port
     const { template } = await inquirer.prompt([
         {
             name: 'template',
@@ -21,8 +23,16 @@ export default async () => {
     if (template === 'client') {
         logger.info('Running the client side 🔓')
         shell.cd(`./client`)
+        port = '8080'
+        shell.exec(`npm run serve -- --port ${port} --open`)
     } else if (template === 'server') {
         logger.info('Running the server side 🔓')
         shell.cd(`./server`)
+        if (templateServerMongo === 'GraphQL' || templateServerMysql === 'GraphQL') {
+            port = '9000/graphql'
+        } else {
+            port = '9000/api'
+        }
+        shell.exec(`npm run serve -- --port ${port} --open`)
     }
 }

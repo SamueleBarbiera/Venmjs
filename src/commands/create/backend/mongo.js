@@ -5,13 +5,13 @@
 import fs from 'fs-extra'
 import path from 'path'
 import inquirer from 'inquirer'
-import * as logger from '../../../preload/logger'
-import { validateInput } from '../../../preload/validate'
-import { validateInputname } from '../../../preload/validate'
-import { validateInputhost } from '../../../preload/validate'
-import { validateInputuser } from '../../../preload/validate'
-import { validateInputpass } from '../../../preload/validate'
-import { validateInputdb } from '../../../preload/validate'
+import * as logger from '../../../utils/logger'
+import { validateInput } from '../../../utils/validate'
+import { validateInputname } from '../../../utils/validate'
+import { validateInputhost } from '../../../utils/validate'
+import { validateInputuser } from '../../../utils/validate'
+import { validateInputpass } from '../../../utils/validate'
+import { validateInputdb } from '../../../utils/validate'
 let shell = require('shelljs')
 
 export async function mongo(showInstructions, templateServer) {
@@ -125,7 +125,7 @@ export async function mongo(showInstructions, templateServer) {
         PUSHER_APP_CLUSTER=mt1
 
         MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-        MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`,
+        MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
         )
         fs.writeFileSync(
             './app/Users.php',
@@ -144,7 +144,7 @@ export async function mongo(showInstructions, templateServer) {
         protected $fillable = [
             'name', 'age', 'description'
         ];
-    }`,
+    }`
         )
         shell.cd(`server`)
         shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 'use strict'
-import { run } from '../jest/helpers'
+import { run } from '../build/helpers'
 
 describe('Default behavior', () => {
     it('warns the user if an unknown option is passed in', () => {

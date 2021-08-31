@@ -2,7 +2,7 @@
 /* eslint-disable no-useless-escape */
 'use strict'
 import inquirer from 'inquirer'
-import * as logger from '../../../preload/logger'
+import * as logger from '../../../utils/logger'
 let shell = require('shelljs')
 
 export async function frontend() {

@@ -3,8 +3,8 @@ import execa from 'execa'
 import fs from 'fs'
 import path from 'path'
 import showBanner from 'node-banner'
-import { readFileContent } from '../../preload/helpers'
-import { validateInstallation } from '../../preload/validate'
+import { readFileContent } from '../../utils/helpers'
+import { validateInstallation } from '../../utils/validate'
 
 /**
  * @param {String} configFile - File whose content is to be read

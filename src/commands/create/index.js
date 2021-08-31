@@ -6,7 +6,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import showBanner from 'node-banner'
 import validate from 'validate-npm-package-name'
-import * as logger from '../../preload/logger'
+import * as logger from '../../utils/logger'
 import { frontend } from './frontend/frontend.js'
 import { backend } from './backend/backend.js'
 let shell = require('shelljs')

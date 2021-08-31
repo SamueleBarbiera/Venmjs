@@ -3,8 +3,8 @@ import execa from 'execa'
 import fs from 'fs'
 import inquirer from 'inquirer'
 import path from 'path'
-import * as logger from '../../preload/logger'
-import { validateInput, validateInstallation } from '../../preload/validate'
+import * as logger from '../../utils/logger'
+import { validateInput, validateInstallation } from '../../utils/validate'
 const template = require('../create/index')
 
 /**

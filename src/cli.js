@@ -3,11 +3,11 @@
 import '@babel/polyfill'
 import program from 'commander'
 import updateNotifier from 'update-notifier'
-import dependencies from './cmd/dependencies'
-import deploy from './cmd/deploy/'
-import dockerize from './cmd/dockerize'
-import create from './cmd/create'
-import start from './cmd/start'
+import dependencies from './commands/dependencies'
+import deploy from './commands/deploy'
+import dockerize from './commands/dockerize'
+import create from './commands/create'
+import start from './commands/start'
 import pkg from '../package'
 
 updateNotifier({ pkg }).notify()

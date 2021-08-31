@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-escape */
 'use strict'
-import * as logger from '../../../preload/logger'
+import * as logger from '../../../utils/logger'
 import inquirer from 'inquirer'
 import chalk from 'chalk'
 import { mongo } from './mongo.js'

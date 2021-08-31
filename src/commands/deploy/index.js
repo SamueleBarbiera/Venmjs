@@ -5,7 +5,7 @@ import showBanner from 'node-banner'
 import deployToHeroku from './heroku'
 import deployToNetlify from './netlify'
 import deployToFirebase from './firebase'
-import { dirOfChoice } from '../../preload/helpers'
+import { dirOfChoice } from '../../utils/helpers'
 //const templateDir = require('../create/index')
 
 /**
