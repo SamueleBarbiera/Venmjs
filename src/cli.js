@@ -2,6 +2,8 @@
 'use strict'
 import '@babel/polyfill'
 import program from 'commander'
+import chalk from 'chalk'
+import leven from 'leven'
 import updateNotifier from 'update-notifier'
 import dependencies from './commands/dependencies'
 import deploy from './commands/deploy'
@@ -9,8 +11,28 @@ import dockerize from './commands/dockerize'
 import create from './commands/create'
 import start from './commands/start'
 import pkg from '../package'
+import * as logger from './utils/logger'
 
 updateNotifier({ pkg }).notify()
+
+const suggestCommands = (cmd) => {
+    const availableCommands = program.commands.map((c) => c._name)
+
+    const suggestion = availableCommands.find((c) => leven(c, cmd) < c.length * 0.4)
+    if (suggestion) {
+        logger.error(` Did you mean ${chalk.yellow(suggestion)}?`)
+    }
+}
+
+// Validation for unknown commands
+program.on('command:*', ([cmd]) => {
+    program.outputHelp()
+    logger.error(`\n Unknown command ${chalk.yellow(cmd)}.\n`)
+    suggestCommands(cmd)
+    process.exitCode = 1
+})
+
+program.parse(process.argv)
 
 program.version(pkg.version).usage(', options listed below 👇')
 program.command('create <appname>').description('Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [ WORKS ✅ ]').action(create)

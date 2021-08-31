@@ -13,11 +13,11 @@
     },
     "src": {
         "cli": "src/cli.js",
-        "dependencies": "src/cmd/dependencies.js",
-        "deploy": "src/cmd/deploy.js",
-        "dockerize": "src/cmd/dockerize.js",
-        "create": "src/cmd/create.js",
-        "start": "src/cmd/start.js"
+        "dependencies": "src/commands/dependencies/index.js",
+        "deploy": "src/commands/deploy/index.js",
+        "dockerize": "src/commands/dockerize/index.js",
+        "create": "src/commands/create/index.js",
+        "start": "src/commands/start/index.js"
     },
     "scripts": {
         "build": "gulp",
