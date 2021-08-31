@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-escape */
@@ -14,7 +15,7 @@ import { validateInputpass } from '../../../utils/validate'
 import { validateInputdb } from '../../../utils/validate'
 let shell = require('shelljs')
 
-export async function mongo(showInstructions, templateServer) {
+export async function mongo() {
     const { template_backend } = await inquirer.prompt([
         {
             name: 'template_backend',
@@ -25,14 +26,6 @@ export async function mongo(showInstructions, templateServer) {
     ])
     //#region MONGODB
     if (template_backend === 'laravel 2️⃣') {
-        const { templateServerMongo } = await inquirer.prompt([
-            {
-                name: 'templateServerMongo',
-                type: 'list',
-                message: 'Please choose a starter template for the CRUD API💾',
-                choices: ['Rest API 1️⃣'],
-            },
-        ])
         logger.info('Creating the Rest API 📃')
         fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/RestAPI'), './RestAPI')
         const currPath = './RestAPI'
@@ -148,18 +141,18 @@ export async function mongo(showInstructions, templateServer) {
         )
         shell.cd(`server`)
         shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
-        module.exports.templateServerMongo = 'RestAPI'
-        showInstructions()
+        let templateServer
+        module.exports.templateServer = 'RestAPI'
     } else if (template_backend === 'express 1️⃣') {
-        const { templateServerMongo } = await inquirer.prompt([
+        const { templateServer } = await inquirer.prompt([
             {
-                name: 'templateServerMongo',
+                name: 'templateServer',
                 type: 'list',
                 message: 'Please choose a starter template for the CRUD API 💾',
                 choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
             },
         ])
-        if (templateServerMongo === 'Rest API 1️⃣') {
+        if (templateServer === 'Rest API 1️⃣') {
             logger.info('Creating the Rest API 📃')
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/RestAPI'), './RestAPI')
             const currPath = './RestAPI'
@@ -186,9 +179,8 @@ export async function mongo(showInstructions, templateServer) {
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
-            module.exports.templateServerMongo = 'RestAPI'
-            showInstructions()
-        } else if (templateServerMongo === 'GraphQL 2️⃣') {
+            module.exports.templateServer = 'RestAPI'
+        } else if (templateServer === 'GraphQL 2️⃣') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
@@ -214,8 +206,7 @@ export async function mongo(showInstructions, templateServer) {
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
-            module.exports.templateServerMongo = 'GraphQL'
-            showInstructions()
+            module.exports.templateServer = 'GraphQL'
         }
     }
     //#endregion

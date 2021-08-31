@@ -1,26 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-escape */
 'use strict'
-import * as logger from '../../../utils/logger'
 import inquirer from 'inquirer'
-import chalk from 'chalk'
 import { mongo } from './mongo.js'
 import { mysql } from './mysql.js'
-let projectPathRelative
 
 export async function backend() {
     //ISTRUZIONI INIZIALI
-    const showInstructions = () => {
-        const isCurrentDir = projectPathRelative === '.'
-        let userCommandInstruction = chalk.green.bold('venm start')
 
-        if (!isCurrentDir) {
-            userCommandInstruction = `${chalk.green.bold(`cd ${projectPathRelative}`)} && ${userCommandInstruction}`
-        }
-
-        logger.info(`Everything ready 👌 `)
-        logger.info(`Now type in ${userCommandInstruction}`)
-    }
     //#region BACKEND SERVER API DATABASE
     const { template_database } = await inquirer.prompt([
         {
@@ -31,9 +18,9 @@ export async function backend() {
         },
     ])
     if (template_database === 'Mongo 1️⃣') {
-        await mongo(showInstructions)
+        await mongo()
     } else {
-        await mysql(showInstructions)
+        await mysql()
     }
     //#endregion
 }

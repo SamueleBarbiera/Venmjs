@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-escape */
 'use strict'
@@ -11,7 +12,7 @@ import { validateInputpass } from '../../../utils/validate'
 import { validateInputdb } from '../../../utils/validate'
 let shell = require('shelljs')
 
-export async function mysql(showInstructions) {
+export async function mysql() {
     const { template_backend } = await inquirer.prompt([
         {
             name: 'template_backend',
@@ -22,15 +23,15 @@ export async function mysql(showInstructions) {
     ])
     //#region MYSQL
     if (template_backend === 'laravel 2️⃣') {
-        const { templateServerMysql } = await inquirer.prompt([
+        const { templateServer } = await inquirer.prompt([
             {
-                name: 'templateServerMysql',
+                name: 'templateServer',
                 type: 'list',
                 message: 'Please choose a starter template for the CRUD API💾',
                 choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
             },
         ])
-        if (templateServerMysql === 'Rest API 1️⃣') {
+        if (templateServer === 'Rest API 1️⃣') {
             logger.info('Creating the Rest API 📃')
             fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mysql/RestAPI'), './RestAPI')
             const currPath = './RestAPI'
@@ -128,9 +129,8 @@ export async function mysql(showInstructions) {
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
-            module.exports.templateServerMysql = 'RestAPI'
-            showInstructions()
-        } else if (templateServerMysql === 'GraphQL 2️⃣') {
+            module.exports.templateServer = 'RestAPI'
+        } else if (templateServer === 'GraphQL 2️⃣') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mysql/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
@@ -227,19 +227,18 @@ export async function mysql(showInstructions) {
             )
             shell.cd(`server`)
             shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install')
-            module.exports.templateServerMysql = 'GraphQL'
-            showInstructions()
+            module.exports.templateServer = 'GraphQL'
         }
     } else if (template_backend === 'express 1️⃣') {
-        const { templateServerMysql } = await inquirer.prompt([
+        const { templateServer } = await inquirer.prompt([
             {
-                name: 'templateServerMysql',
+                name: 'templateServer',
                 type: 'list',
                 message: 'Please choose a starter template for the CRUD API 💾',
                 choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
             },
         ])
-        if (templateServerMysql === 'Rest API 1️⃣') {
+        if (templateServer === 'Rest API 1️⃣') {
             logger.info('Creating the Rest API 📃')
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mysql/RestAPI'), './RestAPI')
             const currPath = './RestAPI'
@@ -301,9 +300,8 @@ export async function mysql(showInstructions) {
             )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
-            module.exports.templateServerMysql = 'RestAPI'
-            showInstructions()
-        } else if (templateServerMysql === 'GraphQL 2️⃣') {
+            module.exports.templateServer = 'RestAPI'
+        } else if (templateServer === 'GraphQL 2️⃣') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mysql/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
@@ -365,10 +363,8 @@ export async function mysql(showInstructions) {
             )
             shell.cd(`server`)
             shell.exec('npm install && npm i mongoose')
-            module.exports.templateServerMysql = 'GraphQL'
-            showInstructions()
+            module.exports.templateServer = 'GraphQL'
         }
-
         //#endregion
     }
 }

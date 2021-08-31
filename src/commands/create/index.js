@@ -10,6 +10,7 @@ import * as logger from '../../utils/logger'
 import { frontend } from './frontend/frontend.js'
 import { backend } from './backend/backend.js'
 let shell = require('shelljs')
+let projectPathRelative
 /**
  * @returns {Void}
  * @returns {Promise<void>}
@@ -61,8 +62,20 @@ export default async (appName) => {
     }
     module.exports.appName = `./${appName}`
     shell.cd(`./${appName}`)
+    const showInstructions = () => {
+        const isCurrentDir = projectPathRelative === '.'
+        let userCommandInstruction = chalk.green.bold('venm start')
+
+        if (!isCurrentDir) {
+            userCommandInstruction = `${chalk.green.bold(`cd ${projectPathRelative}`)} && ${userCommandInstruction}`
+        }
+
+        logger.info(`Everything ready 👌 `)
+        logger.info(`Now type in ${userCommandInstruction}`)
+    }
     //#endregion
 
-    await frontend()
     await backend()
+    await frontend()
+    await showInstructions()
 }
