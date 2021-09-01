@@ -14,24 +14,19 @@ import pkg from '../package'
 import * as logger from './utils/logger'
 
 updateNotifier({ pkg }).notify()
-
 const suggestCommands = (cmd) => {
     const availableCommands = program.commands.map((c) => c._name)
-
     const suggestion = availableCommands.find((c) => leven(c, cmd) < c.length * 0.4)
     if (suggestion) {
         logger.error(` Did you mean ${chalk.yellow(suggestion)}?`)
     }
 }
-
-// Validation for unknown commands
 program.on('command:*', ([cmd]) => {
     program.outputHelp()
     logger.error(`\n Unknown command ${chalk.yellow(cmd)}.\n`)
     suggestCommands(cmd)
     process.exitCode = 1
 })
-
 program.parse(process.argv)
 
 program.version(pkg.version).usage(', options listed below 👇')
@@ -40,7 +35,7 @@ program.command('start').description('Start the client side or the server side l
 program.command('dockerize').description('Create a multicontainer for your app with Docker 🐳 [ WORKS ✅ ]').action(dockerize)
 program.command('deploy').description('Deploy the webapp on a cloud platform of choice 🌐 [ WORKS ✅ ]').action(deploy)
 program.command('dep').description('Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]').action(dependencies)
-program.command('v').description('Check the version of your venm-cli [WORKS ✅]')
+program.command('v').description('Check the version of this cli [ WORKS ✅ ]')
 
 program.parse(process.argv)
 if (!program.args.length) {

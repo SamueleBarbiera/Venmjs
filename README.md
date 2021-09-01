@@ -9,7 +9,7 @@
     <img alt="" src="https://img.shields.io/npm/v/blitz.svg?style=for-the-badge&labelColor=000000&color=E65528">
   </a>
 </p>
-<h1>NOTE : This current version works only with Windows O.S.</h1>
+<h1>This tool can be used only with Windows, Mac, Linux O.S.</h1>
 <h3>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
 </h3>
@@ -33,7 +33,6 @@ venm create <appname>
 # Installation & Prerequisite (to run the cli) ⚗️
 
 -   [**Node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
--   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) the new windows terminal used to create various projects with this cli.
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager

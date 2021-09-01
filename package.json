@@ -1,6 +1,6 @@
 {
     "name": "venmjs",
-    "version": "0.0.65",
+    "version": "0.0.66",
     "description": "This is a tool 🔧 that can be installed in your terminal at any time ⛏️ it was made for beginners and even for experts, for his utilities, and for a simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new fullstack project using vue... 👀 as developers we know that we are lazy, so I came up with this idea 💡",
     "main": "./bin/venm.js",
     "files": [
@@ -104,12 +104,12 @@
         "eslint": "^7.24.0",
         "eslint-config-prettier": "^8.2.0",
         "eslint-plugin-prettier": "^3.4.0",
-        "gulp": "^4.0.2",
+        "gulp": "^3.9.1",
         "husky": "^1.3.1",
         "jest": "^24.9.0",
         "lint-staged": "^11.0.1",
         "metro-config": "^0.66.2",
         "prettier": "^2.2.1",
-        "vuepress": "^1.8.2"
+        "vuepress": "^0.14.11"
     }
 }

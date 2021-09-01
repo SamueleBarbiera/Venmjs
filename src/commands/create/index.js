@@ -9,6 +9,7 @@ import validate from 'validate-npm-package-name'
 import * as logger from '../../utils/logger'
 import { frontend } from './frontend/frontend.js'
 import { backend } from './backend/backend.js'
+import { validateInstallation } from '../../utils/validate'
 let shell = require('shelljs')
 let projectPathRelative
 /**
@@ -67,14 +68,16 @@ export default async (appName) => {
         let userCommandInstruction = chalk.green.bold('venm start')
 
         if (!isCurrentDir) {
-            userCommandInstruction = `${chalk.green.bold(`cd ${projectPathRelative}`)} && ${userCommandInstruction}`
+            userCommandInstruction = `${chalk.green.bold(`cd ${appName}`)} && ${userCommandInstruction}`
         }
 
         logger.info(`Everything ready 👌 `)
         logger.info(`Now type in ${userCommandInstruction}`)
     }
     //#endregion
-
+    //await validateInstallation('git help -g')
+    await validate('git')
+    await validate('yarn')
     await backend()
     await frontend()
     await showInstructions()
