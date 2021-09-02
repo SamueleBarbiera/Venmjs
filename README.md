@@ -32,7 +32,15 @@ venm create <appname>
 
 # Installation & Prerequisite (to run the cli) ⚗️
 
--   [**Node.js**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
+## Windows
+-   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
+## MacOS
+-   [**Cmd**](https://brew.sh/) MacOS Cmd used [using Brew] 
+## Linux
+-   [**Wt**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
+
+## General
+-   [**Nodejs**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager

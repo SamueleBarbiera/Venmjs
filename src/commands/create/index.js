@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-escape */
 'use strict'
@@ -75,10 +76,9 @@ export default async (appName) => {
         logger.info(`Now type in ${userCommandInstruction}`)
     }
     //#endregion
-    //await validateInstallation('git help -g')
-    await validate('git')
-    await validate('yarn')
-    await backend()
+    await validateInstallation('yarn')
+    await validateInstallation('git help -g')
+    //await backend()
     await frontend()
     await showInstructions()
 }

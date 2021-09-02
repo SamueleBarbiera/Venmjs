@@ -114,6 +114,7 @@ const checkInstallationStatus = async (dependency) => {
     }
 }
 
+//#region INSTALL PACKAGES
 const installGit = () => {
     const url = 'https://git-scm.com/download/win'
 
@@ -134,6 +135,16 @@ const installDocker = () => {
     }
     return exec('apt install docker.io')
 }
+
+const installYarn = () => {
+    if (isWin) {
+        return exec(`npm install --global yarn`)
+    }
+    const packageMgr = isLinux ? 'apt' : 'brew'
+    return exec(`${packageMgr} install --global yarn`)
+}
+
+//#endregion
 
 export const validateInstallation = async (dependency) => {
     const isDepInstalled = await checkInstallationStatus(dependency)
@@ -163,9 +174,11 @@ export const validateInstallation = async (dependency) => {
         if (dependency === 'git') {
             return installGit()
         }
+        if (dependency === 'yarn') {
+            return installYarn()
+        }
         if (dependency === 'docker') {
             return installDocker()
         }
-        await exec(`npm install -g ${dependency}`)
     }
 }

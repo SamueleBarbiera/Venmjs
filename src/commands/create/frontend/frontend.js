@@ -1,9 +1,13 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-undef */
 /* eslint-disable no-useless-escape */
 'use strict'
 import inquirer from 'inquirer'
 import * as logger from '../../../utils/logger'
 import validate from 'validate-npm-package-name'
+const isWin = process.platform === 'win32'
+const isLinux = process.platform === 'linux'
+const isMac = process.platform === 'darwin'
 let shell = require('shelljs')
 
 export async function frontend() {
@@ -75,7 +79,13 @@ export async function frontend() {
     } else if (template_FRONTEND === 'Vue 3️⃣') {
         await validate('@vue/cli')
         logger.info('Creating the Vue-Vite project 📃')
-        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && npm install && npm i @vitejs/plugin-vue && vue add vite && npm i mongoose && exit";')
+        if (isWin) {
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && npm install && npm i @vitejs/plugin-vue && vue add vite && npm i mongoose && exit";')
+        } else if (isMac) {
+            shell.exec('gnome-terminal -e "sh -c "cd ..; vue create client; cd client; npm install; npm i @vitejs/plugin-vue; vue add vite; npm i mongoose; exec bash"')
+        } else if (isLinux) {
+            shell.exec('gnome-terminal -e "sh -c "cd ..; vue create client; cd client; npm install; npm i @vitejs/plugin-vue; vue add vite; npm i mongoose; exec bash"')
+        }
         module.exports.template = 'Vue'
     } else if (template_FRONTEND === 'Mobile 4️⃣') {
         const { template_Mobile } = await inquirer.prompt([
