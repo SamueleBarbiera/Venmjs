@@ -36,7 +36,7 @@ venm create <appname>
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
-## OS
+## Os
 -   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
 -   [**Cmd**](https://brew.sh/) MacOS Cmd used [using Brew] 
 -   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
@@ -47,7 +47,7 @@ venm create <appname>
 - [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
 - [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
  
-# Optional (to use every command of the cli) 📦
+# Optional (to use every cmd of venm-cli) 📦
 
 <h2>Frontend 🎱</h2>
 
