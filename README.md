@@ -47,7 +47,7 @@ venm create <appname>
 - [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
 - [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
  
-# Optional (to use every cmd of venm-cli) 📦
+# Optional (to use every cmd available) 📦
 
 <h2>Frontend 🎱</h2>
 
