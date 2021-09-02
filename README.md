@@ -2,7 +2,7 @@
 <a href="https://samuelebarbiera.github.io/venmjs/"><img src="img/logo.png" width="270px" height="230px"/></a>
 </p>
 <p align="center">
-  <a aria-label="License" href="https://github.com/SamueleBarbiera/venmjs/blob/0.0.2/LICENSE.md">
+  <a aria-label="License" href="https://github.com/SamueleBarbiera/Venmjs/blob/0.0.6/LICENSE.md">
     <img alt="" src="https://img.shields.io/npm/l/blitz.svg?style=for-the-badge&labelColor=000000&color=blue">
   </a>
   <a aria-label="NPM version" href="https://www.npmjs.com/package/venmjs">
@@ -36,12 +36,10 @@ venm create <appname>
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
-## Windows
+## OS
 -   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
-## MacOS
 -   [**Cmd**](https://brew.sh/) MacOS Cmd used [using Brew] 
-## Linux
--   [**Wt**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
+-   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
   
 # Accessible fullstack projects to create ✒️
 - [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
