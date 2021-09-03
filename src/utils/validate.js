@@ -6,7 +6,7 @@ import exec from './exec'
 import ora from 'ora'
 const isWin = process.platform === 'win32'
 const isLinux = process.platform === 'linux'
-//const isMac = process.platform === 'darwin'
+const isMac = process.platform === 'darwin'
 class Spinner {
     constructor(text) {
         this.text = text
@@ -28,7 +28,6 @@ class Spinner {
     }
 }
 const spinner = new Spinner()
-export default Spinner
 
 /**
  * Shows installation information
@@ -120,9 +119,11 @@ const installGit = () => {
 
     if (isWin) {
         return showInstallationInfo('git', url)
+    } else if (isLinux) {
+        return exec(`apt install -g git`)
+    } else if (isMac) {
+        return exec(`brew install git`)
     }
-    const packageMgr = isLinux ? 'apt' : 'brew'
-    return exec(`${packageMgr} install git`)
 }
 
 const installDocker = () => {
@@ -139,9 +140,11 @@ const installDocker = () => {
 const installYarn = () => {
     if (isWin) {
         return exec(`npm install --global yarn`)
+    } else if (isLinux) {
+        return exec(`apt install --global yarn`)
+    } else if (isMac) {
+        return exec(`brew install --global yarn`)
     }
-    const packageMgr = isLinux ? 'apt' : 'brew'
-    return exec(`${packageMgr} install --global yarn`)
 }
 
 //#endregion
@@ -168,8 +171,8 @@ export const validateInstallation = async (dependency) => {
             process.exit(1)
         }
 
-        spinner.text = `Installing ${dependency}`
-        spinner.start()
+        spinner.text = `The installation of ${dependency} is starting`
+        await spinner.start()
 
         if (dependency === 'git') {
             return installGit()

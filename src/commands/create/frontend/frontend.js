@@ -32,13 +32,21 @@ export async function frontend() {
         if (template_SSG_Jam === 'Vuepress 1️⃣') {
             await validate('vuepress')
             logger.info('Creating the Vuepress project 📃')
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npx create-vuepress-site client && cd client && npm add --dev vitepress && npm i && npm i mongoose && exit";')
+            if (isWin) {
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npx create-vuepress-site client && cd client && npm add --dev vitepress && npm i && npm i mongoose && exit";')
+            } else if (isMac || isLinux) {
+                shell.exec('gnome-terminal -e "sh -c "cd ..;  npx create-vuepress-site client; cd client; npm add --dev vitepress; npm install; npm i mongoose; exec bash"')
+            }
             module.exports.template = 'Vuepress'
         }
         if (template_SSG_Jam === 'Gridsome 2️⃣') {
             await validate('@gridsome/cli')
             logger.info('Creating the Gridsome project 📃')
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "gridsome create client && cd client && npm i && npm i mongoose && exit";')
+            if (isWin) {
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && gridsome create client && cd client && npm i && npm i mongoose && exit";')
+            } else if (isMac || isLinux) {
+                shell.exec('gnome-terminal -e "sh -c "cd ..;  gridsome create client; cd client; npm install; npm i mongoose; exec bash"')
+            }
             module.exports.template = 'Gridsome'
         }
     } else if (template_FRONTEND === 'SSR 2️⃣') {
@@ -54,26 +62,22 @@ export async function frontend() {
             await validate('nuxt')
             await validate('create-nuxt-app')
             logger.info('Creating the Nuxt-Vite project 📃')
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
-            logger.info(`Insert in nuxt.config 👉 buildModules: ['nuxt-vite']`)
-            /*IMPLEMENTATION OF VITE
-            const template = path.resolve(__dirname, '../../templates/create/nuxt')
-            if (templateDir != 'client' || templateDir != 'server') {
-                shell.cd('cd client')
-                fs.unlink(`nuxt.config.js`)
-                fs.copySync((`${appName}/client`, `${template}`), 'nuxt.config.js')
-            } else if (templateDir != 'client' || templateDir === 'server') {
-                shell.exec('cd .. && cd client')
-                fs.unlink(`nuxt.config.js`)
-                fs.copySync((`${appName}/client`, `${template}`), 'nuxt.config.js')
+            if (isWin) {
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
+            } else if (isMac || isLinux) {
+                shell.exec('gnome-terminal -e "sh -c "cd ..;  npm init nuxt-app@latest client; cd client; npm i -D nuxt-vite; npm install; npm i mongoose; exec bash"')
             }
-            */
+            logger.info(`Insert in nuxt.config 👉 buildModules: ['nuxt-vite']`)
             module.exports.template = 'Nuxt'
         }
         if (template_SSR === 'Quasar 2️⃣') {
             await validate('@quasar/cli')
             logger.info('Creating the Quasar project 📃')
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "quasar create client && cd client && npm i && npm i mongoose && exit";')
+            if (isWin) {
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && quasar create client && cd client && npm i && npm i mongoose && exit";')
+            } else if (isMac || isLinux) {
+                shell.exec('gnome-terminal -e "sh -c "cd ..;  quasar create client; cd client; npm install; npm i mongoose; exec bash"')
+            }
             module.exports.template = 'Quasar'
         }
     } else if (template_FRONTEND === 'Vue 3️⃣') {
@@ -81,9 +85,7 @@ export async function frontend() {
         logger.info('Creating the Vue-Vite project 📃')
         if (isWin) {
             shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && npm install && npm i @vitejs/plugin-vue && vue add vite && npm i mongoose && exit";')
-        } else if (isMac) {
-            shell.exec('gnome-terminal -e "sh -c "cd ..; vue create client; cd client; npm install; npm i @vitejs/plugin-vue; vue add vite; npm i mongoose; exec bash"')
-        } else if (isLinux) {
+        } else if (isMac || isLinux) {
             shell.exec('gnome-terminal -e "sh -c "cd ..; vue create client; cd client; npm install; npm i @vitejs/plugin-vue; vue add vite; npm i mongoose; exec bash"')
         }
         module.exports.template = 'Vue'
@@ -100,20 +102,33 @@ export async function frontend() {
             await validate('vue-native-cli')
             await validate('expo-cli')
             logger.info('Creating the VueNative project 📃')
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue-native init client && npm install && npm i mongoose && exit";')
+            if (isWin) {
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue-native init client && npm install && npm i mongoose && exit";')
+            } else if (isMac || isLinux) {
+                shell.exec('gnome-terminal -e "sh -c "cd ..;  vue-native init client; cd client; npm install; npm i mongoose; exec bash"')
+            }
             module.exports.template = 'Vue native'
         }
         if (template_Mobile === 'Ionic 2️⃣') {
             await validate('@ionic/cli@latest')
-            await validate('@ionic/cli@latest native-run cordova-res')
+            await validate('native-run')
+            await validate('cordova-res')
             logger.info('Creating the VueNative project 📃')
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && ionic start client tabs --type vue --capacitor && npm install && npm i mongoose && exit";')
+            if (isWin) {
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && ionic start client tabs --type vue --capacitor && npm install && npm i mongoose && exit";')
+            } else if (isMac || isLinux) {
+                shell.exec('gnome-terminal -e "sh -c "cd ..;  ionic start client tabs --type vue --capacitor; cd client; npm install; npm i mongoose; exec bash"')
+            }
             module.exports.template = 'Ionic'
         }
     } else if (template_FRONTEND === 'Multi Platform 5️⃣') {
         await validate('electron@latest')
         logger.info('Creating the Electron project 📃')
-        shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && vue add electron-builder && npm install && npm i mongoose && exit";')
+        if (isWin) {
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && vue add electron-builder && npm install && npm i mongoose && exit";')
+        } else if (isMac || isLinux) {
+            shell.exec('gnome-terminal -e "sh -c "cd ..;  vue create client; cd client; vue add electron-builder; npm install; npm i mongoose; exec bash"')
+        }
         module.exports.template = 'Multi Platform'
     }
     //#endregion

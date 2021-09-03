@@ -17,7 +17,7 @@ This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,i
 # Quick start 🕹️
 
 ```bash
-npm install -g venmjs
+npm i -g venmjs OR sudo i -g venmjs --unsafe-perm
 venm create <appname>
 ```
 
@@ -38,7 +38,7 @@ venm create <appname>
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 ## Os
 -   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
--   [**Cmd**](https://brew.sh/) MacOS Cmd used [using Brew] 
+-   [**Cmd**](https://brew.sh/) MacOS Cmd used [using Homebrew with Brew] 
 -   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
   
 # Accessible fullstack projects to create ✒️
