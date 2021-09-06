@@ -23,12 +23,12 @@ venm create <appname>
 
 # Venm-cli offers the options listed below 👇
 
--   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [ WORKS ✅ ]
--   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [ WORKS ✅ ]
--   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [ WORKS ✅ ]
--   start 👉 Start the client side or the server side locally 🏁 [ WORKS ✅ ]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
+-   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [WORKS ✅]
+-   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
+-   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
 -   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]
--   v 👉 Check the version of your venm-cli [ WORKS ✅ ]
+-   v 👉 Check the version of your venm-cli [WORKS ✅]
 
 # Installation & Prerequisite (to run the cli) ⚗️
 ## General

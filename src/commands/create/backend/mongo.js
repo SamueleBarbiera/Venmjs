@@ -12,6 +12,7 @@ import { validateInputname } from '../../../utils/validate'
 import { validateInputhost } from '../../../utils/validate'
 import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
+import exec from '../../../utils/exec'
 import { validateInputdb } from '../../../utils/validate'
 let shell = require('shelljs')
 
@@ -21,11 +22,11 @@ export async function mongo() {
             name: 'template_backend',
             type: 'list',
             message: 'Please choose a BACKEND framework ✨',
-            choices: ['express 1️⃣', 'laravel 2️⃣'],
+            choices: ['express', 'laravel'],
         },
     ])
     //#region MONGODB
-    if (template_backend === 'laravel 2️⃣') {
+    if (template_backend === 'laravel') {
         logger.info('Creating the Rest API 📃')
         fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/RestAPI'), './RestAPI')
         const currPath = './RestAPI'
@@ -140,19 +141,25 @@ export async function mongo() {
     }`
         )
         shell.cd(`server`)
-        shell.exec('composer install && php artisan key:generate && php artisan migrate && php artisan db:seed &&  php artisan passport:install && npm install && npm i mongoose')
+        await exec('composer install','Composer installed')
+        await exec('php artisan key:generate','Artisan key generated')
+        await exec('php artisan migrate','Artisan migrated')
+        await exec('php artisan db:seed','Artisan db seed done')
+        await exec('php artisan passport:install','Passport Installed')
+        await exec('npm install','Installing Dependencies')
+        await exec('npm i mongoose','Installing Dependencies')
         let templateServer
         module.exports.templateServer = 'RestAPI'
-    } else if (template_backend === 'express 1️⃣') {
+    } else if (template_backend === 'express') {
         const { templateServer } = await inquirer.prompt([
             {
                 name: 'templateServer',
                 type: 'list',
                 message: 'Please choose a starter template for the CRUD API 💾',
-                choices: ['Rest API 1️⃣', 'GraphQL 2️⃣'],
+                choices: ['Rest API', 'GraphQL'],
             },
         ])
-        if (templateServer === 'Rest API 1️⃣') {
+        if (templateServer === 'Rest API') {
             logger.info('Creating the Rest API 📃')
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/RestAPI'), './RestAPI')
             const currPath = './RestAPI'
@@ -178,9 +185,10 @@ export async function mongo() {
             ])
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
-            shell.exec('npm install && npm i mongoose')
+            await exec('npm install','Installing Dependencies')
+            await exec('npm i mongoose','Installing Dependencies')
             module.exports.templateServer = 'RestAPI'
-        } else if (templateServer === 'GraphQL 2️⃣') {
+        } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
@@ -205,7 +213,8 @@ export async function mongo() {
             ])
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
-            shell.exec('npm install && npm i mongoose')
+            await exec('npm install','Installing Dependencies')
+            await exec('npm i mongoose','Installing Dependencies')
             module.exports.templateServer = 'GraphQL'
         }
     }

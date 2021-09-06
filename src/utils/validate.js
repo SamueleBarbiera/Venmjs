@@ -136,7 +136,7 @@ const installDocker = () => {
     }
     return exec('apt install docker.io')
 }
-
+/*
 const installYarn = () => {
     if (isWin) {
         return exec(`npm install --global yarn`)
@@ -146,7 +146,7 @@ const installYarn = () => {
         return exec(`brew install --global yarn`)
     }
 }
-
+*/
 //#endregion
 
 export const validateInstallation = async (dependency) => {
@@ -176,9 +176,6 @@ export const validateInstallation = async (dependency) => {
 
         if (dependency === 'git') {
             return installGit()
-        }
-        if (dependency === 'yarn') {
-            return installYarn()
         }
         if (dependency === 'docker') {
             return installDocker()

@@ -13,3 +13,14 @@ typings/
 dest-path
 prova
 desktop.ini
+sessff/client/.gitignore
+sessff/client/babel.config.js
+sessff/client/package-lock.json
+sessff/client/package.json
+sessff/client/README.md
+sessff/client/public/favicon.ico
+sessff/client/public/index.html
+sessff/client/src/App.vue
+sessff/client/src/main.js
+sessff/client/src/assets/logo.png
+sessff/client/src/components/HelloWorld.vue

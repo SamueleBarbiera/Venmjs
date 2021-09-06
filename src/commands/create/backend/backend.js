@@ -14,12 +14,10 @@ export async function backend() {
             name: 'template_database',
             type: 'list',
             message: 'Please choose a DATABASE ✨',
-            choices: ['Mongo 1️⃣', 'mysql 2️⃣'],
+            choices: ['Mongo', 'mysql'],
         },
     ])
-    if (template_database === 'Mongo 1️⃣') {
-        //await validateInstallation('mongo')
-        //await validateInstallation('graphql')
+    if (template_database === 'Mongo') {
         await mongo()
     } else {
         //await validateInstallation('xampp')
