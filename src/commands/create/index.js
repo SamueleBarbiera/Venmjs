@@ -76,9 +76,9 @@ export default async (appName) => {
         logger.info(`Now type in ${userCommandInstruction}`)
     }
     //#endregion
-    await validateInstallation('yarn')
-    await validateInstallation('git')
-    await backend()
+    //await validateInstallation('yarn')
+    //await validateInstallation('git')
+    //await backend()
     await frontend()
     await showInstructions()
 }

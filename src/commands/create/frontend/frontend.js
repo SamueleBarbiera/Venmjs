@@ -4,7 +4,6 @@
 'use strict'
 import inquirer from 'inquirer'
 import * as logger from '../../../utils/logger'
-import validate from 'validate-npm-package-name'
 const isWin = process.platform === 'win32'
 const isLinux = process.platform === 'linux'
 const isMac = process.platform === 'darwin'
@@ -30,22 +29,24 @@ export async function frontend() {
             },
         ])
         if (template_SSG_Jam === 'Vuepress 1️⃣') {
-            await validate('vuepress')
             logger.info('Creating the Vuepress project 📃')
             if (isWin) {
-                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npx create-vuepress-site client && cd client && npm add --dev vitepress && npm i && npm i mongoose && exit";')
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npx create-vuepress-site client && npm add --dev vitepress && npm i && npm i mongoose && exit";')
             } else if (isMac || isLinux) {
-                shell.exec('gnome-terminal -e "sh -c "cd ..;  npx create-vuepress-site client; cd client; npm add --dev vitepress; npm install; npm i mongoose; exec bash"')
+                shell.exec(`osascript -e 'tell app "Terminal"
+                do script "npx create-vuepress-site client; npm add --dev vitepress; npm install; npm i mongoose; killall Terminal"
+                end tell'`)
             }
             module.exports.template = 'Vuepress'
         }
         if (template_SSG_Jam === 'Gridsome 2️⃣') {
-            await validate('@gridsome/cli')
             logger.info('Creating the Gridsome project 📃')
             if (isWin) {
-                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && gridsome create client && cd client && npm i && npm i mongoose && exit";')
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && gridsome create client && npm i && npm i mongoose && exit";')
             } else if (isMac || isLinux) {
-                shell.exec('gnome-terminal -e "sh -c "cd ..;  gridsome create client; cd client; npm install; npm i mongoose; exec bash"')
+                shell.exec(`osascript -e 'tell app "Terminal"
+                do script "gridsome create client; npm install; npm i mongoose; killall Terminal"
+                end tell'`)
             }
             module.exports.template = 'Gridsome'
         }
@@ -59,34 +60,36 @@ export async function frontend() {
             },
         ])
         if (template_SSR === 'Nuxt 1️⃣') {
-            await validate('nuxt')
-            await validate('create-nuxt-app')
             logger.info('Creating the Nuxt-Vite project 📃')
             if (isWin) {
-                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && npm i mongoose && exit";')
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npm init nuxt-app@latest client && npm i -D nuxt-vite && npm i mongoose && exit";')
             } else if (isMac || isLinux) {
-                shell.exec('gnome-terminal -e "sh -c "cd ..;  npm init nuxt-app@latest client; cd client; npm i -D nuxt-vite; npm install; npm i mongoose; exec bash"')
+                shell.exec(`osascript -e 'tell app "Terminal"
+                do script "npm init nuxt-app@latest client; npm i -D nuxt-vite; npm install; npm i mongoose; killall Terminal"
+                end tell'`)
             }
             logger.info(`Insert in nuxt.config 👉 buildModules: ['nuxt-vite']`)
             module.exports.template = 'Nuxt'
         }
         if (template_SSR === 'Quasar 2️⃣') {
-            await validate('@quasar/cli')
             logger.info('Creating the Quasar project 📃')
             if (isWin) {
-                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && quasar create client && cd client && npm i && npm i mongoose && exit";')
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && quasar create client && npm i && npm i mongoose && exit";')
             } else if (isMac || isLinux) {
-                shell.exec('gnome-terminal -e "sh -c "cd ..;  quasar create client; cd client; npm install; npm i mongoose; exec bash"')
+                shell.exec(`osascript -e 'tell app "Terminal"
+                do script "quasar create client; npm install; npm i mongoose; killall Terminal"
+                end tell'`)
             }
             module.exports.template = 'Quasar'
         }
     } else if (template_FRONTEND === 'Vue 3️⃣') {
-        await validate('@vue/cli')
         logger.info('Creating the Vue-Vite project 📃')
         if (isWin) {
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && npm install && npm i @vitejs/plugin-vue && vue add vite && npm i mongoose && exit";')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && npm install && npm i @vitejs/plugin-vue && vue add vite && npm i mongoose && exit";')
         } else if (isMac || isLinux) {
-            shell.exec('gnome-terminal -e "sh -c "cd ..; vue create client; cd client; npm install; npm i @vitejs/plugin-vue; vue add vite; npm i mongoose; exec bash"')
+            shell.exec(`osascript -e 'tell app "Terminal"
+            do script "vue create client; npm install; npm i @vitejs/plugin-vue; vue add vite; npm i mongoose; killall Terminal"
+        end tell'`)
         }
         module.exports.template = 'Vue'
     } else if (template_FRONTEND === 'Mobile 4️⃣') {
@@ -99,35 +102,35 @@ export async function frontend() {
             },
         ])
         if (template_Mobile === 'Vue native 1️⃣') {
-            await validate('vue-native-cli')
-            await validate('expo-cli')
             logger.info('Creating the VueNative project 📃')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue-native init client && npm install && npm i mongoose && exit";')
             } else if (isMac || isLinux) {
-                shell.exec('gnome-terminal -e "sh -c "cd ..;  vue-native init client; cd client; npm install; npm i mongoose; exec bash"')
+                shell.exec(`osascript -e 'tell app "Terminal"
+                do script "vue-native init client; npm install; npm i mongoose; killall Terminal"
+                end tell'`)
             }
             module.exports.template = 'Vue native'
         }
         if (template_Mobile === 'Ionic 2️⃣') {
-            await validate('@ionic/cli@latest')
-            await validate('native-run')
-            await validate('cordova-res')
             logger.info('Creating the VueNative project 📃')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && ionic start client tabs --type vue --capacitor && npm install && npm i mongoose && exit";')
             } else if (isMac || isLinux) {
-                shell.exec('gnome-terminal -e "sh -c "cd ..;  ionic start client tabs --type vue --capacitor; cd client; npm install; npm i mongoose; exec bash"')
+                shell.exec(`osascript -e 'tell app "Terminal"
+                do script "sh -c "ionic start client tabs --type vue --capacitor; npm install; npm i mongoose; killall Terminal"
+                end tell'`)
             }
             module.exports.template = 'Ionic'
         }
     } else if (template_FRONTEND === 'Multi Platform 5️⃣') {
-        await validate('electron@latest')
         logger.info('Creating the Electron project 📃')
         if (isWin) {
-            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && vue add electron-builder && npm install && npm i mongoose && exit";')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && vue add electron-builder && npm install && npm i mongoose && exit";')
         } else if (isMac || isLinux) {
-            shell.exec('gnome-terminal -e "sh -c "cd ..;  vue create client; cd client; vue add electron-builder; npm install; npm i mongoose; exec bash"')
+            shell.exec(`osascript -e 'tell app "Terminal"
+            do script "vue create client; vue add electron-builder; npm install; npm i mongoose; killall Terminal"
+            end tell'`)
         }
         module.exports.template = 'Multi Platform'
     }
