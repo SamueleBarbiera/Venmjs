@@ -16,13 +16,13 @@ This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,i
 
 # Quick start 🕹️
 
-## 👇 INSTALLATION 👇 
+### 👇 INSTALLATION 👇 
 ```bash
 npm i -g venmjs                 (WINDOWS USERS)
 sudo i -g venmjs --unsafe-perm  (MAC & LINUX USERS)
 ```
 
-##  👇 CREATION OF A NEW PROJECT  👇
+###  👇 CREATION OF A NEW PROJECT  👇
 ```bash
 venm create <appname>
 ```
