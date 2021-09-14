@@ -9,7 +9,7 @@
     <img alt="" src="https://img.shields.io/npm/v/blitz.svg?style=for-the-badge&labelColor=000000&color=E65528">
   </a>
 </p>
-<h1>This package can be used on Windows (Mac && Linux OS are still on the tsting phase)</h1>
+<h1>This package can be used on Windows (Mac & Linux OS are still on the testing phase)</h1>
 <h3>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we pretty lazy, so I came up with this idea 💡
 </h3>
@@ -17,9 +17,14 @@ This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,i
 # Quick start 🕹️
 
 ```bash
+INSTALLATION
 npm i -g venmjs 
 OR 
 sudo i -g venmjs --unsafe-perm
+venm create <appname>
+```
+```bash
+CREATION OF A NEW PROJECT
 venm create <appname>
 ```
 
