@@ -37,10 +37,10 @@ program.command('create <appname>').description('Create a FULLSTACK project 🚀
 program.command('start').description('Start the client side or the server side locally 🏁 [WORKS ✅]').action(start)
 program.command('dockerize').description('Create a multicontainer for your app with Docker 🐳 [WORKS ✅]').action(dockerize)
 program.command('deploy').description('Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]').action(deploy)
+program.command('devops').description('automations available on the current project 🎲 [⛔⏳🔜]').action(devops)
 program.command('dep').description('Install dependencies on the current project 🧰 [⛔⏳🔜]').action(dependencies)
 program.command('build').description('build a folder for the current project 🎲 [⛔⏳🔜]').action(build)
 program.command('test').description('testing the current project 🎲 [⛔⏳🔜]').action(test)
-program.command('devops').description('automations available on the current project 🎲 [⛔⏳🔜]').action(devops)
 
 program.parse(process.argv)
 if (!program.args.length) {
