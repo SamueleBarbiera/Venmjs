@@ -53,11 +53,13 @@ venm create <appname>
 
 ## Frontend ⚡
 
--   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
--   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
+-   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm install -g @ionic/cli@latest` 
+-   [**Ionic**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm install -g @ionic/cli@latest native-run cordova-res` 
+-   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm install --global vue-native-cli` 
+-   [**VueNative**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm install --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
--   [**Vuepress**]() `npm install -D vuepress`
+-   [**Vuepress**](https://vuepress.vuejs.org/) `npm install -D vuepress`
 -   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
 -   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
 -   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
