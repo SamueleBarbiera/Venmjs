@@ -18,13 +18,14 @@ This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,i
 
 ```bash
 INSTALLATION
+
 npm i -g venmjs 
 OR 
 sudo i -g venmjs --unsafe-perm
-venm create <appname>
 ```
 ```bash
 CREATION OF A NEW PROJECT
+
 venm create <appname>
 ```
 
