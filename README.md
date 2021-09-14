@@ -16,14 +16,15 @@ This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,i
 
 # Quick start 🕹️
 
+## 👇 INSTALLATION 👇 
 ```bash
-              👇 INSTALLATION 👇 
-npm i -g venmjs (WINDOWS USERS)
-sudo i -g venmjs --unsafe-perm (MAC & LINUX USERS)
+npm i -g venmjs                 (WINDOWS USERS)
+sudo i -g venmjs --unsafe-perm  (MAC & LINUX USERS)
 ```
+
+##  👇 CREATION OF A NEW PROJECT  👇
 ```bash
- 👇 CREATION OF A NEW PROJECT  👇
-      venm create <appname>
+venm create <appname>
 ```
 
 # Venm-cli offers the options listed below 👇
@@ -32,10 +33,10 @@ sudo i -g venmjs --unsafe-perm (MAC & LINUX USERS)
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [WORKS ✅]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
+-   devops 👉 automations available on the current project 🎲 [ ⛔⏳🔜 ]
 -   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]
 -   build 👉 build a folder for the current project 🎲 [ ⛔⏳🔜 ]
 -   test 👉 testing the current project 🎲 [ ⛔⏳🔜 ]
--   devops 👉 automations available on the current project 🎲 [ ⛔⏳🔜 ]
 
 # Installation & Prerequisite (to run the cli) ⚗️
 ## General
