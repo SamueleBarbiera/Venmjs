@@ -14,7 +14,7 @@
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we pretty lazy, so I came up with this idea 💡
 </h3>
 
-# Quick start 🕹️
+# Quick start 🔮
 
 ### 👇 INSTALLATION 👇 
 ```bash
