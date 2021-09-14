@@ -172,11 +172,11 @@ export const validateInstallation = async (dependency) => {
         }
 
         spinner.text = `The installation of ${dependency} is starting`
-        await spinner.start()
-
+        spinner.start()
+        /*
         if (dependency === 'git') {
             return installGit()
-        }
+        }*/
         if (dependency === 'docker') {
             return installDocker()
         }

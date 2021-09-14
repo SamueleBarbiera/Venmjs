@@ -9,15 +9,17 @@
     <img alt="" src="https://img.shields.io/npm/v/blitz.svg?style=for-the-badge&labelColor=000000&color=E65528">
   </a>
 </p>
-<h1>This package can be used on Windows, Mac, Linux</h1>
+<h1>This package can be used on Windows (Mac && Linux OS are still on the tsting phase)</h1>
 <h3>
-This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we are lazy, so I came up with this idea 💡
+This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we pretty lazy, so I came up with this idea 💡
 </h3>
 
 # Quick start 🕹️
 
 ```bash
-npm i -g venmjs OR sudo i -g venmjs --unsafe-perm
+npm i -g venmjs 
+OR 
+sudo i -g venmjs --unsafe-perm
 venm create <appname>
 ```
 
@@ -40,12 +42,6 @@ venm create <appname>
 -   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
 -   [**Cmd**](https://brew.sh/) MacOS Cmd used [using Homebrew with Brew] 
 -   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
-  
-# Accessible fullstack projects to create ✒️
-- [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
-- [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
-- [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
-- [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
  
 # Optional (to use every cmd available) 📦
 
@@ -86,7 +82,14 @@ venm create <appname>
 ## Database 🧱
 -   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          
 -   [**Mysql**](https://www.mysql.com/) Starting relational database
-  
+
+
+# Accessible fullstack projects to create ✒️
+- [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
+- [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
+- [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
+- [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
+
 # License ©️
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
