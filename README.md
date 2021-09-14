@@ -30,7 +30,9 @@ venm create <appname>
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
 -   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]
--   v 👉 Check the version of your venm-cli [WORKS ✅]
+-   build 👉 build a folder for the current project 🎲 [ ⛔⏳🔜 ]
+-   test 👉 testing the current project 🎲 [ ⛔⏳🔜 ]
+-   devops 👉 automations available on the current project 🎲 [ ⛔⏳🔜 ]
 
 # Installation & Prerequisite (to run the cli) ⚗️
 ## General

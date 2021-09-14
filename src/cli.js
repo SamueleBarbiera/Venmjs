@@ -10,6 +10,9 @@ import deploy from './commands/deploy'
 import dockerize from './commands/dockerize'
 import create from './commands/create'
 import start from './commands/start'
+import start from './commands/devops'
+import start from './commands/build'
+import start from './commands/test'
 import pkg from '../package'
 import * as logger from './utils/logger'
 
@@ -35,7 +38,9 @@ program.command('start').description('Start the client side or the server side l
 program.command('dockerize').description('Create a multicontainer for your app with Docker 🐳 [WORKS ✅]').action(dockerize)
 program.command('deploy').description('Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]').action(deploy)
 program.command('dep').description('Install dependencies on the current project 🧰 [⛔⏳🔜]').action(dependencies)
-program.command('v').description('Check the version of this cli [WORKS ✅]')
+program.command('build').description('build a folder for the current project 🎲 [⛔⏳🔜]').action(build)
+program.command('test').description('testing the current project 🎲 [⛔⏳🔜]').action(test)
+program.command('devops').description('automations available on the current project 🎲 [⛔⏳🔜]').action(devops)
 
 program.parse(process.argv)
 if (!program.args.length) {
