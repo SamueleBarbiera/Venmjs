@@ -51,24 +51,15 @@ venm create <appname>
  
 # Optional (to use every cmd available) 📦
 
-<h2>Frontend 🎱</h2>
+## Frontend ⚡
 
-### Mobile
 -   [**Ionic**](https://quasar.dev/) mobile js framework for Vuejs `npm install -g @ionic/cli@latest && npm install -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) native framework made for dev mobile apps `npm install --global vue-native-cli && npm install --global expo-cli`
-
-### Ssr
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
-
-### Ssg/Jamstack
 -   [**Vuepress**]() `npm install -D vuepress`
 -   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
-
-### Multi Platform
 -   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
-
-### Default
 -   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
 
 ## Standard Api 🎯
@@ -96,10 +87,6 @@ venm create <appname>
 - [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
 - [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 
-# License ©️
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-<h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
 
 # Donations 💸
 <p align="left">
@@ -116,3 +103,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <a href="https://instagram.com/samuelebarbiera" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="samuelebarbiera" height="30" width="40" /></a>
 <a href="https://discord.gg/CBsUJtk2" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="samuele#6396" height="30" width="40" /></a>
 </p>
+
+# License ©️
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+<h5><a href="https://github.com/madlabsinc/mevn-cli">This project was inspired by madlabsinc repository [MEVN CLI]</a></h5>
