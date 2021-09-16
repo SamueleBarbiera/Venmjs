@@ -44,7 +44,7 @@ venm create <appname>
 - [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
 - [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 
-# Installation & Prerequisite (to run the cli) ⚗️
+# Installation & Prerequisite (to run the venm-cli) ⚗️
 ## General
 -   [**Nodejs**](https://nodejs.org/en/) A JavaScript run-time environment that executes JavaScript code on the browser
 -   [**Npm**](https://www.npmjs.com/) is a package manager for the JavaScript programming language.
@@ -57,7 +57,7 @@ venm create <appname>
 
 
 
-# Optional Prerequisite (to use every cmd available) 📦
+# Optional Prerequisite (use every cmd available) 📦
 
 ## Frontend ⚡
 
