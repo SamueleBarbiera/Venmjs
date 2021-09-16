@@ -29,6 +29,7 @@ venm create <appname>
 
 # Venm-cli offers the commands listed below 👇
 
+
 -   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [WORKS ✅]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
@@ -37,6 +38,11 @@ venm create <appname>
 -   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]
 -   build 👉 build a folder for the current project 🎲 [ ⛔⏳🔜 ]
 -   test 👉 testing the current project 🎲 [ ⛔⏳🔜 ]
+# Accessible fullstack projects to create ✒️
+- [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
+- [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
+- [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
+- [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 
 # Installation & Prerequisite (to run the cli) ⚗️
 ## General
@@ -49,18 +55,14 @@ venm create <appname>
 -   [**Cmd**](https://brew.sh/) MacOS Cmd [using Homebrew with Brew] 
 -   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
 
-# Accessible fullstack projects to create ✒️
-- [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
-- [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
-- [**MLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - RestAPI]
-- [**MYLVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Laravel - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 
-# Optional (to use every cmd available) 📦
+
+# Optional Prerequisite (to use every cmd available) 📦
 
 ## Frontend ⚡
 
 -   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm i -g @ionic/cli@latest` 
--   [**Cordova**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm i -g @ionic/cli@latest native-run cordova-res` 
+-   [**Cordova**](https://quasar.dev/) Cordova/Native Ionic implementation `npm i -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm i --global vue-native-cli` 
 -   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm i --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm i nuxt && npm i -g create-nuxt-app`
