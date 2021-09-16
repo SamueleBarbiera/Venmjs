@@ -55,20 +55,13 @@ venm create <appname>
 
 -   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm i -g @ionic/cli@latest` 
 -   [**Cordova**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm i -g @ionic/cli@latest native-run cordova-res` 
--   -----------------------------------------------------------------------------------------------------
 -   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm i --global vue-native-cli` 
--   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm i --global expo-cli` 
--   -----------------------------------------------------------------------------------------------------
--   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm i nuxt && npm i -g create-nuxt-app` 
--   -----------------------------------------------------------------------------------------------------
--   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm i -g @quasar/cli` 
--   -----------------------------------------------------------------------------------------------------
--   [**Vuepress**](https://vuepress.vuejs.org/) `npm i -D vuepress` 
--   -----------------------------------------------------------------------------------------------------
--   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm i --global @gridsome/cli` 
--   -----------------------------------------------------------------------------------------------------
--   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest` 
--   -----------------------------------------------------------------------------------------------------
+-   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm i --global expo-cli`
+-   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm i nuxt && npm i -g create-nuxt-app`
+-   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm i -g @quasar/cli`
+-   [**Vuepress**](https://vuepress.vuejs.org/) `npm i -D vuepress`
+-   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm i --global @gridsome/cli`
+-   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
 -   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm i -g @vue/cli`
 
 ## Standard Api 🎯
@@ -82,7 +75,7 @@ venm create <appname>
 ## Deployment 🚧
 -   [**Firebase**](https://firebase.google.com/) `npm i -g firebase-tools` it's a platform service to deploy a full stack webapp
 -   [**Heroku**](https://dashboard.heroku.com/) `brew i heroku` it's a platform service to deploy a full stack webapp
--   [**Netlify**](https://www.netlify.com/) `npm i netlify-cli -g` it's a platform service to deploy Static sites
+-   [**Netlify**](https://www.netlify.com/) `npm install netlify-cli -g` it's a platform service to deploy Static sites
 -   [**Docker**](https://www.docker.com/) it's a Dev Environment to create containers that can be deployed easily
 
 ## Database 🧱
