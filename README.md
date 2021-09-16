@@ -54,9 +54,9 @@ venm create <appname>
 ## Frontend ⚡
 
 -   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm install -g @ionic/cli@latest` 
--   [**Ionic**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm install -g @ionic/cli@latest native-run cordova-res` 
+-   [**Cordova**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm install -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm install --global vue-native-cli` 
--   [**VueNative**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm install --global expo-cli`
+-   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm install --global expo-cli`
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
 -   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
 -   [**Vuepress**](https://vuepress.vuejs.org/) `npm install -D vuepress`
