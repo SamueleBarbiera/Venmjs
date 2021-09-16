@@ -53,19 +53,19 @@ venm create <appname>
 
 ## Frontend ⚡
 
--   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm install -g @ionic/cli@latest` 
--   [**Cordova**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm install -g @ionic/cli@latest native-run cordova-res` 
--   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm install --global vue-native-cli` 
--   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm install --global expo-cli`
--   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm install nuxt && npm i -g create-nuxt-app`
--   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm install -g @quasar/cli`
--   [**Vuepress**](https://vuepress.vuejs.org/) `npm install -D vuepress`
--   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm install --global @gridsome/cli`
+-   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm i -g @ionic/cli@latest` 
+-   [**Cordova**](https://quasar.dev/) Cordova/Native implementation in Ionic `npm i -g @ionic/cli@latest native-run cordova-res` 
+-   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm i --global vue-native-cli` 
+-   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm i --global expo-cli`
+-   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm i nuxt && npm i -g create-nuxt-app`
+-   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm i -g @quasar/cli`
+-   [**Vuepress**](https://vuepress.vuejs.org/) `npm i -D vuepress`
+-   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm i --global @gridsome/cli`
 -   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
--   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm install -g @vue/cli`
+-   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm i -g @vue/cli`
 
 ## Standard Api 🎯
--   [**GraphQL**](https://graphql.org/graphql-js/) `npm install graphql --save`
+-   [**GraphQL**](https://graphql.org/graphql-js/) `npm i graphql --save`
 -   [**Rest API**](https://it.wikipedia.org/wiki/Representational_State_Transfer) Default Api
   
 ## Backend Framework 👨‍💻
@@ -73,9 +73,9 @@ venm create <appname>
 -   [**Laravel**](https://laravel.com/docs/8.x/installation) Laravel framework (Composer and php must be installed)
 
 ## Deployment 🚧
--   [**Firebase**](https://firebase.google.com/) `npm install -g firebase-tools` it's a platform service to deploy a full stack webapp
--   [**Heroku**](https://dashboard.heroku.com/) `brew install heroku` it's a platform service to deploy a full stack webapp
--   [**Netlify**](https://www.netlify.com/) `npm install netlify-cli -g` it's a platform service to deploy Static sites
+-   [**Firebase**](https://firebase.google.com/) `npm i -g firebase-tools` it's a platform service to deploy a full stack webapp
+-   [**Heroku**](https://dashboard.heroku.com/) `brew i heroku` it's a platform service to deploy a full stack webapp
+-   [**Netlify**](https://www.netlify.com/) `npm i netlify-cli -g` it's a platform service to deploy Static sites
 -   [**Docker**](https://www.docker.com/) it's a Dev Environment to create containers that can be deployed easily
 
 ## Database 🧱
