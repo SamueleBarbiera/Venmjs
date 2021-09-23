@@ -13,7 +13,7 @@ const isWin = process.platform === 'win32'
  */
 
 export const fetchProjectConfig = (genPath) => {
-    const configFilePath = genPath ? path.join(genPath, '.mevnrc') : '.mevnrc'
+    const configFilePath = genPath ? path.join(genPath, '.venm') : '.venm'
     if (!fs.existsSync(configFilePath)) {
         return
     }
@@ -69,7 +69,7 @@ export const dirOfChoice = () => {
     return inquirer.prompt({
         name: 'dir',
         type: 'list',
-        message: 'Choose from below',
+        message: 'Choose from below 👇',
         choices: ['client', 'server'],
     })
 }

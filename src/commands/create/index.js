@@ -46,7 +46,7 @@ export default async (appName) => {
         isCurrentDir = true
         appName = path.basename(process.cwd())
     } else if (process.argv[4] && !process.argv[4].startsWith('-')) {
-        logger.error('\n Error: Kindly provide only one argument as the directory name❗❗')
+        logger.error('\n Error: Provide only one argument as the directory name❗')
         process.exit(1)
     } else if (!validate(appName)) {
         logger.error(` Error: Could not create a project called "${chalk.cyan.bold(appName)}" because of npm naming restrictions:`)
