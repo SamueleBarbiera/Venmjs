@@ -134,7 +134,7 @@ export async function mysql() {
             await exec('php artisan migrate', 'Artisan migrated')
             await exec('php artisan db:seed', 'Artisan db seed done')
             await exec('php artisan passport:install', 'Passport Installed')
-            await exec('npm install', 'Installing Dependencies')
+            await exec('npm install', 'Installing Backend Dependencies')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mysql/GraphQL'), './GraphQL')
@@ -237,7 +237,7 @@ export async function mysql() {
             await exec('php artisan migrate', 'Artisan migrated')
             await exec('php artisan db:seed', 'Artisan db seed done')
             await exec('php artisan passport:install', 'Passport Installed')
-            await exec('npm install', 'Installing Dependencies')
+            await exec('npm install', 'Installing Backend Dependencies')
             module.exports.templateServer = 'GraphQL'
         }
     } else if (template_backend === 'express') {
@@ -310,7 +310,7 @@ export async function mysql() {
         }`
             )
             shell.cd(`server`)
-            await exec('npm install','Installing Dependencies')
+            await exec('npm install','Installing Backend Dependencies')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mysql/GraphQL'), './GraphQL')
@@ -373,7 +373,7 @@ export async function mysql() {
             export default db`
             )
             shell.cd(`server`)
-            await exec('npm install','Installing Dependencies')
+            await exec('npm install','Installing Backend Dependencies')
             module.exports.templateServer = 'GraphQL'
         }
         //#endregion

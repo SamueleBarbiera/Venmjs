@@ -146,8 +146,8 @@ export async function mongo() {
         await exec('php artisan migrate','Artisan migrated')
         await exec('php artisan db:seed','Artisan db seed done')
         await exec('php artisan passport:install','Passport Installed')
-        await exec('npm install','Installing Dependencies')
-        await exec('npm i mongoose','Installing Dependencies')
+        await exec('npm install','Installing Backend Dependencies')
+        await exec('npm i mongoose','Installing Mongoose')
         let templateServer
         module.exports.templateServer = 'RestAPI'
     } else if (template_backend === 'express') {
@@ -185,8 +185,8 @@ export async function mongo() {
             ])
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
-            await exec('npm install','Installing Dependencies')
-            await exec('npm i mongoose','Installing Dependencies')
+            await exec('npm install','Installing Backend Dependencies')
+            await exec('npm i mongoose','Installing Mongoose')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/GraphQL'), './GraphQL')
@@ -213,8 +213,8 @@ export async function mongo() {
             ])
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
-            await exec('npm install','Installing Dependencies')
-            await exec('npm i mongoose','Installing Dependencies')
+            await exec('npm install','Installing Backend Dependencies')
+            await exec('npm i mongoose','Installing Mongoose')
             module.exports.templateServer = 'GraphQL'
         }
     }
