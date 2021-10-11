@@ -13,3 +13,4 @@ typings/
 dest-path
 test-dir
 desktop.ini
+.vscode
