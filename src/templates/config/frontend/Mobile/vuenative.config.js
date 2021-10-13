@@ -1,3 +1,4 @@
-export default {
-    frontend: 'vuenative',
+export default function vuenative () {
+    frontend: 'vuenative'
+    return frontend
 }

@@ -1,3 +1,4 @@
-export default {
-    frontend: 'ionic',
+export default function ionic () {
+    frontend: 'ionic'
+    return frontend
 }

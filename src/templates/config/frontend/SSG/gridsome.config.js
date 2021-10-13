@@ -1,3 +1,4 @@
-export default {
-    frontend: 'gridsome',
+export default function gridsome () {
+    frontend: 'gridsome'
+    return frontend
 }

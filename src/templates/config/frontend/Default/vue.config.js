@@ -1,3 +1,4 @@
-export default {
-    frontend: 'vue',
+export default function vue (){
+    frontend: 'vue'
+    return frontend
 }

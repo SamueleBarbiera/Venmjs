@@ -1,3 +1,4 @@
-export default {
-    frontend: 'nuxt',
+export default function nuxt () {
+    frontend: 'nuxt'
+    return frontend
 }

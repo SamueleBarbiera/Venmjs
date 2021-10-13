@@ -32,12 +32,12 @@ venm create <appname>
 
 -   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [WORKS ✅]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [WORKS ✅]
--   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [WORKS ✅]
+-   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [Semi-Stable ✅🚧]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
--   devops 👉 automations available on the current project 🎲 [ ⛔⏳🔜 ]
--   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳🔜 ]
--   build 👉 build a folder for the current project 🎲 [ ⛔⏳🔜 ]
--   test 👉 testing the current project 🎲 [ ⛔⏳🔜 ]
+-   devops 👉 automations available on the current project 🎲 [ ⛔⏳ ]
+-   dep 👉 Install dependencies on the current project 🧰 [ ⛔⏳ ]
+-   build 👉 build a folder for the current project 🎲 [ ⛔⏳ ]
+-   test 👉 testing the current project 🎲 [ ⛔⏳ ]
 # Accessible fullstack projects to create ✒️
 - [**MEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/)  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 - [**MYEVN**](https://skillcrush.com/blog/front-end-back-end-full-stack/) [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
