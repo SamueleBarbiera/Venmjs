@@ -10,6 +10,7 @@ import { validateInputhost } from '../../../utils/validate'
 import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import { validateInputdb } from '../../../utils/validate'
+
 import exec from '../../../utils/exec'
 let shell = require('shelljs')
 
@@ -38,11 +39,12 @@ export async function mysql() {
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the Mongodb 👇',
+                    message: 'Enter the HOST of the Mysql DB 👇',
                     default: '127.0.0.1',
                     validate: validateInputhost,
                 },
@@ -51,7 +53,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the Mongodb 👇',
+                    message: 'Enter the USER of the Mysql DB 👇',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -60,7 +62,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the Mongodb 👇',
+                    message: 'Enter the PASSWORD of the Mysql DB 👇',
                     default: 'root',
                     validate: validateInputpass,
                 },
@@ -69,7 +71,43 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            const { port } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'port',
+                    message: 'Enter the PORT of the Mysql DB 👇',
+                    default: '27017',
+                    validate: validateInputuser,
+                },
+            ])
+            const { APP_NAME } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'mail',
+                    message: 'Enter the NAME MAIL of the app 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            const { PUSHER_APP_KEY } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'PUSHER_APP_KEY',
+                    message: 'Enter the PUSHER_APP_KEY 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            const { PUSHER_APP_CLUSTER } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'Enter the PUSHER_APP_CLUSTER 👇',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -141,11 +179,12 @@ export async function mysql() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the Mongodb 👇',
+                    message: 'Enter the HOST of the Mysql DB 👇',
                     default: '127.0.0.1',
                     validate: validateInputhost,
                 },
@@ -154,7 +193,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the Mongodb 👇',
+                    message: 'Enter the USER of the Mysql DB 👇',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -163,7 +202,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the Mongodb 👇',
+                    message: 'Enter the PASSWORD of the Mysql DB 👇',
                     default: '',
                     validate: validateInputpass,
                 },
@@ -172,7 +211,43 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of the new Database 👇',
+                    message: 'Enter the NAME of the new Mysql DB 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            const { port } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'port',
+                    message: 'Enter the PORT of the Mysql DB 👇',
+                    default: '27017',
+                    validate: validateInputuser,
+                },
+            ])
+            const { APP_NAME } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'mail',
+                    message: 'Enter the NAME MAIL of the app 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            const { PUSHER_APP_KEY } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'PUSHER_APP_KEY',
+                    message: 'Enter the PUSHER_APP_KEY 👇',
+                    default: 'example',
+                    validate: validateInputdb,
+                },
+            ])
+            const { PUSHER_APP_CLUSTER } = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'Enter the PUSHER_APP_CLUSTER 👇',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -255,6 +330,7 @@ export async function mysql() {
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
                     type: 'input',
@@ -286,7 +362,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👇',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -310,13 +386,14 @@ export async function mysql() {
         }`
             )
             shell.cd(`server`)
-            await exec('npm install','Installing Backend Dependencies')
+            await exec('npm install', 'Installing Backend Dependencies')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mysql/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
                     type: 'input',
@@ -348,7 +425,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👇',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -373,7 +450,7 @@ export async function mysql() {
             export default db`
             )
             shell.cd(`server`)
-            await exec('npm install','Installing Backend Dependencies')
+            await exec('npm install', 'Installing Backend Dependencies')
             module.exports.templateServer = 'GraphQL'
         }
         //#endregion

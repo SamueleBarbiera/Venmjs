@@ -14,11 +14,6 @@ import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import exec from '../../../utils/exec'
 import { validateInputdb } from '../../../utils/validate'
-import mongoconfig from '../../../templates/config/database/mongodb.config'
-import laravel from '../../../templates/config/backend/laravel.config'
-import express from '../../../templates/config/backend/express.config'
-import restapi from '../../../templates/config/api/restapi.config'
-import gtaphql from '../../../templates/config/api/graphql.config'
 let shell = require('shelljs')
 
 export async function mongo() {
@@ -34,6 +29,7 @@ export async function mongo() {
     if (template_backend === 'laravel') {
         logger.info('Creating the Rest API 📃')
         fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/server'), './server')
+        fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
         const { host } = await inquirer.prompt([
             {
                 type: 'input',
@@ -74,7 +70,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'name',
-                message: 'Enter the name of the new Database 👇',
+                message: 'Enter the NAME of the new Database 👇',
                 default: 'example',
                 validate: validateInputdb,
             },
@@ -159,9 +155,9 @@ export async function mongo() {
         MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
         MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
         )
-        shell.cd('app')
+        shell.cd('./server/app')
         fs.writeFileSync(
-            './app/Users.php',
+            'Users.php',
             `<?php
 
     namespace App\Models;
@@ -179,11 +175,6 @@ export async function mongo() {
         ];
             }`
         )
-        shell.cd('./config')
-        fs.copySync(path.resolve(__dirname, '../../../templates/config/backend/laravel.config.js'), './laravel.config.js')
-        fs.copySync(path.resolve(__dirname, '../../../templates/config/api/restapi.config.js'), './restapi.config.js')
-        fs.copySync(path.resolve(__dirname, '../../../templates/config/database/mongodb.config.js'), './mongodb.config.js')
-        shell.cd(`./server`)
         await exec('composer install', 'Composer installed')
         await exec('php artisan key:generate', 'Artisan key generated')
         await exec('php artisan migrate', 'Artisan migrated')
@@ -191,7 +182,6 @@ export async function mongo() {
         await exec('php artisan passport:install', 'Passport Installed')
         await exec('npm install', 'Installing Backend Dependencies')
         await exec('npm i mongoose', 'Installing Mongoose')
-        let templateServer
         module.exports.templateServer = 'RestAPI'
     } else if (template_backend === 'express') {
         const { templateServer } = await inquirer.prompt([
@@ -207,6 +197,7 @@ export async function mongo() {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/RestAPI'), './RestAPI')
             const currPath = './RestAPI'
             const newPath = './server'
+            fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             fs.rename(currPath, newPath)
             const { uri } = await inquirer.prompt([
                 {
@@ -221,7 +212,7 @@ export async function mongo() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👇',
                     default: 'example',
                     validate: validateInputname,
                 },
@@ -236,6 +227,7 @@ export async function mongo() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { uri } = await inquirer.prompt([
                 {
                     type: 'input',
@@ -249,7 +241,7 @@ export async function mongo() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the name of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👇',
                     default: 'example',
                     validate: validateInputname,
                 },

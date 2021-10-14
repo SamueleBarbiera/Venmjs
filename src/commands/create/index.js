@@ -79,7 +79,6 @@ export default async (appName) => {
     //#endregion
     //await validateInstallation('yarn')
     //await validateInstallation('git')
-    await shell.exec('mkdir config')
     await backend()
     await frontend()
     await showInstructions()
