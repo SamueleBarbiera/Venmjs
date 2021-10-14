@@ -30,7 +30,7 @@ venm create <appname>
 # 👇 Venm-cli offers the commands listed below 👇
 
 
--   create <appname> 👉 Create a FULLSTACK project 🚀 ([Frontend]-[Backend]-[Api]-[Database]) [SEMI-STABLE ✅🚧]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 [Frontend]-[Backend]-[Api]-[Database] [SEMI-STABLE ✅🚧]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [WORKS ✅]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [SEMI-STABLE ✅🚧]
 -   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
