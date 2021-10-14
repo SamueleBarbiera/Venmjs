@@ -30,14 +30,14 @@ venm create <appname>
 # 👇 Venm-cli offers the commands listed below 👇
 
 
--   create <appname> 👉 Create a FULLSTACK project 🚀 (Frontend|Backend|Api|Database) [SEMI-STABLE ✅🚧]
--   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [WORKS ✅]
--   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [SEMI-STABLE ✅🚧]
--   start 👉 Start the client side or the server side locally 🏁 [WORKS ✅]
--   devops 👉 Automate option is available 🎲 [ ⛔⏳ ]
--   dep 👉 Install dependencies 🧰 [ ⛔⏳ ]
--   build 👉 Build folder for production 🎲 [ ⛔⏳ ]
--   test 👉 Testing phase 🎲 [ ⛔⏳ ]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 Frontend Backend Api Database [SEMISTABLE ✅🚧]
+-   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [SEMISTABLE ✅🚧]
+-   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [STABLE ✅]
+-   start 👉 Start the client side or the server side locally 🏁 [STABLE ✅]
+-   devops 👉 Automate option is available 🔰 [ UNSTABLE ⛔⏳ ]
+-   build 👉 Build folder for production 🏠 [ UNSTABLE ⛔⏳ ]
+-   dep 👉 Install dependencies 🧰 [ UNSTABLE ⛔⏳ ]
+-   test 👉 Testing phase 🔬 [ UNSTABLE ⛔⏳ ]
 # Accessible fullstack projects to create ✒️
 - [**MEVN**]  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 - [**MYEVN**] [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
