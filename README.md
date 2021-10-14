@@ -28,7 +28,7 @@ venm create <appname>
 ```
 
 # 👇 Venm-cli offers the commands listed below 👇
--   create <appname> 👉 Create a FULLSTACK project 🚀 [SEMISTABLE ✅🚧]
+-   create <appname> 👉 Create a Fullstack Project (Client && Server)🚀 [SEMISTABLE ✅🚧]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [SEMISTABLE ✅🚧]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [STABLE ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [STABLE ✅]
