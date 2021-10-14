@@ -28,9 +28,7 @@ venm create <appname>
 ```
 
 # 👇 Venm-cli offers the commands listed below 👇
-
-
--   create <appname> 👉 Create a FULLSTACK project 🚀 Frontend Backend Api Database [SEMISTABLE ✅🚧]
+-   create <appname> 👉 Create a FULLSTACK project 🚀 [SEMISTABLE ✅🚧]
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [SEMISTABLE ✅🚧]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [STABLE ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [STABLE ✅]
@@ -38,6 +36,7 @@ venm create <appname>
 -   build 👉 Build folder for production 🏠 [ UNSTABLE ⛔⏳ ]
 -   dep 👉 Install dependencies 🧰 [ UNSTABLE ⛔⏳ ]
 -   test 👉 Testing phase 🔬 [ UNSTABLE ⛔⏳ ]
+
 # Accessible fullstack projects to create ✒️
 - [**MEVN**]  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
 - [**MYEVN**] [MySQL - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
@@ -60,7 +59,6 @@ venm create <appname>
 # Optional Prerequisite (use every cmd available) 📦
 
 ## Frontend ⚡
-
 -   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm i -g @ionic/cli@latest` 
 -   [**Cordova**](https://quasar.dev/) Cordova/Native Ionic implementation `npm i -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm i --global vue-native-cli` 
