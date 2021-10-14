@@ -7,6 +7,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import showBanner from 'node-banner'
 import validate from 'validate-npm-package-name'
+import exec from '../../utils/exec'
 import * as logger from '../../utils/logger'
 import { frontend } from './frontend/frontend.js'
 import { backend } from './backend/backend.js'
@@ -78,6 +79,7 @@ export default async (appName) => {
     //#endregion
     //await validateInstallation('yarn')
     //await validateInstallation('git')
+    await shell.exec('mkdir config')
     await backend()
     await frontend()
     await showInstructions()

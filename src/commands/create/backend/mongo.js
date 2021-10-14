@@ -14,6 +14,11 @@ import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import exec from '../../../utils/exec'
 import { validateInputdb } from '../../../utils/validate'
+import mongoconfig from '../../../templates/config/database/mongodb.config'
+import laravel from '../../../templates/config/backend/laravel.config'
+import express from '../../../templates/config/backend/express.config'
+import restapi from '../../../templates/config/api/restapi.config'
+import gtaphql from '../../../templates/config/api/graphql.config'
 let shell = require('shelljs')
 
 export async function mongo() {
@@ -28,32 +33,38 @@ export async function mongo() {
     //#region MONGODB
     if (template_backend === 'laravel') {
         logger.info('Creating the Rest API 📃')
-        fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/RestAPI'), './RestAPI')
-        const currPath = './RestAPI'
-        const newPath = './server'
-        fs.rename(currPath, newPath)
+        fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/server'), './server')
         const { host } = await inquirer.prompt([
             {
                 type: 'input',
                 name: 'uri',
                 message: 'Enter the HOST of the Mongodb 👇',
-                default: '127.0.0.1',
+                default: 'localhost',
                 validate: validateInputhost,
             },
         ])
         const { user } = await inquirer.prompt([
             {
                 type: 'input',
-                name: 'uri',
+                name: 'user',
                 message: 'Enter the USER of the Mongodb 👇',
                 default: 'root',
+                validate: validateInputuser,
+            },
+        ])
+        const { port } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'port',
+                message: 'Enter the PORT of the Mongodb 👇',
+                default: '27017',
                 validate: validateInputuser,
             },
         ])
         const { pass } = await inquirer.prompt([
             {
                 type: 'input',
-                name: 'uri',
+                name: 'pass',
                 message: 'Enter the PASSWORD of the Mongodb 👇',
                 default: '',
                 validate: validateInputpass,
@@ -64,6 +75,33 @@ export async function mongo() {
                 type: 'input',
                 name: 'name',
                 message: 'Enter the name of the new Database 👇',
+                default: 'example',
+                validate: validateInputdb,
+            },
+        ])
+        const { APP_NAME } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'mail',
+                message: 'Enter the NAME MAIL of the app 👇',
+                default: 'example',
+                validate: validateInputdb,
+            },
+        ])
+        const { PUSHER_APP_KEY } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'PUSHER_APP_KEY',
+                message: 'Enter the PUSHER_APP_KEY 👇',
+                default: 'example',
+                validate: validateInputdb,
+            },
+        ])
+        const { PUSHER_APP_CLUSTER } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Enter the PUSHER_APP_CLUSTER 👇',
                 default: 'example',
                 validate: validateInputdb,
             },
@@ -121,6 +159,7 @@ export async function mongo() {
         MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
         MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
         )
+        shell.cd('app')
         fs.writeFileSync(
             './app/Users.php',
             `<?php
@@ -138,16 +177,20 @@ export async function mongo() {
         protected $fillable = [
             'name', 'age', 'description'
         ];
-    }`
+            }`
         )
-        shell.cd(`server`)
-        await exec('composer install','Composer installed')
-        await exec('php artisan key:generate','Artisan key generated')
-        await exec('php artisan migrate','Artisan migrated')
-        await exec('php artisan db:seed','Artisan db seed done')
-        await exec('php artisan passport:install','Passport Installed')
-        await exec('npm install','Installing Backend Dependencies')
-        await exec('npm i mongoose','Installing Mongoose')
+        shell.cd('./config')
+        fs.copySync(path.resolve(__dirname, '../../../templates/config/backend/laravel.config.js'), './laravel.config.js')
+        fs.copySync(path.resolve(__dirname, '../../../templates/config/api/restapi.config.js'), './restapi.config.js')
+        fs.copySync(path.resolve(__dirname, '../../../templates/config/database/mongodb.config.js'), './mongodb.config.js')
+        shell.cd(`./server`)
+        await exec('composer install', 'Composer installed')
+        await exec('php artisan key:generate', 'Artisan key generated')
+        await exec('php artisan migrate', 'Artisan migrated')
+        await exec('php artisan db:seed', 'Artisan db seed done')
+        await exec('php artisan passport:install', 'Passport Installed')
+        await exec('npm install', 'Installing Backend Dependencies')
+        await exec('npm i mongoose', 'Installing Mongoose')
         let templateServer
         module.exports.templateServer = 'RestAPI'
     } else if (template_backend === 'express') {
@@ -185,8 +228,8 @@ export async function mongo() {
             ])
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
-            await exec('npm install','Installing Backend Dependencies')
-            await exec('npm i mongoose','Installing Mongoose')
+            await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm i mongoose', 'Installing Mongoose')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mongodb/GraphQL'), './GraphQL')
@@ -213,8 +256,8 @@ export async function mongo() {
             ])
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
-            await exec('npm install','Installing Backend Dependencies')
-            await exec('npm i mongoose','Installing Mongoose')
+            await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm i mongoose', 'Installing Mongoose')
             module.exports.templateServer = 'GraphQL'
         }
     }
