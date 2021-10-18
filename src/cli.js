@@ -31,7 +31,6 @@ program.on('command:*', ([cmd]) => {
     process.exitCode = 1
 })
 program.parse(process.argv)
-
 program.version(pkg.version).usage(', options listed below 👇')
 program.command('create <appname>').description('Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [SEMISTABLE ✅🚧]').action(create)
 program.command('start').description('Start the client side or the server side locally 🏁 [STABLE ✅]').action(start)
