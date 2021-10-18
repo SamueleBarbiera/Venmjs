@@ -44,7 +44,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the Mysql DB 👇',
+                    message: 'Enter the HOST of the Mysql DB 👉',
                     default: '127.0.0.1',
                     validate: validateInputhost,
                 },
@@ -53,7 +53,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the Mysql DB 👇',
+                    message: 'Enter the USER of the Mysql DB 👉',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -62,7 +62,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the Mysql DB 👇',
+                    message: 'Enter the PASSWORD of the Mysql DB 👉',
                     default: 'root',
                     validate: validateInputpass,
                 },
@@ -71,7 +71,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the NAME of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -80,7 +80,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'port',
-                    message: 'Enter the PORT of the Mysql DB 👇',
+                    message: 'Enter the PORT of the Mysql DB 👉',
                     default: '27017',
                     validate: validateInputuser,
                 },
@@ -89,7 +89,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'mail',
-                    message: 'Enter the NAME MAIL of the app 👇',
+                    message: 'Enter the NAME MAIL of the app 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -98,7 +98,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'PUSHER_APP_KEY',
-                    message: 'Enter the PUSHER_APP_KEY 👇',
+                    message: 'Enter the PUSHER_APP_KEY 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -107,7 +107,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the PUSHER_APP_CLUSTER 👇',
+                    message: 'Enter the PUSHER_APP_CLUSTER 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -184,7 +184,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the Mysql DB 👇',
+                    message: 'Enter the HOST of the Mysql DB 👉',
                     default: '127.0.0.1',
                     validate: validateInputhost,
                 },
@@ -193,7 +193,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the Mysql DB 👇',
+                    message: 'Enter the USER of the Mysql DB 👉',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -202,7 +202,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the Mysql DB 👇',
+                    message: 'Enter the PASSWORD of the Mysql DB 👉',
                     default: '',
                     validate: validateInputpass,
                 },
@@ -211,7 +211,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the NAME of the new Mysql DB 👇',
+                    message: 'Enter the NAME of the new Mysql DB 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -220,7 +220,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'port',
-                    message: 'Enter the PORT of the Mysql DB 👇',
+                    message: 'Enter the PORT of the Mysql DB 👉',
                     default: '27017',
                     validate: validateInputuser,
                 },
@@ -229,7 +229,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'mail',
-                    message: 'Enter the NAME MAIL of the app 👇',
+                    message: 'Enter the NAME MAIL of the app 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -238,7 +238,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'PUSHER_APP_KEY',
-                    message: 'Enter the PUSHER_APP_KEY 👇',
+                    message: 'Enter the PUSHER_APP_KEY 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -247,7 +247,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the PUSHER_APP_CLUSTER 👇',
+                    message: 'Enter the PUSHER_APP_CLUSTER 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -335,7 +335,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the mySQL db 👇',
+                    message: 'Enter the HOST of the mySQL db 👉',
                     default: 'localhost',
                     validate: validateInputhost,
                 },
@@ -344,7 +344,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the mySQL db 👇',
+                    message: 'Enter the USER of the mySQL db 👉',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -353,7 +353,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the mySQL db 👇',
+                    message: 'Enter the PASSWORD of the mySQL db 👉',
                     default: '',
                     validate: validateInputpass,
                 },
@@ -362,7 +362,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the NAME of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },
@@ -398,7 +398,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the HOST of the mySQL db 👇',
+                    message: 'Enter the HOST of the mySQL db 👉',
                     default: 'localhost',
                     validate: validateInputhost,
                 },
@@ -407,7 +407,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the USER of the mySQL db 👇',
+                    message: 'Enter the USER of the mySQL db 👉',
                     default: 'root',
                     validate: validateInputuser,
                 },
@@ -416,7 +416,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the PASSWORD of the mySQL db 👇',
+                    message: 'Enter the PASSWORD of the mySQL db 👉',
                     default: 'root',
                     validate: validateInputpass,
                 },
@@ -425,7 +425,7 @@ export async function mysql() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the NAME of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👉',
                     default: 'example',
                     validate: validateInputdb,
                 },

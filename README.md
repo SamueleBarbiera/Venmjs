@@ -59,15 +59,24 @@ venm create <appname>
 # Optional Prerequisite (use every cmd available) 📦
 
 ## Frontend ⚡
+### Mobile
 -   [**Ionic**](https://quasar.dev/) Mobile js framework for Vuejs `npm i -g @ionic/cli@latest` 
 -   [**Cordova**](https://quasar.dev/) Cordova/Native Ionic implementation `npm i -g @ionic/cli@latest native-run cordova-res` 
 -   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm i --global vue-native-cli` 
 -   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm i --global expo-cli`
+
+### SSR
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm i nuxt && npm i -g create-nuxt-app`
 -   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm i -g @quasar/cli`
+
+### SSG
 -   [**Vuepress**](https://vuepress.vuejs.org/) `npm i -D vuepress`
 -   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm i --global @gridsome/cli`
+
+### MultiPlatform
 -   [**Electron**](https://www.electronjs.org/) Electron `npm i -g electron@latest`
+
+### Default
 -   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm i -g @vue/cli`
 
 ## Standard Api 🎯

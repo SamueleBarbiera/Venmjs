@@ -34,7 +34,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'uri',
-                message: 'Enter the HOST of the Mongodb 👇',
+                message: 'Enter the HOST of the Mongodb 👉',
                 default: 'localhost',
                 validate: validateInputhost,
             },
@@ -43,7 +43,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'user',
-                message: 'Enter the USER of the Mongodb 👇',
+                message: 'Enter the USER of the Mongodb 👉',
                 default: 'root',
                 validate: validateInputuser,
             },
@@ -52,7 +52,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'port',
-                message: 'Enter the PORT of the Mongodb 👇',
+                message: 'Enter the PORT of the Mongodb 👉',
                 default: '27017',
                 validate: validateInputuser,
             },
@@ -61,7 +61,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'pass',
-                message: 'Enter the PASSWORD of the Mongodb 👇',
+                message: 'Enter the PASSWORD of the Mongodb 👉',
                 default: '',
                 validate: validateInputpass,
             },
@@ -70,7 +70,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'name',
-                message: 'Enter the NAME of the new Database 👇',
+                message: 'Enter the NAME of the new Database 👉',
                 default: 'example',
                 validate: validateInputdb,
             },
@@ -79,7 +79,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'mail',
-                message: 'Enter the NAME MAIL of the app 👇',
+                message: 'Enter the NAME MAIL of the app 👉',
                 default: 'example',
                 validate: validateInputdb,
             },
@@ -88,7 +88,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'PUSHER_APP_KEY',
-                message: 'Enter the PUSHER_APP_KEY 👇',
+                message: 'Enter the PUSHER_APP_KEY 👉',
                 default: 'example',
                 validate: validateInputdb,
             },
@@ -97,7 +97,7 @@ export async function mongo() {
             {
                 type: 'input',
                 name: 'name',
-                message: 'Enter the PUSHER_APP_CLUSTER 👇',
+                message: 'Enter the PUSHER_APP_CLUSTER 👉',
                 default: 'example',
                 validate: validateInputdb,
             },
@@ -203,7 +203,7 @@ export async function mongo() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the URI of the MongoDB 👇',
+                    message: 'Enter the URL of the MongoDB 👉',
                     default: 'mongodb://localhost:27017',
                     validate: validateInput,
                 },
@@ -212,7 +212,7 @@ export async function mongo() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the NAME of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👉',
                     default: 'example',
                     validate: validateInputname,
                 },
@@ -232,7 +232,7 @@ export async function mongo() {
                 {
                     type: 'input',
                     name: 'uri',
-                    message: 'Enter the URI of the MongoDB 👇',
+                    message: 'Enter the URL of the MongoDB 👉',
                     default: 'mongodb://localhost:27017',
                     validate: validateInput,
                 },
@@ -241,7 +241,7 @@ export async function mongo() {
                 {
                     type: 'input',
                     name: 'name',
-                    message: 'Enter the NAME of the new Database 👇',
+                    message: 'Enter the NAME of the new Database 👉',
                     default: 'example',
                     validate: validateInputname,
                 },
