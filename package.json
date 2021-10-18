@@ -1,0 +1,102 @@
+{
+    "name": "venmjs",
+    "version": "0.0.766",
+    "description": "This is a tool 🔧 that can be installed in your terminal at any time ⛏️ it was made for beginners and even for experts, for his utilities, and for a simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new fullstack project using vue... 👀 as developers we know that we are lazy, so I came up with this idea 💡",
+    "author": "Samuele Barbiera <barbierasamuele01@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SamueleBarbiera/Venmjs"
+    },
+    "main": "./bin/venm.js",
+    "files": [
+        "bin",
+        "lib"
+    ],
+    "bin": {
+        "venm": "bin/venm.js"
+    },
+    "src": {
+        "cli": "src/cli.js",
+        "dependencies": "src/commands/dependencies/index.js",
+        "deploy": "src/commands/deploy/index.js",
+        "dockerize": "src/commands/dockerize/index.js",
+        "create": "src/commands/create/index.js",
+        "start": "src/commands/start/index.js"
+    },
+    "scripts": {
+        "build": "gulp",
+        "build:watch": "babel --watch src --out-dir lib --copy-files --include-dotfiles",
+        "lint": "eslint ./src test jest",
+        "lint:fix": "eslint --fix ./src test jest",
+        "pretest": "npm run lint",
+        "test": "jest"
+    },
+    "lint-staged": {
+        "src/**/*.js": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "keywords": [
+        "node.js",
+        "commander.js",
+        "inquirer.js",
+        "shell.js",
+        "cli",
+        "venmjs",
+        "vue"
+    ],
+    "dependencies": {
+        "@babel/polyfill": "^7.10.4",
+        "@octokit/auth-basic": "^1.4.8",
+        "@octokit/rest": "^18.6.8",
+        "body-parser": "^1.19.0",
+        "chalk": "^2.4.2",
+        "commander": "^6.2.1",
+        "core-util-is": "^1.0.2",
+        "envinfo": "^7.7.3",
+        "esm": "^3.2.25",
+        "execa": "^4.0.3",
+        "figlet": "^1.5.0",
+        "fs-extra": "^9.1.0",
+        "graceful-fs": "^4.2.8",
+        "inquirer": "^8.2.0",
+        "leven": "^3.1.0",
+        "lodash": "^4.17.21",
+        "minimist": "^1.2.5",
+        "node-banner": "^1.4.0",
+        "opencollective-postinstall": "^2.0.3",
+        "ora": "^3.4.0",
+        "resolve-url": "^0.2.1",
+        "shelljs": "^0.8.4",
+        "simple-git": "^2.41.1",
+        "touch": "^3.1.0",
+        "update-notifier": "^5.1.0",
+        "urix": "^0.1.0",
+        "validate-npm-package-name": "^3.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.10.5",
+        "@babel/eslint-parser": "^7.13.14",
+        "@babel/preset-env": "^7.10.4",
+        "@commitlint/cli": "^12.0.0",
+        "@commitlint/config-conventional": "^12.0.0",
+        "babel-jest": "^27.3.0",
+        "cli-prompts-test": "^0.3.0",
+        "del": "^4.1.1",
+        "eslint": "^7.24.0",
+        "eslint-config-prettier": "^8.2.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "gulp": "^4.0.2",
+        "husky": "^1.3.1",
+        "jest": "^27.3.0",
+        "lint-staged": "^11.0.1",
+        "metro-config": "^0.66.2",
+        "prettier": "^2.2.1"
+    },
+    "resolutions": {
+        "graceful-fs": "^4.2.4"
+    }
+}

@@ -1,0 +1,17 @@
+logs
+*.log
+npm-debug.log*
+build/Release
+node_modules/
+lib
+typings/
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.env
+dest-path
+test-dir
+desktop.ini
+.vscode
+TODO.txt
