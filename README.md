@@ -13,9 +13,7 @@
 <h1>(Mac is still on the testing phase)</h1>
 
 ## This CLI was tested on these OS
-### Windows 10 
-### Linux (Ubuntu 20.04 LTS)
-### MacOS (Big Sur 11.5)
+- Windows 10 - Linux (Ubuntu 20.04 LTS) - MacOS (Big Sur 11.5)
 
 <h3>
 This is a tool 🔧 that can be installed in your terminal at any time ⛏️ ,it was made for beginners and even for experts... for his utilities and his simple creation process 🧨. Every web developer knows how frustrating is to deal with the creation of a new project... 👀 and we even know that we pretty lazy, so I came up with this idea 💡
