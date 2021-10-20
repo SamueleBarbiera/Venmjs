@@ -79,7 +79,9 @@ export default async (appName) => {
     //#endregion
     //await validateInstallation('yarn')
     //await validateInstallation('git')
-    await backend()
+    //await backend()
+
     await frontend()
     await showInstructions()
+    module.exports = appName
 }

@@ -51,7 +51,7 @@ venm create <appname>
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 ## Os Terminal
 -   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
--   [**Cmd**](https://brew.sh/) MacOS Cmd [using Homebrew with Brew] 
+-   [**Cmd**](https://brew.sh/) MacOS Cmd [using Homebrew with Brew] / [**XCode**](https://developer.apple.com/xcode/) MacOS Dev Env
 -   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
 
 
@@ -65,11 +65,11 @@ venm create <appname>
 -   [**VueNative**](https://vue-native.io/docs/installation.html) Mobile framework for Vuejs `npm i --global vue-native-cli` 
 -   [**Expo-cli**](https://vue-native.io/docs/installation.html) Expo-cli implementation in Vuenative`npm i --global expo-cli`
 
-### SSR
+### Ssr
 -   [**Nuxtjs**](https://nuxtjs.org/docs/2.x/get-started/installation) `npm i nuxt && npm i -g create-nuxt-app`
 -   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm i -g @quasar/cli`
 
-### SSG
+### Ssg
 -   [**Vuepress**](https://vuepress.vuejs.org/) `npm i -D vuepress`
 -   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm i --global @gridsome/cli`
 

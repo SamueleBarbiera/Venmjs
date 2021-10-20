@@ -1,12 +1,12 @@
 {
     "name": "venmjs",
-    "version": "0.0.761",
+    "version": "0.0.8271",
     "lockfileVersion": 2,
     "requires": true,
     "packages": {
         "": {
             "name": "venmjs",
-            "version": "0.0.761",
+            "version": "0.0.8271",
             "license": "MIT",
             "dependencies": {
                 "@babel/polyfill": "^7.10.4",
@@ -38,7 +38,6 @@
                 "validate-npm-package-name": "^3.0.0"
             },
             "bin": {
-                "cli": "src/cli.js",
                 "venm": "bin/venm.js"
             },
             "devDependencies": {

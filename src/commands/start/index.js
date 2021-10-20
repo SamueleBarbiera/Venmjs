@@ -22,12 +22,10 @@ export default async () => {
     ])
     if (template === 'client') {
         logger.info('Running the client side 🔓')
-        shell.cd(`./client`)
         port = '8080'
         shell.exec(`npm run serve -- --port ${port} --open`)
     } else if (template === 'server') {
         logger.info('Running the server side 🔓')
-        shell.cd(`./server`)
         if (templateServerMongo === 'GraphQL' || templateServerMysql === 'GraphQL') {
             port = '9000/graphql'
         } else {

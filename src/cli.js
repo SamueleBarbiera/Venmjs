@@ -21,7 +21,7 @@ const suggestCommands = (cmd) => {
     const availableCommands = program.commands.map((c) => c._name)
     const suggestion = availableCommands.find((c) => leven(c, cmd) < c.length * 0.4)
     if (suggestion) {
-        logger.error(` Did you mean ${chalk.yellow(suggestion)}?`)
+        logger.error(`Did you mean ${chalk.yellow(suggestion)}?`)
     }
 }
 program.on('command:*', ([cmd]) => {
@@ -30,6 +30,7 @@ program.on('command:*', ([cmd]) => {
     suggestCommands(cmd)
     process.exitCode = 1
 })
+
 program.parse(process.argv)
 program.version(pkg.version).usage(', options listed below 👇')
 program.command('create <appname>').description('Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [SEMISTABLE ✅🚧]').action(create)
