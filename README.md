@@ -35,10 +35,10 @@ venm create <appname>
 -   deploy 👉 Deploy the webapp on a cloud platform of choice 🌐 [SEMISTABLE ✅🚧]
 -   dockerize 👉 Create a multicontainer for your app with Docker 🐳 [STABLE ✅]
 -   start 👉 Start the client side or the server side locally 🏁 [STABLE ✅]
--   devops 👉 Automate option is available 🔰 [ UNSTABLE ⛔⏳ ]
--   build 👉 Build folder for production 🏠 [ UNSTABLE ⛔⏳ ]
--   dep 👉 Install dependencies 🧰 [ UNSTABLE ⛔⏳ ]
--   test 👉 Testing phase 🔬 [ UNSTABLE ⛔⏳ ]
+-   devops 👉 Automate option is available 🔰 [UNSTABLE ⛔⏳]
+-   build 👉 Build folder for production 🏠 [UNSTABLE ⛔⏳]
+-   dep 👉 Install dependencies 🧰 [UNSTABLE ⛔⏳]
+-   test 👉 Testing phase 🔬 [UNSTABLE ⛔⏳]
 
 # Accessible fullstack projects to create ✒️
 - [**MEVN**]  [Mongodb - Express - Mobile/Ssr/Ssg/MultiPlatform/Vue - Nodejs - GraphQL/RestAPI]
