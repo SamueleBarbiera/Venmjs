@@ -9,7 +9,7 @@
     <img alt="" src="https://img.shields.io/npm/v/blitz.svg?style=for-the-badge&labelColor=000000&color=E65528">
   </a>
 </p>
-<h1>This package can be used on Windows & Linux (Mac is still on the testing phase)</h1>
+<h1>This package can be used on Windows & Linux <br> (Mac is still on the testing phase)</h1>
 
 ## This CLI was tested on these OS
 - [Windows 10] - [Linux (Ubuntu 20.04 LTS)] - [MacOS (Big Sur 11.5)]
