@@ -1,0 +1,1 @@
+tell application "Terminal" to do script "vue create client" in selected tab of the front window
