@@ -33,7 +33,6 @@ export default async () => {
         dockerComposeTemplate[9] = `${' '.repeat(6)}- "8080:8080"`
         fs.writeFileSync(clientDockerFilePath, dockerFileTemplate.join('\n'))
     }
-    console.log('1')
 
     if (fs.existsSync('server')) {
         // Create Dockerfile for server directory

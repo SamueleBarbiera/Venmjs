@@ -30,15 +30,15 @@ export default async () => {
                 name: 'platform',
                 type: 'list',
                 message: 'Choose your preferred platform 📍',
-                choices: ['Heroku 1️⃣', 'Netlify 2️⃣', 'Firebase 3️⃣'],
+                choices: ['Heroku', 'Netlify', 'Firebase'],
             },
         ])
 
-        if (platform === 'Heroku 1️⃣') {
+        if (platform === 'Heroku') {
             return deployToHeroku(templateDir)
-        } else if (platform === 'Netlify 2️⃣') {
+        } else if (platform === 'Netlify') {
             return deployToNetlify(templateDir)
-        } else if (platform === 'Firebase 3️⃣') {
+        } else if (platform === 'Firebase') {
             return deployToFirebase(templateDir)
         }
         module.exports.templateDir = 'client'
@@ -48,12 +48,12 @@ export default async () => {
                 name: 'platform',
                 type: 'list',
                 message: 'Choose your preferred platform 📍',
-                choices: ['Heroku 1️⃣', 'Firebase 2️⃣'],
+                choices: ['Heroku', 'Firebase'],
             },
         ])
-        if (platform === 'Heroku 1️⃣') {
+        if (platform === 'Heroku') {
             return deployToHeroku(templateDir)
-        } else if (platform === 'Firebase 2️⃣') {
+        } else if (platform === 'Firebase') {
             return deployToFirebase(templateDir)
         }
     }

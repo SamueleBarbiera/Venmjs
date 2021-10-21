@@ -54,7 +54,7 @@ venm create <appname>
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 ## Os Terminal
 -   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) Windows Cmd [using Npm]
--   [**Cmd**](https://brew.sh/) MacOS Cmd [using Homebrew with Brew] / [**XCode**](https://developer.apple.com/xcode/) MacOS Dev Env
+-   [**Cmd**](https://brew.sh/) MacOS Cmd [using Homebrew with Brew]
 -   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
 
 
@@ -82,10 +82,6 @@ venm create <appname>
 ### Default
 -   [**Vue**](https://cli.vuejs.org/guide/installation.html) Vuejs  CLI `npm i -g @vue/cli`
 
-## Standard Api 🎯
--   [**GraphQL**](https://graphql.org/graphql-js/) `npm i graphql --save`
--   [**Rest API**](https://it.wikipedia.org/wiki/Representational_State_Transfer) Default Api
-  
 ## Backend Framework 👨‍💻
 -   [**Express**](https://expressjs.com/en/starter/installing.html) Express framework
 -   [**Laravel**](https://laravel.com/docs/8.x/installation) Laravel framework (Composer and php must be installed)
@@ -96,6 +92,10 @@ venm create <appname>
 -   [**Netlify**](https://www.netlify.com/) `npm i netlify-cli -g` it's a platform service to deploy Static sites
 -   [**Docker**](https://www.docker.com/) it's a Dev Environment to create containers that can be deployed easily
 
+## Standard Api 🎯
+-   [**GraphQL**](https://graphql.org/graphql-js/) `npm i graphql --save`
+-   [**Rest API**](https://it.wikipedia.org/wiki/Representational_State_Transfer) Default Api
+  
 ## Database 🧱
 -   [**Mongodb**](https://www.mongodb.com/) Starting non relational database          
 -   [**Mysql**](https://www.mysql.com/) Starting relational database
