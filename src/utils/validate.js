@@ -137,17 +137,25 @@ const installDocker = () => {
     }
     return exec('apt install docker.io')
 }
-/*
+
 const installYarn = () => {
+    return exec(`npm install --global yarn`)
+}
+const installwt = () => {
+    const urlMap = {
+        win32: 'https://www.microsoft.com/store/productId/9N0DX20HK701',
+    }
     if (isWin) {
-        return exec(`npm install --global yarn`)
-    } else if (isLinux) {
-        return exec(`apt install --global yarn`)
-    } else if (isMac) {
-        return exec(`brew install --global yarn`)
+        return showInstallationInfo('wt', urlMap[process.platform])
     }
 }
-*/
+const installfirebase = () => {
+    return exec(`npm i -g firebase-tools`)
+}
+const installnetlify = () => {
+    return exec(`npm i netlify-cli -g`)
+}
+
 //#endregion
 
 export const validateInstallation = async (dependency) => {
@@ -174,12 +182,26 @@ export const validateInstallation = async (dependency) => {
 
         spinner.text = `The installation of ${dependency} is starting`
         spinner.start()
-        /*
-        if (dependency === 'git') {
+        if (dependency === 'yarn') {
             return installGit()
-        }*/
+        }
+        if (dependency === 'git') {
+            return installYarn()
+        }
         if (dependency === 'docker') {
             return installDocker()
         }
+        if (dependency === 'wt') {
+            return installwt()
+        }
+
+        if (dependency === 'firebase') {
+            return installfirebase()
+        }
+        if (dependency === 'netlify') {
+            return installnetlify()
+        }
+
+        await exec(`npm install -g ${dependency}`)
     }
 }

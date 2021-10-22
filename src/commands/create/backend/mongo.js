@@ -14,6 +14,7 @@ import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import exec from '../../../utils/exec'
 import { validateInputdb } from '../../../utils/validate'
+import { validateInstallation } from '../../utils/validate'
 let shell = require('shelljs')
 
 export async function mongo() {
@@ -199,6 +200,7 @@ export async function mongo() {
             const newPath = './server'
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             fs.rename(currPath, newPath)
+            await exec('npm install express --save' , 'Installed ExpresJS')
             const { uri } = await inquirer.prompt([
                 {
                     type: 'input',
@@ -227,6 +229,8 @@ export async function mongo() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            await exec('npm install express --save' , 'Installed ExpresJS')
+            await exec('npm install graphql --save' , 'Installed GraphQL')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { uri } = await inquirer.prompt([
                 {

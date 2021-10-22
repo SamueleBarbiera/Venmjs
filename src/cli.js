@@ -17,21 +17,15 @@ import pkg from '../package'
 import * as logger from './utils/logger'
 
 updateNotifier({ pkg }).notify()
+
 const suggestCommands = (cmd) => {
     const availableCommands = program.commands.map((c) => c._name)
     const suggestion = availableCommands.find((c) => leven(c, cmd) < c.length * 0.4)
     if (suggestion) {
-        logger.error(`Did you mean ${chalk.yellow(suggestion)}?`)
+        logger.error(` Did you mean ${chalk.yellow(suggestion)}?`)
     }
 }
-program.on('command:*', ([cmd]) => {
-    program.outputHelp()
-    logger.error(`\n Unknown command ${chalk.yellow(cmd)}.\n`)
-    suggestCommands(cmd)
-    process.exitCode = 1
-})
 
-program.parse(process.argv)
 program.version(pkg.version).usage(', options listed below 👇')
 program.command('create <appname>').description('Create a FULLSTACK project 🚀 (Frontend - Backend - Api - Database) [SEMISTABLE ✅🚧]').action(create)
 program.command('start').description('Start the client side or the server side locally 🏁 [STABLE ✅]').action(start)
@@ -42,7 +36,16 @@ program.command('dep').description('Install dependencies 🧰 [UNSTABLE ⛔⏳]'
 program.command('build').description('Build folder for production 🏠 [UNSTABLE ⛔⏳]').action(build)
 program.command('test').description('Testing phase 🔬 [UNSTABLE ⛔⏳]').action(test)
 
+program.on('command:*', ([cmd]) => {
+    program.outputHelp()
+    logger.error(`\n Unknown command ${chalk.yellow(cmd)}.\n`)
+    suggestCommands(cmd)
+    process.exitCode = 1
+})
+
 program.parse(process.argv)
+
+// Shows up help if no arguments were provided.
 if (!program.args.length) {
     program.help()
 }

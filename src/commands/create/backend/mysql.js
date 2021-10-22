@@ -5,13 +5,12 @@
 import fs from 'fs-extra'
 import path from 'path'
 import inquirer from 'inquirer'
+import exec from '../../../utils/exec'
 import * as logger from '../../../utils/logger'
 import { validateInputhost } from '../../../utils/validate'
 import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import { validateInputdb } from '../../../utils/validate'
-
-import exec from '../../../utils/exec'
 let shell = require('shelljs')
 
 export async function mysql() {
@@ -173,12 +172,17 @@ export async function mysql() {
             await exec('php artisan db:seed', 'Artisan db seed done')
             await exec('php artisan passport:install', 'Passport Installed')
             await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mysql/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            await exec('npm install graphql --save' , 'Installed GraphQL')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
@@ -330,6 +334,9 @@ export async function mysql() {
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            await exec('npm install express --save' , 'Installed ExpresJS')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
@@ -393,6 +400,10 @@ export async function mysql() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
+            await exec('npm install express --save' , 'Installed ExpresJS')
+            await exec('npm install graphql --save' , 'Installed GraphQL')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {

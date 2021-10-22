@@ -6,6 +6,7 @@ import deployToHeroku from './heroku'
 import deployToNetlify from './netlify'
 import deployToFirebase from './firebase'
 import { dirOfChoice } from '../../utils/helpers'
+import { validateInstallation } from '../../utils/validate'
 //const templateDir = require('../create/index')
 
 /**
@@ -37,8 +38,10 @@ export default async () => {
         if (platform === 'Heroku') {
             return deployToHeroku(templateDir)
         } else if (platform === 'Netlify') {
+            await validateInstallation('netlify')
             return deployToNetlify(templateDir)
         } else if (platform === 'Firebase') {
+            await validateInstallation('firebase')
             return deployToFirebase(templateDir)
         }
         module.exports.templateDir = 'client'
@@ -54,6 +57,7 @@ export default async () => {
         if (platform === 'Heroku') {
             return deployToHeroku(templateDir)
         } else if (platform === 'Firebase') {
+            await validateInstallation('firebase')
             return deployToFirebase(templateDir)
         }
     }
