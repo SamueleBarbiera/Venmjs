@@ -155,6 +155,38 @@ const installfirebase = () => {
 const installnetlify = () => {
     return exec(`npm i netlify-cli -g`)
 }
+const installgridsome = () => {
+    return exec(`npm i --global @gridsome/cli`)
+}
+const installnuxt = () => {
+    return exec(`npm i -g @nuxt/cli`)
+}
+const installquasar = () => {
+    return exec(`npm i -g @quasar/cli`)
+}
+const installvue = () => {
+    return exec(`npm i -g @vue/cli`)
+}
+const installelectron = () => {
+    return exec(`npm i -g electron@latest`)
+}
+const installexpocli = () => {
+    return exec(`npm i --global expo-cli`)
+}
+const installvuenative = () => {
+    return exec(`npm i --global vue-native-cli`)
+}
+const installionic = () => {
+    return exec(`npm i -g electron@latest`)
+}
+const installcomposer = () => {
+    const urlMap = 'https://www.microsoft.com/store/productId/9N0DX20HK701'
+    return showInstallationInfo('composer', urlMap[process.platform])
+}
+const installxampp = () => {
+    const urlMap = 'https://www.apachefriends.org/download.html'
+    return showInstallationInfo('xampp', urlMap[process.platform])
+}
 
 //#endregion
 
@@ -182,11 +214,12 @@ export const validateInstallation = async (dependency) => {
 
         spinner.text = `The installation of ${dependency} is starting`
         spinner.start()
-        if (dependency === 'yarn') {
-            return installGit()
-        }
-        if (dependency === 'git') {
+
+        if (dependency === 'yarn -v') {
             return installYarn()
+        }
+        if (dependency === 'git help -g') {
+            return installGit()
         }
         if (dependency === 'docker') {
             return installDocker()
@@ -194,12 +227,45 @@ export const validateInstallation = async (dependency) => {
         if (dependency === 'wt') {
             return installwt()
         }
-
+        if (dependency === 'nuxt -v') {
+            return installnuxt()
+        }
         if (dependency === 'firebase') {
             return installfirebase()
         }
         if (dependency === 'netlify') {
             return installnetlify()
+        }
+        if (dependency === 'gridsome -v') {
+            return installgridsome()
+        }
+        if (dependency === 'quasar -v') {
+            return installquasar()
+        }
+        if (dependency === 'vue -V') {
+            return installvue()
+        }
+        if (dependency === 'electron -v') {
+            return installelectron()
+        }
+
+        if (dependency === 'vue-native -v') {
+            return installvuenative()
+        }
+        if (dependency === 'expo-cli -V') {
+            return installexpocli()
+        }
+        if (dependency === 'ionic -v') {
+            return installionic()
+        }
+        if (dependency === 'composer -V') {
+            return installcomposer()
+        }
+        if (dependency === 'php -v') {
+            return installxampp()
+        }
+        if (dependency === 'php -v') {
+            return installxampp()
         }
 
         await exec(`npm install -g ${dependency}`)

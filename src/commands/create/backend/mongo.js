@@ -14,7 +14,7 @@ import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import exec from '../../../utils/exec'
 import { validateInputdb } from '../../../utils/validate'
-import { validateInstallation } from '../../utils/validate'
+import { validateInstallation } from '../../../utils/validate'
 let shell = require('shelljs')
 
 export async function mongo() {
@@ -29,6 +29,8 @@ export async function mongo() {
     //#region MONGODB
     if (template_backend === 'laravel') {
         logger.info('Creating the Rest API 📃')
+        await validateinstallation('composer -V')
+        await validateinstallation('php -v')
         fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/server'), './server')
         fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
         const { host } = await inquirer.prompt([

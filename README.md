@@ -53,9 +53,9 @@ venm create <appname>
 -   [**Git**](https://git-scm.com/) is a version control system for tracking changes in computer files
 -   [**Yarn**](https://yarnpkg.com/getting-started/install) a package manager that doubles down as project manager
 ## Os Terminal
--   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) NEW Windows Cmd [using Npm]
--   [**Cmd**](https://brew.sh/) MacOS Cmd [using Homebrew with Brew]
--   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd [using Apt]
+-   [**Wt**](https://www.microsoft.com/it-it/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) NEW Windows Cmd 
+-   [**Cmd**](https://brew.sh/) MacOS Cmd
+-   [**Bash**](https://www.dummies.com/computers/operating-systems/linux/common-linux-commands/) Linux Cmd 
 
 
 
@@ -73,7 +73,7 @@ venm create <appname>
 -   [**Quasar**](https://quasar.dev/) SSR framework for Vuejs `npm i -g @quasar/cli`
 
 ### Ssg
--   [**Vuepress**](https://vuepress.vuejs.org/) `npm i -D vuepress`
+-   [**Vuepress**](https://vuepress.vuejs.org/) 
 -   [**Gridsome**](https://gridsome.org/) Jamstack framework for Vuejs `npm i --global @gridsome/cli`
 
 ### MultiPlatform

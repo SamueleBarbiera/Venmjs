@@ -53,6 +53,7 @@ export async function frontend(appName) {
         }
         if (template_SSG_Jam === 'Gridsome') {
             logger.info('Creating the Gridsome project 📃')
+            await validateinstallation('gridsome -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && gridsome create client && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -78,6 +79,7 @@ export async function frontend(appName) {
         ])
         if (template_SSR === 'Nuxt') {
             logger.info('Creating the Nuxt-Vite project 📃')
+            await validateinstallation('nuxt -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -93,6 +95,7 @@ export async function frontend(appName) {
         }
         if (template_SSR === 'Quasar') {
             logger.info('Creating the Quasar project 📃')
+            await validateinstallation('quasar -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && quasar create client && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -109,6 +112,7 @@ export async function frontend(appName) {
         }
     } else if (template_FRONTEND === 'Vue') {
         logger.info('Creating the Vue-Vite project 📃')
+        await validateinstallation('vue -V')
         if (isWin) {
             shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && npm i @vitejs/plugin-vue && vue add vite && exit";')
             await exec('npm install', 'Installing Frontend Dependencies')
@@ -132,6 +136,8 @@ export async function frontend(appName) {
         ])
         if (template_Mobile === 'Vue native') {
             logger.info('Creating the VueNative project 📃')
+            await validateinstallation('vue-native -v')
+            await validateinstallation('expo-cli -V')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue-native init client && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -148,6 +154,7 @@ export async function frontend(appName) {
         }
         if (template_Mobile === 'Ionic') {
             logger.info('Creating the VueNative project 📃')
+            await validateinstallation('ionic -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && ionic start client tabs --type vue --capacitor && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -164,6 +171,7 @@ export async function frontend(appName) {
         }
     } else if (template_FRONTEND === 'Multi Platform') {
         logger.info('Creating the Electron project 📃')
+        await validateinstallation('electron -v')
         if (isWin) {
             await exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && vue add electron-builder && exit";')
             await exec('npm install', 'Installing Frontend Dependencies')

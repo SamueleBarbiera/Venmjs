@@ -11,9 +11,12 @@ import { validateInputhost } from '../../../utils/validate'
 import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
 import { validateInputdb } from '../../../utils/validate'
+import { validateInstallation } from '../../../utils/validate'
 let shell = require('shelljs')
 
 export async function mysql() {
+    await validateInstallation('composer -V')
+    await validateInstallation('php -v')
     const { template_backend } = await inquirer.prompt([
         {
             name: 'template_backend',

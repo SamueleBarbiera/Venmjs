@@ -4,6 +4,7 @@
 import inquirer from 'inquirer'
 import { mongo } from './mongo.js'
 import { mysql } from './mysql.js'
+import { validateInstallation } from '../../../utils/validate'
 
 export async function backend() {
     //ISTRUZIONI INIZIALI
@@ -18,6 +19,7 @@ export async function backend() {
         },
     ])
     if (template_database === 'Mongo') {
+        await validateInstallation()
         await mongo()
     } else {
         //await validateInstallation('xampp')

@@ -77,9 +77,11 @@ export default async (appName) => {
         logger.info(`Now type in ${userCommandInstruction}`)
     }
     //#endregion
-    await validateInstallation('yarn --version')
+    await validateInstallation('yarn -v')
     await validateInstallation('git help -g')
-    await validateInstallation('wt')
+    if (isWin) {
+        return await validateInstallation('wt')
+    }
 
     await backend()
     await frontend()
