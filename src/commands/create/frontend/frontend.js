@@ -7,13 +7,16 @@ import inquirer from 'inquirer'
 import * as logger from '../../../utils/logger'
 import exec from '../../../utils/exec'
 var nomedir = require('../index')
+var requireServerSide = require('../index')
 const isWin = process.platform === 'win32'
 const isLinux = process.platform === 'linux'
 const isMac = process.platform === 'darwin'
+import { validateInstallation } from '../../../utils/validate'
 let shell = require('shelljs')
 
 export async function frontend(appName) {
     //#region FRONTEND CLIENT
+    console.log(JSON.stringify(requireServerSide),nomedir)
     const dir = JSON.stringify(nomedir)
     const dirr = dir.replace(/[^\w\s]/gi, '')
     const dirrr = dirr.replace('appName', '')
@@ -38,22 +41,22 @@ export async function frontend(appName) {
         if (template_SSG_Jam === 'Vuepress') {
             logger.info('Creating the Vuepress project 📃')
             if (isWin) {
-                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npx create-vuepress-site client && cd client && npm add --dev vitepress && exit";')
+                shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && yarn create vuepress-site client && cd client && npm add --dev vitepress && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
             } else if (isMac) {
                 shell.exec(`osascript -e 'tell app "Terminal"
-                do script "npx create-vuepress-site client; cd client; npm add --dev vitepress; killall Terminal"
+                do script "yarn create vuepress-site client; cd client; npm add --dev vitepress; killall Terminal"
                 end tell'`)
                 await exec('npm install', 'Installing Frontend Dependencies')
             } else if (isLinux) {
-                shell.exec(`gnome-terminal -- /bin/bash -c "cd .. && npx create-vuepress-site client && npm add --dev vitepress"`)
+                shell.exec(`gnome-terminal -- /bin/bash -c "cd .. && yarn create vuepress-site client && npm add --dev vitepress"`)
                 await exec('npm install', 'Installing Frontend Dependencies')
             }
             module.exports.template = 'Vuepress'
         }
         if (template_SSG_Jam === 'Gridsome') {
             logger.info('Creating the Gridsome project 📃')
-            await validateinstallation('gridsome -v')
+            await validateInstallation('gridsome -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && gridsome create client && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -79,7 +82,7 @@ export async function frontend(appName) {
         ])
         if (template_SSR === 'Nuxt') {
             logger.info('Creating the Nuxt-Vite project 📃')
-            await validateinstallation('nuxt -v')
+            await validateInstallation('nuxt -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && npm init nuxt-app@latest client && cd client && npm i -D nuxt-vite && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -95,7 +98,7 @@ export async function frontend(appName) {
         }
         if (template_SSR === 'Quasar') {
             logger.info('Creating the Quasar project 📃')
-            await validateinstallation('quasar -v')
+            await validateInstallation('quasar -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && quasar create client && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -112,13 +115,12 @@ export async function frontend(appName) {
         }
     } else if (template_FRONTEND === 'Vue') {
         logger.info('Creating the Vue-Vite project 📃')
-        await validateinstallation('vue -V')
+        await validateInstallation('vue -V')
         if (isWin) {
             shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && npm i @vitejs/plugin-vue && vue add vite && exit";')
             await exec('npm install', 'Installing Frontend Dependencies')
         } else if (isMac) {
-            await exec('osascript -e "tell app "Terminal" to do script "vue create client; npm i @vitejs/plugin-vue; vue add vite; killall Terminal" in selected tab of the front window"')
-            shell.exec(`'mv client ${dirstring}'`)
+            shell.exec('osascript -e "tell app "Terminal" to do script "vue create client; npm i @vitejs/plugin-vue; vue add vite; killall Terminal" in selected tab of the front window"')
             await exec('npm install', 'Installing Frontend Dependencies')
         } else if (isLinux) {
             shell.exec(`gnome-terminal -- /bin/bash -c "cd .. && vue create client && npm i @vitejs/plugin-vue && vue add vite"`)
@@ -136,8 +138,8 @@ export async function frontend(appName) {
         ])
         if (template_Mobile === 'Vue native') {
             logger.info('Creating the VueNative project 📃')
-            await validateinstallation('vue-native -v')
-            await validateinstallation('expo-cli -V')
+            await validateInstallation('vue-native -v')
+            await validateInstallation('expo-cli -V')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue-native init client && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -154,7 +156,7 @@ export async function frontend(appName) {
         }
         if (template_Mobile === 'Ionic') {
             logger.info('Creating the VueNative project 📃')
-            await validateinstallation('ionic -v')
+            await validateInstallation('ionic -v')
             if (isWin) {
                 shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && ionic start client tabs --type vue --capacitor && cd client && exit";')
                 await exec('npm install', 'Installing Frontend Dependencies')
@@ -171,17 +173,17 @@ export async function frontend(appName) {
         }
     } else if (template_FRONTEND === 'Multi Platform') {
         logger.info('Creating the Electron project 📃')
-        await validateinstallation('electron -v')
+        await validateInstallation('electron -v')
         if (isWin) {
-            await exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && vue add electron-builder && exit";')
+            shell.exec('wt -w 0 -d . -p "Command Prompt" cmd /k "cd .. && vue create client && cd client && vue add electron-builder && exit";')
             await exec('npm install', 'Installing Frontend Dependencies')
         } else if (isMac) {
-            await exec(`osascript -e 'tell app "Terminal"
+            shell.exec(`osascript -e 'tell app "Terminal"
             do script "vue create client; cd client; vue add electron-builder; killall Terminal"
             end tell'`)
             await exec('npm install', 'Installing Frontend Dependencies')
         } else if (isLinux) {
-            await exec(`gnome-terminal -- /bin/bash -c "cd .. && vue create client && vue add electron-builder"`)
+            shell.exec(`gnome-terminal -- /bin/bash -c "cd .. && vue create client && vue add electron-builder"`)
             await exec('npm install', 'Installing Frontend Dependencies')
         }
         module.exports.template = 'Multi Platform'

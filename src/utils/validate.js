@@ -139,7 +139,11 @@ const installDocker = () => {
 }
 
 const installYarn = () => {
-    return exec(`npm install --global yarn`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm install --global yarn --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm install --global yarn`)
+    }
 }
 const installwt = () => {
     const urlMap = {
@@ -150,34 +154,74 @@ const installwt = () => {
     }
 }
 const installfirebase = () => {
-    return exec(`npm i -g firebase-tools`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i -g firebase-tools --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i -g firebase-tools`)
+    }
 }
 const installnetlify = () => {
-    return exec(`npm i netlify-cli -g`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i netlify-cli -g --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i netlify-cli -g`)
+    }
 }
 const installgridsome = () => {
-    return exec(`npm i --global @gridsome/cli`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i --global @gridsome/cli --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i --global @gridsome/cli`)
+    }
 }
 const installnuxt = () => {
-    return exec(`npm i -g @nuxt/cli`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i -g @nuxt/cli --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i -g @nuxt/cli`)
+    }
 }
 const installquasar = () => {
-    return exec(`npm i -g @quasar/cli`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i -g @quasar/cli --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i -g @quasar/cli`)
+    }
 }
 const installvue = () => {
-    return exec(`npm i -g @vue/cli`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i -g @vue/cli --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i -g @vue/cli`)
+    }
 }
 const installelectron = () => {
-    return exec(`npm i -g electron@latest`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i -g electron@latest --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i -g electron@latest`)
+    }
 }
 const installexpocli = () => {
-    return exec(`npm i --global expo-cli`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i --global expo-cli --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i --global expo-cli`)
+    }
 }
 const installvuenative = () => {
-    return exec(`npm i --global vue-native-cli`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i --global vue-native-cli --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i --global vue-native-cli`)
+    }
 }
 const installionic = () => {
-    return exec(`npm i -g electron@latest`)
+    if (isMac || isLinux) {
+        return exec(`sudo npm i -g electron@latest --unsafe-perm`)
+    } else if (isWin) {
+        return exec(`npm i -g electron@latest`)
+    }
 }
 const installcomposer = () => {
     const urlMap = 'https://www.microsoft.com/store/productId/9N0DX20HK701'
@@ -224,7 +268,7 @@ export const validateInstallation = async (dependency) => {
         if (dependency === 'docker') {
             return installDocker()
         }
-        if (dependency === 'exit') {
+        if (dependency === 'wt') {
             return installwt()
         }
         if (dependency === 'nuxt -v') {

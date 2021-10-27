@@ -7,12 +7,14 @@ import fs from 'fs-extra'
 import path from 'path'
 import showBanner from 'node-banner'
 import validate from 'validate-npm-package-name'
-import exec from '../../utils/exec'
+import inquirer from 'inquirer'
 import * as logger from '../../utils/logger'
 import { frontend } from './frontend/frontend.js'
 import { backend } from './backend/backend.js'
 import { validateInstallation } from '../../utils/validate'
 const isWin = process.platform === 'win32'
+const isLinux = process.platform === 'linux'
+const isMac = process.platform === 'darwin'
 let shell = require('shelljs')
 let projectPathRelative
 /**
@@ -64,7 +66,6 @@ export default async (appName) => {
     } else if (!isCurrentDir) {
         fs.mkdirSync(appName)
     }
-    module.exports.appName = `./${appName}`
     shell.cd(`./${appName}`)
     const showInstructions = () => {
         const isCurrentDir = projectPathRelative === '.'
@@ -78,12 +79,32 @@ export default async (appName) => {
         logger.info(`Now type in ${userCommandInstruction}`)
     }
     //#endregion
-    await validateInstallation('yarn -v')
-    await validateInstallation('git help -g')
-    await validateInstallation('exit')
+    if (isLinux || isMac) {
+        await validateInstallation('yarn -v')
+        await validateInstallation('git help -g')
+    } else if (isWin) {
+        await validateInstallation('yarn -v')
+        await validateInstallation('git help -g')
+        await validateInstallation('wt')
+    }
+    const { requireServerSide } = await inquirer.prompt([
+        {
+            name: 'requireServerSide',
+            type: 'list',
+            message: 'Please choose the structure of this project ✨',
+            choices: ['Frontend', 'Backend', 'Fullstack'],
+        },
+    ])
+    if (requireServerSide === 'Fullstack') {
+        await backend()
+        await frontend()
+    } else if (requireServerSide === 'Frontend') {
+        await frontend()
+    } else if (requireServerSide === 'Backend') {
+        await backend()
+    }
 
-    await backend()
-    await frontend()
     await showInstructions()
-    module.exports = appName
+    module.exports.requireServerSide
+    module.exports.appName = `./${appName}`
 }

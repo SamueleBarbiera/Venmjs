@@ -6,13 +6,13 @@
 import fs from 'fs-extra'
 import path from 'path'
 import inquirer from 'inquirer'
+import exec from '../../../utils/exec'
 import * as logger from '../../../utils/logger'
 import { validateInput } from '../../../utils/validate'
 import { validateInputname } from '../../../utils/validate'
 import { validateInputhost } from '../../../utils/validate'
 import { validateInputuser } from '../../../utils/validate'
 import { validateInputpass } from '../../../utils/validate'
-import exec from '../../../utils/exec'
 import { validateInputdb } from '../../../utils/validate'
 import { validateInstallation } from '../../../utils/validate'
 let shell = require('shelljs')
@@ -29,8 +29,8 @@ export async function mongo() {
     //#region MONGODB
     if (template_backend === 'laravel') {
         logger.info('Creating the Rest API 📃')
-        await validateinstallation('composer -V')
-        await validateinstallation('php -v')
+        await validateInstallation('composer -V')
+        await validateInstallation('php -v')
         fs.copySync(path.resolve(__dirname, '../../../templates/server/laravel-mongodb/server'), './server')
         fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
         const { host } = await inquirer.prompt([
@@ -178,11 +178,11 @@ export async function mongo() {
         ];
             }`
         )
-        await exec('composer install', 'Composer installed')
+        await exec('composer install', 'Installing Composer')
         await exec('php artisan key:generate', 'Artisan key generated')
         await exec('php artisan migrate', 'Artisan migrated')
         await exec('php artisan db:seed', 'Artisan db seed done')
-        await exec('php artisan passport:install', 'Passport Installed')
+        await exec('php artisan passport:install', 'Installing Passport ')
         await exec('npm install', 'Installing Backend Dependencies')
         await exec('npm i mongoose', 'Installing Mongoose')
         module.exports.templateServer = 'RestAPI'
@@ -202,7 +202,6 @@ export async function mongo() {
             const newPath = './server'
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             fs.rename(currPath, newPath)
-            await exec('npm install express --save', 'Installed ExpressJS')
             const { uri } = await inquirer.prompt([
                 {
                     type: 'input',
@@ -224,6 +223,7 @@ export async function mongo() {
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
             await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm install express --save', 'Installing ExpressJS')
             await exec('npm i mongoose', 'Installing Mongoose')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
@@ -231,8 +231,6 @@ export async function mongo() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install express --save', 'Installed ExpressJS')
-            await exec('npm install graphql --save', 'Installed GraphQL')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { uri } = await inquirer.prompt([
                 {
@@ -255,6 +253,8 @@ export async function mongo() {
             fs.writeFileSync('./server/.env', `DB_URL=${uri}/${name}`)
             shell.cd(`server`)
             await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm install express --save', 'Installing ExpressJS')
+            await exec('npm install graphql --save', 'Installing GraphQL')
             await exec('npm i mongoose', 'Installing Mongoose')
             module.exports.templateServer = 'GraphQL'
         }

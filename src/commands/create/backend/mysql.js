@@ -169,11 +169,11 @@ export async function mysql() {
             MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
             )
             shell.cd(`server`)
-            await exec('composer install', 'Composer installed')
+            await exec('composer install', 'Installing Composer')
             await exec('php artisan key:generate', 'Artisan key generated')
             await exec('php artisan migrate', 'Artisan migrated')
             await exec('php artisan db:seed', 'Artisan db seed done')
-            await exec('php artisan passport:install', 'Passport Installed')
+            await exec('php artisan passport:install', 'Installing Passport ')
             await exec('npm install', 'Installing Backend Dependencies')
             await exec('npm i sequelize', 'Installing sequelize')
             await exec('npm i mysql2', 'Installing mysql2')
@@ -183,9 +183,6 @@ export async function mysql() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install graphql --save', 'Installed GraphQL')
-            await exec('npm i sequelize', 'Installing sequelize')
-            await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
@@ -314,12 +311,15 @@ export async function mysql() {
             MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"`
             )
             shell.cd(`server`)
-            await exec('composer install', 'Composer installed')
+            await exec('composer install', 'Installing Composer')
             await exec('php artisan key:generate', 'Artisan key generated')
             await exec('php artisan migrate', 'Artisan migrated')
             await exec('php artisan db:seed', 'Artisan db seed done')
-            await exec('php artisan passport:install', 'Passport Installed')
+            await exec('php artisan passport:install', 'Installing Passport ')
             await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm install graphql --save', 'Installing GraphQL')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             module.exports.templateServer = 'GraphQL'
         }
     } else if (template_backend === 'express') {
@@ -337,9 +337,6 @@ export async function mysql() {
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install express --save', 'Installed ExpressJS')
-            await exec('npm i sequelize', 'Installing sequelize')
-            await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
@@ -397,16 +394,15 @@ export async function mysql() {
             )
             shell.cd(`server`)
             await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm install express --save', 'Installing ExpressJS')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             module.exports.templateServer = 'RestAPI'
         } else if (templateServer === 'GraphQL') {
             fs.copySync(path.resolve(__dirname, '../../../templates/server/express-mysql/GraphQL'), './GraphQL')
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install express --save', 'Installed ExpressJS')
-            await exec('npm install graphql --save', 'Installed GraphQL')
-            await exec('npm i sequelize', 'Installing sequelize')
-            await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
             const { host } = await inquirer.prompt([
                 {
@@ -465,6 +461,10 @@ export async function mysql() {
             )
             shell.cd(`server`)
             await exec('npm install', 'Installing Backend Dependencies')
+            await exec('npm install express --save', 'Installing ExpressJS')
+            await exec('npm install graphql --save', 'Installing GraphQL')
+            await exec('npm i sequelize', 'Installing sequelize')
+            await exec('npm i mysql2', 'Installing mysql2')
             module.exports.templateServer = 'GraphQL'
         }
         //#endregion
