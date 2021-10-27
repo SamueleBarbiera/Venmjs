@@ -224,7 +224,7 @@ export const validateInstallation = async (dependency) => {
         if (dependency === 'docker') {
             return installDocker()
         }
-        if (dependency === 'wt') {
+        if (dependency === 'exit') {
             return installwt()
         }
         if (dependency === 'nuxt -v') {
@@ -260,9 +260,6 @@ export const validateInstallation = async (dependency) => {
         }
         if (dependency === 'composer -V') {
             return installcomposer()
-        }
-        if (dependency === 'php -v') {
-            return installxampp()
         }
         if (dependency === 'php -v') {
             return installxampp()

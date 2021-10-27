@@ -183,7 +183,7 @@ export async function mysql() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install graphql --save' , 'Installed GraphQL')
+            await exec('npm install graphql --save', 'Installed GraphQL')
             await exec('npm i sequelize', 'Installing sequelize')
             await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
@@ -337,7 +337,7 @@ export async function mysql() {
             const currPath = './RestAPI'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install express --save' , 'Installed ExpresJS')
+            await exec('npm install express --save', 'Installed ExpressJS')
             await exec('npm i sequelize', 'Installing sequelize')
             await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')
@@ -403,8 +403,8 @@ export async function mysql() {
             const currPath = './GraphQL'
             const newPath = './server'
             fs.rename(currPath, newPath)
-            await exec('npm install express --save' , 'Installed ExpresJS')
-            await exec('npm install graphql --save' , 'Installed GraphQL')
+            await exec('npm install express --save', 'Installed ExpressJS')
+            await exec('npm install graphql --save', 'Installed GraphQL')
             await exec('npm i sequelize', 'Installing sequelize')
             await exec('npm i mysql2', 'Installing mysql2')
             fs.copySync(path.resolve(__dirname, '../../../templates/config/venm.config.js'), './venm.config.js')

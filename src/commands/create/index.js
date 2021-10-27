@@ -12,6 +12,7 @@ import * as logger from '../../utils/logger'
 import { frontend } from './frontend/frontend.js'
 import { backend } from './backend/backend.js'
 import { validateInstallation } from '../../utils/validate'
+const isWin = process.platform === 'win32'
 let shell = require('shelljs')
 let projectPathRelative
 /**
@@ -79,9 +80,7 @@ export default async (appName) => {
     //#endregion
     await validateInstallation('yarn -v')
     await validateInstallation('git help -g')
-    if (isWin) {
-        return await validateInstallation('wt')
-    }
+    await validateInstallation('exit')
 
     await backend()
     await frontend()
